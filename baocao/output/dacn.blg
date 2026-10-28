@@ -1,0 +1,48 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: baocao/output/dacn.aux
+Reallocating 'name_of_file' (item size: 1) to 7 items.
+The style file: ieeetr.bst
+Reallocating 'name_of_file' (item size: 1) to 18 items.
+Database file #1: baocao/latex/dacn.bib
+You've used 21 entries,
+            1876 wiz_defined-function locations,
+            628 strings with 7180 characters,
+and the built_in function-call counts, 5978 in all, are:
+= -- 614
+> -- 212
+< -- 0
++ -- 80
+- -- 59
+* -- 388
+:= -- 811
+add.period$ -- 26
+call.type$ -- 21
+change.case$ -- 16
+chr.to.int$ -- 0
+cite$ -- 21
+duplicate$ -- 340
+empty$ -- 557
+format.name$ -- 59
+if$ -- 1497
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 26
+newline$ -- 71
+num.names$ -- 21
+pop$ -- 71
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 0
+skip$ -- 247
+stack$ -- 0
+substring$ -- 362
+swap$ -- 162
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 0
+warning$ -- 0
+while$ -- 57
+width$ -- 23
+write$ -- 215
