@@ -52,7 +52,6 @@
 \contentsline {subsubsection}{\numberline {2.4.2}Quy trình hoạt động}{44}{subsubsection.2.4.2}%
 \contentsline {subsubsection}{\numberline {2.4.3}Thuật toán tổng quát}{45}{subsubsection.2.4.3}%
 \contentsline {subsubsection}{\numberline {2.4.4}Phân tích độ phức tạp tính toán}{48}{subsubsection.2.4.4}%
-\contentsline {subsubsection}{\numberline {2.4.5}Thảo luận và định hướng đánh giá thực nghiệm}{50}{subsubsection.2.4.5}%
 \contentsline {subsection}{\numberline {2.5}Thảo luận và định hướng đánh giá thực nghiệm}{50}{subsection.2.5}%
 \contentsline {subsection}{\numberline {2.6}Thiết kế thực nghiệm}{50}{subsection.2.6}%
 \contentsline {subsubsection}{\numberline {2.6.1}Bộ dữ liệu thực nghiệm}{50}{subsubsection.2.6.1}%
