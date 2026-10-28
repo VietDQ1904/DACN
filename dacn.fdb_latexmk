@@ -1,0 +1,16 @@
+# Fdb version 4
+["pdflatex"] 1793153518.75596 "/workspace/dacn.tex" "dacn.pdf" "dacn" 1793153519.25256 2
+  "/root/.miktex/texmfs/data/miktex/data/le/pdftex/pdflatex.fmt" 1793029460.05881 10201219 e7811875ca65f5d3af4a3fd29ea50457 ""
+  "/root/.miktex/texmfs/install/fonts/tfm/public/cm/cmr12.tfm" 1793028061.64118 1288 655e228510b4c2a1abe905c368440826 ""
+  "/root/.miktex/texmfs/install/tex/latex/base/exscale.sty" 1793028057.77326 2622 c8e1821f47cbe297ec723ed1c87284bb ""
+  "/root/.miktex/texmfs/install/tex/latex/extsizes/extarticle.cls" 1793027985 20602 3112294ba237d94ce4a1502cfef3594f ""
+  "/root/.miktex/texmfs/install/tex/latex/extsizes/size14.clo" 1793027985 6214 cc6d832fdd2fc5f4a20ee1a002f45d0f ""
+  "/root/.miktex/texmfs/install/tex/latex/fontspec/fontspec.sty" 1793028091.46233 3780 7d1bbe8ee1fc87beadab5999d0471011 ""
+  "/workspace/dacn.tex" 1793153515.92406 120442 01931a1087edb51a96e9e2cd357aa9a4 ""
+  "dacn.aux" 1793153510 32 3985256e7290058c681f74d7a3565a19 "pdflatex"
+  "dacn.tex" 1793153515.92406 120442 01931a1087edb51a96e9e2cd357aa9a4 ""
+  (generated)
+  "dacn.aux"
+  "dacn.log"
+  "dacn.pdf"
+  (rewritten before read)

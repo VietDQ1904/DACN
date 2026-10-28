@@ -1,0 +1,19 @@
+FROM miktex/miktex:latest
+
+# 1. Cài đặt Git, bộ định dạng ngôn ngữ (locales) và font Microsoft
+RUN echo ttf-mscorefonts-installer msttcorefonts/accepted-mscorefonts-eula select true | debconf-set-selections
+RUN apt-get update && apt-get install -y \
+    ttf-mscorefonts-installer \
+    fontconfig \
+    && fc-cache -f -v \
+    && rm -rf /var/lib/apt/lists/*
+
+# 2. Thiết lập mã nguồn hệ thống UTF-8
+RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && locale-gen
+ENV LANG en_US.UTF-8
+ENV LANGUAGE en_US:en
+ENV LC_ALL en_US.UTF-8
+
+# 3. Cập nhật cơ sở dữ liệu gói MiKTeX và cài đặt các gói hay dùng (ví dụ extsizes cho extarticle)
+RUN miktex packages update
+RUN miktex packages install extsizes

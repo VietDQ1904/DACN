@@ -1,0 +1,18 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+      {
+         "label": "Run Latex",
+         "type": "shell",
+         "command": "xelatex dacn.tex && bibtex dacn && xelatex dacn.tex && xelatex dacn.tex",
+         "options": {
+            "cwd": "${workspaceFolder}"
+         },
+         "problemMatcher": [],
+         "group": {
+         "kind": "build",
+         "isDefault": true
+         }
+      }
+   ]
+}
