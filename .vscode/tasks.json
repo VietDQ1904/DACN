@@ -4,7 +4,7 @@
       {
          "label": "Run Latex",
          "type": "shell",
-         "command": "xelatex dacn.tex && bibtex dacn && xelatex dacn.tex && xelatex dacn.tex",
+         "command": "xelatex -output-directory=output latex/dacn.tex && bibtex latex/dacn && xelatex -output-directory=output latex/dacn.tex && xelatex -output-directory=output latex/dacn.tex",
          "options": {
             "cwd": "${workspaceFolder}"
          },
