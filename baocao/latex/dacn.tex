@@ -117,16 +117,31 @@
 % ------------------------------------------------------------
 
 \usepackage{chngcntr}
+\usepackage{longtable}
 
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
 \counterwithin{equation}{section}
 
 % ------------------------------------------------------------
-% ĐỊNH DẠNG TIÊU ĐỀ
+% ĐỊNH DẠNG TIÊU ĐỀ VÀ MỤC LỤC
 % ------------------------------------------------------------
 
 \usepackage{titlesec}
+\usepackage{tocloft}
+
+\renewcommand{\cftsecpresnum}{Chương~}
+\renewcommand{\cftsecaftersnum}{:~}
+\setlength{\cftsecnumwidth}{5em}
+
+% Dấu chấm dẫn cho Section (Chương)
+\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
+
+% Dấu chấm dẫn cho Subsection
+\renewcommand{\cftsubsecleader}{\cftdotfill{\cftdotsep}}
+
+% Dấu chấm dẫn cho Subsubsection nếu có
+\renewcommand{\cftsubsubsecleader}{\cftdotfill{\cftdotsep}}
 
 % Section: dùng cho 1., 2., ..., 10.
 
@@ -203,6 +218,13 @@
 \renewcommand{\headrulewidth}{0pt}
 \renewcommand{\footrulewidth}{0pt}
 
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \fancyhead[C]{\thepage}
+    \renewcommand{\headrulewidth}{0pt}
+    \renewcommand{\footrulewidth}{0pt}
+}
+
 % ------------------------------------------------------------
 % HYPERLINK
 % ------------------------------------------------------------
@@ -223,9 +245,206 @@
 
 \begin{document}
 
+% Roman page number
+\pagenumbering{roman}
+\setcounter{page}{1}
+
 \makeatletter
 \renewcommand\citepunct{], [}
 \makeatother
+
+\begin{center}
+\textbf{\fontsize{14}{21}\selectfont
+Lời cam đoan}
+\end{center}
+\addcontentsline{toc}{section}{Lời cam đoan}
+
+\noindent Chúng tôi tên là \textbf{Trần Trọng Nghĩa} và \textbf{Đỗ Quốc Việt}, sinh viên Khoa Công nghệ Thông tin Trường Đại học Sài Gòn, xin cam đoan rằng: 
+\\ \noindent Đồ án chuyên ngành với đề tài \textbf{“Nghiên cứu thuật toán Metaheuristic giải bài toán phát hiện cộng đồng trên mạng xã hội”} là công trình nghiên cứu do chính chúng tôi thực hiện dưới sự hướng dẫn của \textbf{TS. Phan Tấn Quốc}.
+\\ \noindent Các kết quả, nội dung và nhận xét được trình bày trong báo cáo là trung thực, được thực hiện trên cơ sở tìm hiểu lý thuyết, khảo sát tài liệu, xây dựng mô hình và thực nghiệm của nhóm. Những số liệu, bảng biểu, hình ảnh, kết quả nghiên cứu và ý tưởng kế thừa từ các tác giả khác đều đã được trích dẫn nguồn đầy đủ trong phần nội dung và danh mục tài liệu tham khảo. 
+\\ \noindent Chúng tôi xin chịu hoàn toàn trách nhiệm về tính trung thực và tính nguyên bản của nội dung đồ án này. Nếu có sai phạm liên quan đến học thuật, trích dẫn hoặc bản quyền, chúng tôi xin hoàn toàn chịu trách nhiệm theo quy định của Nhà trường. 
+\\ \noindent Thành phố Hồ Chí Minh, ngày 12 tháng 9 năm 2026.
+
+\begin{flushright}
+    \begin{minipage}{10cm} % Độ rộng của khối chữ ký (tùy chỉnh theo ý muốn)
+        \centering
+        \textbf{Sinh viên thực hiện} \\
+        (Ký và ghi rõ họ tên) \\[2cm] 
+        TRẦN TRỌNG NGHĨA \hfill ĐỖ QUỐC VIỆT 
+    \end{minipage}
+\end{flushright}
+
+\newpage
+\begin{center}
+\textbf{\fontsize{14}{21}\selectfont
+Lời cảm ơn}
+\end{center}
+\addcontentsline{toc}{section}{Lời cảm ơn}
+
+\noindent Trước hết, chúng tôi xin bày tỏ lòng biết ơn sâu sắc đến \textbf{TS. Phan Tấn Quốc}, giảng viên hướng dẫn, đã tận tình định hướng, góp ý chuyên môn và hỗ trợ chúng tôi trong suốt quá trình thực hiện đồ án chuyên ngành này. 
+\\ \noindent Chúng tôi xin chân thành cảm ơn \textbf{Quý Thầy, Cô Khoa Công nghệ Thông tin - Trường Đại học Sài Gòn} đã trang bị cho chúng tôi những kiến thức nền tảng và chuyên môn cần thiết trong suốt quá trình học tập, tạo điều kiện để chúng tôi có thể thực hiện đề tài này. 
+\\ \noindent Chúng tôi cũng xin cảm ơn gia đình, bạn bè và các anh chị đã luôn động viên, hỗ trợ và tạo điều kiện thuận lợi để chúng tôi hoàn thành báo cáo giữa kỳ của đồ án. 
+\\ \noindent Mặc dù đã rất cố gắng trong quá trình thực hiện, do hạn chế về thời gian, kinh nghiệm nghiên cứu và phạm vi của báo cáo giữa kỳ, nội dung báo cáo khó tránh khỏi những thiếu sót. Chúng tôi rất mong nhận được những ý kiến đóng góp quý báu từ Quý Thầy, Cô để có thể tiếp tục hoàn thiện đề tài trong giai đoạn tiếp theo. 
+\\ \noindent Xin chân thành cảm ơn. 
+
+
+\newpage
+\begin{center}
+\textbf{\fontsize{14}{21}\selectfont
+Danh mục các ký hiệu, các chữ viết tắt}
+\end{center}
+\addcontentsline{toc}{section}{Danh mục các ký hiệu, các chữ viết tắt}
+
+\noindent \textbf{Các ký hiệu}
+
+\begin{longtable}{|c|p{0.72\textwidth}|}
+
+    \hline
+    \textbf{Ký hiệu} & \textbf{Ý nghĩa} \\ \hline
+    \endfirsthead
+
+    % Header được lặp lại ở đầu trang tiếp theo
+    \hline
+    \textbf{Ký hiệu} & \textbf{Ý nghĩa} \\ \hline
+    \endhead
+
+    % Cuối mỗi trang, ngoại trừ trang cuối
+    \hline
+    \endfoot
+
+    % Cuối bảng
+    \hline
+    \endlastfoot
+
+    $A$ & Ma trận kề của đồ thị \\ \hline
+    $A_{\max}$ & Kích thước tối đa của Pareto archive \\ \hline
+    $\mathcal{B}(\mathcal{C})$ & Tập các đỉnh ranh giới của phân hoạch $\mathcal{C}$ \\ \hline
+    $C_c$ & Cộng đồng thứ $c$ trong phân hoạch \\ \hline
+    $\mathcal{C}$ & Phân hoạch cộng đồng của đồ thị \\ \hline
+    $d_c$ & Tổng bậc của các đỉnh thuộc cộng đồng $C_c$ \\ \hline
+    $d_{ij}$ & Khoảng cách giữa hai đỉnh $i$ và $j$ \\ \hline
+    $E$ & Tập các cạnh của đồ thị \\ \hline
+    $E_g$ & Tập các cạnh của đồ thị được giải mã từ cá thể LAR \\ \hline
+    $G$ & Đồ thị mạng phức tạp, $G=(V,E)$ \\ \hline
+    $G_{\max}$ & Số thế hệ tối đa của thuật toán \\ \hline
+    $g_i$ & Đỉnh láng giềng được gen $i$ lựa chọn trong biểu diễn LAR \\ \hline
+    $I_{LS}$ & Số vòng lặp tối đa của Local Search \\ \hline
+    $K$ & Số lượng cộng đồng trong một phân hoạch \\ \hline
+    $k_i$ & Bậc của đỉnh $i$ \\ \hline
+    $l_c$ & Số cạnh nội bộ của cộng đồng $C_c$ \\ \hline
+    $m$ & Số cạnh của đồ thị \\ \hline
+    $n$ & Số đỉnh của đồ thị \\ \hline
+    $N$ & Kích thước quần thể gộp, $N=\mu+\lambda$ \\ \hline
+    $N(u)$ & Tập các đỉnh láng giềng của đỉnh $u$ \\ \hline
+    $p_c$ & Xác suất lai ghép \\ \hline
+    $p_m$ & Xác suất đột biến \\ \hline
+    $p_{LS}$ & Xác suất áp dụng Local Search \\ \hline
+    $\Phi$ & Conductance trung bình của phân hoạch \\ \hline
+    $\varphi(C_c)$ & Conductance của cộng đồng $C_c$ \\ \hline
+    $\rho$ & Tỷ lệ khởi tạo thiên lệch theo hệ số phân cụm \\ \hline
+    $t$ & Kích thước nhóm lựa chọn trong tournament selection \\ \hline
+    $V$ & Tập các đỉnh của đồ thị \\ \hline
+    $w_{ij}$ & Trọng số của cạnh nối đỉnh $i$ và $j$ \\ \hline
+    $X$ & Véc-tơ gán nhãn cộng đồng của các đỉnh \\ \hline
+    $\mu$ & Kích thước quần thể cha \\ \hline
+    $\lambda$ & Số cá thể con được sinh ra trong mỗi thế hệ \\ \hline
+    $\varepsilon_{\mathrm{stop}}$ & Ngưỡng cải thiện tối thiểu của Hypervolume dùng cho điều kiện dừng \\ \hline
+    $k_{\mathrm{stag}}$ & Số thế hệ liên tiếp không có cải thiện dùng để xác định trì trệ \\ \hline
+
+\end{longtable}
+
+\newpage
+\noindent \textbf{Các chữ viết tắt (xếp theo thứ tự ABC)}
+
+\begin{longtable}{|c|p{0.72\textwidth}|}
+
+    \hline
+    \textbf{Viết tắt} & \textbf{Ý nghĩa} \\ \hline
+    \endfirsthead
+
+    % Header được lặp lại ở đầu trang tiếp theo
+    \hline
+    \textbf{Viết tắt} & \textbf{Ý nghĩa} \\ \hline
+    \endhead
+
+    % Cuối mỗi trang, ngoại trừ trang cuối
+    \hline
+    \endfoot
+
+    % Cuối bảng
+    \hline
+    \endlastfoot
+
+    ACO & Ant Colony Optimization - Tối ưu hóa đàn kiến \\ \hline
+    AMI & Adjusted Mutual Information - Thông tin tương hỗ hiệu chỉnh \\ \hline
+    ARI & Adjusted Rand Index - Chỉ số Rand hiệu chỉnh \\ \hline
+    CC & Clustering Coefficient - Hệ số phân cụm \\ \hline
+    CF & Community Fitness - Độ thích nghi cộng đồng \\ \hline
+    CS & Community Score - Điểm số cộng đồng \\ \hline
+    DPSO & Discrete Particle Swarm Optimization - Tối ưu hóa bầy đàn rời rạc \\ \hline
+    EO & Extremal Optimization - Tối ưu hóa cực trị \\ \hline
+    GA & Genetic Algorithm - Giải thuật di truyền \\ \hline
+    GDPSO & Greedy Discrete Particle Swarm Optimization - Tối ưu hóa bầy đàn rời rạc tham lam \\ \hline
+    HV & Hypervolume - Thể tích siêu khối \\ \hline
+    LAR & Locus-based Adjacency Representation - Biểu diễn dựa trên vị trí kề \\ \hline
+    LS & Local Search - Tìm kiếm cục bộ \\ \hline
+    MCD & Metaheuristic-based Community Detection - Phát hiện cộng đồng dựa trên metaheuristic \\ \hline
+    MGA & Matrix-based Genetic Algorithm - Giải thuật di truyền dựa trên biểu diễn ma trận \\ \hline
+    MOCD & Multi-Objective Community Detection - Phát hiện cộng đồng đa mục tiêu \\ \hline
+    MOGA & Multi-Objective Genetic Algorithm - Giải thuật di truyền đa mục tiêu \\ \hline
+    MO-HGA-LS & Multi-Objective Hybrid Genetic Algorithm with Local Search - Giải thuật di truyền lai đa mục tiêu kết hợp tìm kiếm cục bộ \\ \hline
+    MOPSO & Multi-Objective Particle Swarm Optimization - Tối ưu hóa bầy đàn đa mục tiêu \\ \hline
+    NMI & Normalized Mutual Information - Thông tin tương hỗ chuẩn hóa \\ \hline
+    NSGA-II & Non-dominated Sorting Genetic Algorithm II - Giải thuật di truyền sắp xếp không trội thế hệ II \\ \hline
+    PSO & Particle Swarm Optimization - Tối ưu hóa bầy đàn \\ \hline
+    RI & Rand Index - Chỉ số Rand \\ \hline
+    SA & Simulated Annealing - Tôi luyện mô phỏng \\ \hline
+    SBM & Stochastic Block Model - Mô hình khối ngẫu nhiên \\ \hline
+    SGR & String-of-Group Representation - Biểu diễn chuỗi nhóm \\ \hline
+\end{longtable}
+
+\newpage
+\clearpage
+
+\newcommand{\gobblethree}[3]{}
+\begingroup
+    \begin{center}
+    \textbf{\fontsize{14}{21}\selectfont
+    Danh mục các biểu bảng}
+    \end{center}
+    \addcontentsline{toc}{section}{Danh mục các biểu bảng}
+
+    \renewcommand{\listtablename}{}
+
+    % Gọi danh sách bảng
+    \let\addcontentsline\gobblethree
+    \listoftables
+\endgroup
+\clearpage
+
+
+\newpage
+\clearpage
+
+\begingroup
+    \begin{center}
+    \textbf{\fontsize{14}{21}\selectfont
+    Danh mục các hình ảnh, sơ đồ}
+    \end{center}
+    \addcontentsline{toc}{section}{Danh mục các hình ảnh, sơ đồ}
+
+    \renewcommand{\listfigurename}{}
+    
+    \let\addcontentsline\gobblethree
+    \listoffigures
+\endgroup
+
+\clearpage
+
+
+\clearpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 \newpage % Starts the Table of Contents on a new page
 \renewcommand{\contentsname}{
@@ -233,6 +452,7 @@
         \textbf{\fontsize{16pt}{17pt}\selectfont MỤC LỤC}
     \end{center}
 }
+
 \tableofcontents
 \newpage
 
@@ -240,7 +460,7 @@
 \textbf{\fontsize{14}{21}\selectfont
 MỞ ĐẦU}
 \end{center}
-\addcontentsline{toc}{section}{MỞ ĐẦU}
+\addcontentsline{toc}{section}{Mở đầu}
 
 Trong kỷ nguyên bùng nổ thông tin và truyền thông số, hầu hết các hệ thống phức tạp trong tự nhiên, xã hội và công nghệ đều có thể được mô hình hóa dưới dạng các mạng phức tạp \cite{Said2018}, trong đó các đối tượng được biểu diễn bằng đỉnh và mối tương tác giữa chúng được biểu diễn bằng cạnh. Một đặc trưng cấu trúc nổi bật và quan trọng nhất của mạng xã hội là \textbf{cấu trúc cộng đồng}. Cấu trúc này chia mạng thành các tập hợp đỉnh sao cho mật độ liên kết nội bộ bên trong mỗi nhóm rất dày đặc, trong khi liên kết giữa các nhóm với nhau lại rất thưa thớt \cite{Chen2019}.
 
@@ -373,7 +593,7 @@ Trong phân tích mạng phức tạp, cộng đồng (community) - hay còn g�
 \noindent b) Khái niệm phát hiện cộng đồng \\ \indent
 Bài toán phát hiện cộng đồng là quá trình tự động phân chia tập đỉnh $V$ (hoặc ma trận kề $A$) của đồ thị $G$ thành $K$ cộng đồng $\mathcal{C} = \{C_1, C_2, \dots, C_K\}$ sao cho tối đa hóa độ gắn kết nội bộ và tối thiểu hóa liên kết giữa các cụm. Trong đó, số lượng cộng đồng $K$ cũng như kích thước của từng cộng đồng đều chưa được biết trước \cite{Baraa2021}. 
 
-Về mặt toán học, bài toán xác định vector thành viên $X = (x_1,$ $x_2,$ $x_3,$ $\dots,$ $x_n)$, trong đó $x_i \in \{1, 2, 3, \dots, q\}$ chỉ định nhãn cộng đồng mà nút $i$ thuộc về. Phân hoạch chuẩn của bài toán phát hiện cộng đồng bắt buộc phải tuân theo hai quy tắc tập hợp:
+Về mặt toán học, bài toán xác định véc-tơ thành viên $X = (x_1,$ $x_2,$ $x_3,$ $\dots,$ $x_n)$, trong đó $x_i \in \{1, 2, 3, \dots, q\}$ chỉ định nhãn cộng đồng mà nút $i$ thuộc về. Phân hoạch chuẩn của bài toán phát hiện cộng đồng bắt buộc phải tuân theo hai quy tắc tập hợp:
 \begin{itemize}
     \item \textbf{Tính phủ hoàn toàn (Completeness):} Mọi nút trong mạng đều phải thuộc về một cộng đồng, tức là $\bigcup_{c=1}^{q} C_c = V$.
     \item \textbf{Tính không chồng lấp (Non-overlapping):} Mỗi nút chỉ thuộc duy nhất về một cộng đồng, tức là $C_c \cap C_d = \varnothing, \forall c \neq d$.
