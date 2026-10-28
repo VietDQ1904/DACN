@@ -52,13 +52,13 @@
 \contentsline {subsubsection}{\numberline {2.4.2}Quy trình hoạt động}{44}{subsubsection.2.4.2}%
 \contentsline {subsubsection}{\numberline {2.4.3}Thuật toán tổng quát}{45}{subsubsection.2.4.3}%
 \contentsline {subsubsection}{\numberline {2.4.4}Phân tích độ phức tạp tính toán}{48}{subsubsection.2.4.4}%
-\contentsline {subsection}{\numberline {2.5}Thảo luận và định hướng đánh giá thực nghiệm}{50}{subsection.2.5}%
-\contentsline {subsection}{\numberline {2.6}Thiết kế thực nghiệm}{50}{subsection.2.6}%
-\contentsline {subsubsection}{\numberline {2.6.1}Bộ dữ liệu thực nghiệm}{50}{subsubsection.2.6.1}%
-\contentsline {subsubsection}{\numberline {2.6.2}Thiết lập tham số}{52}{subsubsection.2.6.2}%
-\contentsline {subsubsection}{\numberline {2.6.3}Các phương pháp baseline}{53}{subsubsection.2.6.3}%
-\contentsline {subsubsection}{\numberline {2.6.4}Các tiêu chí đánh giá}{53}{subsubsection.2.6.4}%
-\contentsline {subsection}{\numberline {2.7}Tóm tắt chương 2}{54}{subsection.2.7}%
+\contentsline {subsubsection}{\numberline {2.4.5}Thảo luận và định hướng đánh giá thực nghiệm}{50}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Thiết kế thực nghiệm}{50}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Bộ dữ liệu thực nghiệm}{50}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Thiết lập tham số}{52}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Các phương pháp baseline}{53}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Các tiêu chí đánh giá}{53}{subsubsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.6}Tóm tắt chương 2}{54}{subsection.2.6}%
 \contentsline {section}{\numberline {3}Phương pháp đề xuất cho bài toán phát hiện cộng đồng}{56}{section.3}%
 \contentsline {section}{\mbox {Danh mục tài liệu tham khảo}}{56}{section.3}%
 \contentsline {section}{Phụ lục}{58}{section.3}%
