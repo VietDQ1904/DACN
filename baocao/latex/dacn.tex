@@ -79,6 +79,11 @@
 \floatname{algorithm}{Thuật toán}
 
 % ------------------------------------------------------------
+% TRANG PDF
+% ------------------------------------------------------------
+\usepackage{pdfpages}
+
+% ------------------------------------------------------------
 % HÌNH ẢNH VÀ BẢNG
 % ------------------------------------------------------------
 
@@ -245,6 +250,9 @@
 
 \begin{document}
 
+% Chèn bìa
+\includepdf[pages={1-2}]{baocao/latex/cover.pdf}
+
 % Roman page number
 \pagenumbering{roman}
 \setcounter{page}{1}
@@ -403,22 +411,24 @@ Danh mục các ký hiệu, các chữ viết tắt}
     SGR & String-of-Group Representation - Biểu diễn chuỗi nhóm \\ \hline
 \end{longtable}
 
+\newcommand{\gobblethree}[3]{}
 \newpage
 \clearpage
 
-\newcommand{\gobblethree}[3]{}
-\begingroup
-    \begin{center}
-    \textbf{\fontsize{14}{21}\selectfont
-    Danh mục các biểu bảng}
-    \end{center}
-    \addcontentsline{toc}{section}{Danh mục các biểu bảng}
+\begin{center}
+\textbf{\fontsize{14}{21}\selectfont
+Danh mục các biểu bảng}
+\end{center}
+\addcontentsline{toc}{section}{Danh mục các biểu bảng}
 
+\begingroup
+    
     \renewcommand{\listtablename}{}
 
     % Gọi danh sách bảng
     \let\addcontentsline\gobblethree
     \listoftables
+    
 \endgroup
 \clearpage
 
@@ -426,15 +436,14 @@ Danh mục các ký hiệu, các chữ viết tắt}
 \newpage
 \clearpage
 
-\begingroup
-    \begin{center}
-    \textbf{\fontsize{14}{21}\selectfont
-    Danh mục các hình ảnh, sơ đồ}
-    \end{center}
-    \addcontentsline{toc}{section}{Danh mục các hình ảnh, sơ đồ}
+\begin{center}
+\textbf{\fontsize{14}{21}\selectfont
+Danh mục các hình ảnh, sơ đồ}
+\end{center}
+\addcontentsline{toc}{section}{Danh mục các hình ảnh, sơ đồ}
 
+\begingroup
     \renewcommand{\listfigurename}{}
-    
     \let\addcontentsline\gobblethree
     \listoffigures
 \endgroup
@@ -466,7 +475,7 @@ Trong kỷ nguyên bùng nổ thông tin và truyền thông số, hầu hết c
 
 Bài toán phát hiện cộng đồng đóng vai trò trung tâm trong phân tích mạng xã hội, giúp khám phá các mô hình ẩn và cấu trúc mesoscopic của hệ thống. Việc xác định chính xác các cộng đồng mang lại giá trị ứng dụng thực tiễn rất lớn trong nhiều lĩnh vực: từ hệ thống gợi ý sản phẩm và dịch vụ trong thương mại điện tử, phân loại người dùng theo sở thích, phát hiện nhóm chuyên gia trong mạng lưới cộng tác khoa học, cho đến việc phân tích mạng tương tác protein trong sinh học hay lan truyền thông tin trong truyền thông.
 
-Mặc dù có vai trò thiết yếu, phát hiện cộng đồng là một bài toán tối ưu hóa tổ hợp thuộc lớp NP-hard \cite{Said2018}. Do đó, các thuật toán vét cạn hay tìm kiếm chính xác không thể thực thi trong thời gian đa thức đối với các mạng xã hội quy mô lớn.
+Mặc dù có vai trò thiết yếu, phát hiện cộng đồng là một bài toán tối ưu hóa tổ hợp thuộc lớp NP-khó \cite{Said2018}. Do đó, các thuật toán vét cạn hay tìm kiếm chính xác không thể thực thi trong thời gian đa thức đối với các mạng xã hội quy mô lớn.
 
 Phương pháp tiếp cận truyền thống phổ biến nhất là tối ưu hóa độ Modularity ($Q$). Tuy nhiên, các thuật toán heuristic dựa trên tối ưu hóa Modularity ($Q$) gặp phải những hạn chế nghiêm trọng:
 
@@ -654,7 +663,7 @@ Dưới góc nhìn tối ưu hóa tổ hợp, mạng phức tạp được biể
 
 \noindent b) Độ phức tạp tính toán
 \begin{itemize}
-    \item \textbf{Lớp bài toán NP-khó:} Việc tìm kiếm cấu trúc phân hoạch tối ưu toàn cục (đặc biệt là tối đa hóa Modularity $Q$) đã được chứng minh là bài toán thuộc lớp NP-khó (NP-hard) \cite{Fortunato2010}.
+    \item \textbf{Lớp bài toán NP-khó:} Việc tìm kiếm cấu trúc phân hoạch tối ưu toàn cục (đặc biệt là tối đa hóa Modularity $Q$) đã được chứng minh là bài toán thuộc lớp NP-khó \cite{Fortunato2010}.
     \item \textbf{Bùng nổ tổ hợp:} Không gian tìm kiếm các phương án phân hoạch đồ thị tăng theo hàm mũ so với quy mô số đỉnh $N$ của mạng. Do đó, các giải thuật duyệt cạn hay tối ưu toán học truyền thống không thể thực thi trong thời gian đa thức trên các mạng lớn \cite{Baraa2021, Gong2016}.
 \end{itemize}
 
@@ -703,16 +712,16 @@ Modularity ($Q$) là thước đo chất lượng phân hoạch cộng đồng p
     \item Trong thực tế, các mạng xã hội và mạng thực tế có cấu trúc cộng đồng rõ nét thường có giá trị $Q$ dao động trong khoảng từ $0.3$ đến $0.75$ \cite{Baraa2021}.
 \end{itemize}
 
-\noindent c) Đánh giá ưu điểm và hạn chế
+\noindent c) Ưu điểm và nhược điểm
 \\ \indent
 \textbf{Ưu điểm:} Không yêu cầu biết trước số lượng cộng đồng $K$; cung cấp một tiêu chuẩn định lượng khách quan để so sánh các phương pháp phân hoạch.
 \\ \indent
-\textbf{Hạn chế:}
-\begin{enumerate}
+\textbf{Nhược điểm:}
+\begin{itemize}
     \item \textbf{Độ phức tạp NP-khó:} Bài toán tối đa hóa $Q$ để tìm phân hoạch tối ưu toàn cục là bài toán thuộc lớp NP-khó \cite{Said2018, Baraa2021}.
     \item \textbf{Giới hạn độ phân giải:} Thuật toán tối ưu hóa $Q$ có xu hướng bỏ qua hoặc gộp các cộng đồng nhỏ (kích thước nhỏ hơn khoảng $\sqrt{2m}$) vào các cộng đồng lớn hơn, ngay cả khi các cộng đồng nhỏ có liên kết nội bộ rất chặt chẽ \cite{Gong2016}.
     \item \textbf{Nguy cơ quá khớp:} $Q$ vẫn có thể đạt giá trị cao giả tạo trên các đồ thị hoàn toàn ngẫu nhiên do sự biến động ngẫu nhiên của các cạnh \cite{Gong2016}.
-\end{enumerate}
+\end{itemize}
 
 \subsubsection{Normalized Mutual Information}
 Normalized Mutual Information (NMI) (chỉ số thông tin tương hỗ chuẩn hóa) là một độ đo quan trọng dựa trên lý thuyết thông tin, được sử dụng phổ biến để so sánh và đánh giá mức độ tương đồng giữa các phân hoạch đồ thị (partitions) trong phân tích mạng xã hội và phát hiện cộng đồng \cite{Traag2014}.
@@ -763,19 +772,20 @@ Nhược điểm lớn nhất của Rand Index là giá trị kỳ vọng ngẫu
     \item $\text{ARI} < 0$: Mức độ tương đồng kém hơn cả mức ngẫu nhiên kỳ vọng (cho thấy sự bất đồng lớn giữa hai cách phân chia) \cite{Traag2014}.
 \end{itemize}
 
-\noindent d) Đánh giá ưu điểm và hạn chế
+\noindent d) Ưu điểm và nhược điểm
 \\ \indent
 \textbf{Ưu điểm:}
-\begin{enumerate}
+\begin{itemize}
     \item \textbf{Khắc phục thiên vị ngẫu nhiên:} Nhờ bổ sung đại lượng kỳ vọng ngẫu nhiên $\mathbb{E}[\text{Index}]$, ARI cung cấp thước đo khách quan và trung thực hơn nhiều so với Rand Index thuần túy khi so sánh hiệu năng các thuật toán \cite{Dao2020}.
     \item \textbf{Ít nhạy cảm với số lượng và kích thước cộng đồng:} ARI không bị ảnh hưởng nghiêm trọng bởi sự chênh lệch về số lượng cụm giữa hai phân hoạch, giúp đánh giá chính xác trên các bộ dữ liệu thực tế có phân bố kích thước cộng đồng không đều \cite{Dao2020}.
     \item \textbf{Độ phân giải cao:} Các nghiên cứu thực nghiệm cho thấy ARI thường làm nổi bật rõ sự khác biệt hiệu năng giữa các giải thuật (như GA, Louvain, Leiden, Infomap) trên cả mạng chuẩn nhân tạo (như LFR Benchmark) lẫn các mạng xã hội thực tế (như Karate, Football, Polbooks) \cite{Zhou2021}.
-\end{enumerate}
-\textbf{Hạn chế:}
-\begin{enumerate}
+\end{itemize}
+
+\indent \textbf{Nhược điểm:}
+\begin{itemize}
     \item \textbf{Yêu cầu bắt buộc về nhãn thực tế (Ground-Truth):} ARI là một thước đo ngoại tại, do đó chỉ áp dụng được khi đã biết trước phân hoạch chuẩn $C^*$ (Ground-Truth), không thể dùng để đánh giá trực tiếp chất lượng cộng đồng trên các mạng xã hội thực tế mở mà không có nhãn \cite{Dao2020}.
     \item \textbf{Chi phí tính toán cặp đỉnh:} Việc tính toán các tổ hợp cặp $\binom{n_{ij}}{2}$ yêu cầu duyệt qua ma trận nhầm lẫn; đối với các mạng quy mô siêu lớn với hàng triệu đỉnh, cần tối ưu hóa cấu trúc dữ liệu thưa để đảm bảo thời gian thực thi \cite{Dao2020}.
-\end{enumerate}
+\end{itemize}
 
 \subsection{Các phương pháp Metaheuristic trong phát hiện cộng đồng}
 
@@ -804,18 +814,18 @@ Nhược điểm lớn nhất của Rand Index là giá trị kỳ vọng ngẫu
 \end{itemize}
 
 \noindent c) Ưu điểm và nhược điểm
+\\ \indent
+\textbf{Ưu điểm:}
 \begin{itemize}
-    \item \textbf{Ưu điểm:}
-    \begin{itemize}
-        \item \textit{Thoát khỏi tối ưu địa phương:} Việc chấp nhận các bước đi làm xấu lời giải ở nhiệt độ cao giúp làm thay đổi cấu trúc lời giải ban đầu, từ đó vượt qua các bẫy tối ưu địa phương để tìm kiếm vùng lời giải tốt hơn \cite{Taillard2023, Luke2009}.
-        \item \textit{Đảm bảo tối ưu theo lý thuyết:} Về mặt lý thuyết, thuật toán gần như chắc chắn tìm được lời giải tối ưu toàn cục nếu chấp nhận thời gian/công sức tính toán vô hạn \cite{Taillard2023}.
-    \end{itemize}
-    \item \textbf{Nhược điểm và hạn chế:}
-    \begin{itemize}
-        \item \textit{Nhạy cảm với lịch trình làm nguội:} Tốc độ giảm nhiệt độ (schedule) ảnh hưởng trực tiếp đến hiệu năng; nếu lịch trình không phù hợp, thuật toán có thể hội tụ quá nhanh hoặc mất quá nhiều thời gian \cite{Luke2009}.
-        \item \textit{Tốn thời gian tính toán dư thừa:} Thuật toán có thể chạy tốn nhiều vòng lặp không cần thiết khi lời giải tốt nhất đã ngừng cải thiện nhưng nhiệt độ vẫn chưa giảm hết về $T_{\text{end}}$ \cite{Taillard2023}.
-        \item \textit{Phụ thuộc đơn vị đo hàm mục tiêu:} Các tham số nhiệt độ $T_{\text{init}}$ và $T_{\text{end}}$ bị ảnh hưởng bởi đơn vị đo của hàm mục tiêu nếu không áp dụng cơ chế tự động quy đổi tỉ lệ chấp nhận \cite{Taillard2023}.
-    \end{itemize}
+    \item \textit{Thoát khỏi tối ưu địa phương:} Việc chấp nhận các bước đi làm xấu lời giải ở nhiệt độ cao giúp làm thay đổi cấu trúc lời giải ban đầu, từ đó vượt qua các bẫy tối ưu địa phương để tìm kiếm vùng lời giải tốt hơn \cite{Taillard2023, Luke2009}.
+    \item \textit{Đảm bảo tối ưu theo lý thuyết:} Về mặt lý thuyết, thuật toán gần như chắc chắn tìm được lời giải tối ưu toàn cục nếu chấp nhận thời gian/công sức tính toán vô hạn \cite{Taillard2023}.
+\end{itemize}
+
+\textbf{Nhược điểm:}
+\begin{itemize}
+    \item \textit{Nhạy cảm với lịch trình làm nguội:} Tốc độ giảm nhiệt độ (schedule) ảnh hưởng trực tiếp đến hiệu năng; nếu lịch trình không phù hợp, thuật toán có thể hội tụ quá nhanh hoặc mất quá nhiều thời gian \cite{Luke2009}.
+    \item \textit{Tốn thời gian tính toán dư thừa:} Thuật toán có thể chạy tốn nhiều vòng lặp không cần thiết khi lời giải tốt nhất đã ngừng cải thiện nhưng nhiệt độ vẫn chưa giảm hết về $T_{\text{end}}$ \cite{Taillard2023}.
+    \item \textit{Phụ thuộc đơn vị đo hàm mục tiêu:} Các tham số nhiệt độ $T_{\text{init}}$ và $T_{\text{end}}$ bị ảnh hưởng bởi đơn vị đo của hàm mục tiêu nếu không áp dụng cơ chế tự động quy đổi tỉ lệ chấp nhận \cite{Taillard2023}.
 \end{itemize}
 
 \subsubsection{Extremal Optimization}
@@ -823,18 +833,22 @@ Nhược điểm lớn nhất của Rand Index là giá trị kỳ vọng ngẫu
 \\ \indent
 Extremal Optimization (EO) là thuật toán tìm kiếm heuristic ngẫu nhiên do Boettcher và Percus đề xuất, được Duch và Arenas (2005) áp dụng thành công để tối ưu hóa hàm Modularity ($Q$) \cite{Fortunato2010, Beldi2025}. Khác với các thuật toán biến đổi toàn cục, EO tập trung xác định và điều chỉnh những đỉnh có độ thích nghi cục bộ xấu nhất (cực trị kém nhất) \cite{Fortunato2010}.
 
-\noindent b) Cơ chế vận hành:
+\noindent b) Cơ chế vận hành
+\\ 
 \begin{enumerate}
     \item \textbf{Định lượng độ thích nghi cục bộ:} Hàm Modularity toàn cục được phân rã thành tổng đóng góp của từng đỉnh, trong đó độ thích nghi của mỗi đỉnh được tính bằng Modularity cục bộ chia cho bậc của đỉnh đó.
     \item \textbf{Phân chia đệ quy (Recursive Bisection):} Bắt đầu từ một phân hoạch đôi ngẫu nhiên, ở mỗi bước lặp thuật toán chuyển đỉnh có độ thích nghi thấp nhất sang cộng đồng đối diện cho đến khi $Q$ không thể gia tăng, sau đó áp dụng đệ quy quy trình này trên từng đồ thị con.
     \item \textbf{Biến thể xác suất $\tau$-EO:} Để tránh bị kẹt tại các tối ưu cục bộ, thuật toán xếp hạng các đỉnh theo độ thích nghi và chọn đỉnh ở vị trí hạng $q$ để dịch chuyển dựa trên phân bố xác suất lũy thừa $P(q) \propto q^{-\tau}$ \cite{Fortunato2010}.
 \end{enumerate}
 
-\noindent c) Độ phức tạp tính toán và đánh giá:
+\noindent c) Độ phức tạp tính toán và đánh giá
+\\ 
 Chi phí thời gian tính toán nằm trong khoảng $\mathcal{O}(n^2 \log n)$ đến $\mathcal{O}(n^2 \log^2 n)$, thực thi nhanh hơn đáng kể so với Simulated Annealing \cite{Fortunato2010, Bedi2016}.
+
+\noindent d) Ưu điểm và nhược điểm
 \begin{itemize}
     \item \textbf{Ưu điểm:} Đạt chất lượng phân hoạch tiệm cận Simulated Annealing nhưng tiết kiệm thời gian tính toán rõ rệt, đồng thời tự động dò tìm số lượng cộng đồng $K$ thông qua điều kiện dừng đệ quy \cite{Beldi2025}.
-    \item \textbf{Hạn chế:} Việc chia đôi đệ quy liên tục có thể dẫn đến kết quả kém tối ưu trên các mạng quy mô lớn chứa nhiều cộng đồng phức tạp \cite{Fortunato2010}.
+    \item \textbf{Nhược điểm:} Việc chia đôi đệ quy liên tục có thể dẫn đến kết quả kém tối ưu trên các mạng quy mô lớn chứa nhiều cộng đồng phức tạp \cite{Fortunato2010}.
 \end{itemize}
 
 \subsubsection{Genetic Algorithm}
@@ -843,24 +857,24 @@ Chi phí thời gian tính toán nằm trong khoảng $\mathcal{O}(n^2 \log n)$ 
 \\ \indent
 Giải thuật di truyền (GA) là phương pháp siêu tìm kiếm tiến hóa ngẫu nhiên dựa trên quần thể phổ biến nhất để giải bài toán phát hiện cộng đồng \cite{Chen2019, Beldi2025}. Thuật toán liên tục cải thiện chất lượng phân hoạch qua các thế hệ bằng các toán tử chọn lọc, lai ghép (crossover) và đột biến (mutation) dựa trên hàm độ thích nghi (fitness) \cite{Chen2019}.
 
-\noindent b) Các sơ đồ mã hóa nghiệm (Encoding Schemes):
+\noindent b) Các sơ đồ mã hóa nghiệm (Encoding Schemes)
 \begin{itemize}
     \item \textbf{Chuỗi nhãn (String-of-Group / SGR):} Mỗi gen lưu trực tiếp mã nhãn cộng đồng của đỉnh \cite{Chen2019}.
     \item \textbf{Vị trí kề (Locus-based Adjacency Representation - LAR):} Mỗi gen $i$ lưu chỉ số đỉnh lân cận $j$ \cite{Pizzuti2008, Chen2019}. Có ưu điểm tự động xác định số lượng cộng đồng $K$ và giải mã trong thời gian tuyến tính $\mathcal{O}(n + m)$ \cite{Said2018, Baraa2021}.
     \item \textbf{Ma trận nhị phân (Matrix Representation - MGA):} Ma trận $C_G = (c_{ij})_{n \times n}$ đạt mối quan hệ đẳng hình 1-1 với giải pháp phân cụm, khắc phục triệt để bẫy hội tụ sớm của SGR và LAR \cite{Chen2019}.
 \end{itemize}
 
-\noindent c) Phân loại mô hình nghiên cứu:
+\noindent c) Phân loại mô hình nghiên cứu
 \begin{itemize}
     \item \textbf{Đơn mục tiêu:} Tối ưu Modularity $Q$ \cite{Said2018, Chen2019}, hoặc tối ưu Community Score $CS$ (như GA-Net) \cite{Pizzuti2008}. Khởi tạo bằng Hệ số Cụm (CC) giúp tách mạng tại các cầu nối ngay từ đầu \cite{Said2018}.
     \item \textbf{Đa mục tiêu (MOGA):} MOGA-Net sử dụng khung NSGA-II tối ưu đồng thời Community Score ($CS$) và Community Fitness ($CF$) hoặc phân rã Modularity $Q$ thành Intra-score và Inter-score (MOCD) nhằm phá vỡ rào cản Giới hạn độ phân giải (Resolution Limit) \cite{Baraa2021, Gong2016}. GA-Net+ mở rộng cho cộng đồng chồng lấp dựa trên Line Graph \cite{Baraa2021, Bedi2016}.
     \item \textbf{Giải thuật Memetic (GA Lai):} Kết hợp GA với Tìm kiếm cục bộ (Local Search, như Simulated Annealing trong MIGA, iMeme-Net, hoặc các quy tắc lan truyền nhãn) giúp tăng tốc hội tụ và tinh chỉnh ranh giới cộng đồng \cite{Chen2019, Beldi2025, Gong2012Memetic}.
 \end{itemize}
 
-\noindent d) Đánh giá ưu điểm và hạn chế:
+\noindent d) Đánh giá ưu điểm và nhược điểm
 \begin{itemize}
     \item \textbf{Ưu điểm:} Tự động dò tìm số lượng cộng đồng $K$, khả năng tìm kiếm diện rộng (global exploration) và tránh bị kẹt tại cực trị cục bộ \cite{Said2018, Chen2019}.
-    \item \textbf{Hạn chế:} SGR và LAR dễ bị bẫy hội tụ sớm nếu thiếu các toán tử hỗ trợ, đồng thời chi phí tính toán tăng nhanh trên các mạng siêu lớn \cite{Chen2019}.
+    \item \textbf{Nhược điểm:} SGR và LAR dễ bị bẫy hội tụ sớm nếu thiếu các toán tử hỗ trợ, đồng thời chi phí tính toán tăng nhanh trên các mạng siêu lớn \cite{Chen2019}.
 \end{itemize}
 
 \subsubsection{Particle Swarm Optimization}
@@ -902,20 +916,21 @@ Giải thuật di truyền (GA) là phương pháp siêu tìm kiếm tiến hóa
     \end{itemize}
 \end{itemize}
 
-\noindent d) Đánh giá ưu điểm và hạn chế
-\begin{itemize}
-    \item \textbf{Ưu điểm:}
-    \begin{enumerate}
+\noindent d) Ưu điểm và nhược điểm
+\\
+\textbf{Ưu điểm:}
+
+    \begin{itemize}
         \item \textit{Tốc độ hội tụ nhanh:} Cơ chế chia sẻ thông tin trực tiếp từ gbest giúp các hạt nhanh chóng hướng về vùng nghiệm tiềm năng \cite{Baraa2021, Beldi2025}.
         \item \textit{Số lượng tham số ít:} Dễ cài đặt và cấu hình so với các giải thuật tiến hóa phức tạp \cite{Baraa2021}.
         \item \textit{Tính linh hoạt cao:} Dễ dàng kết hợp với các cơ chế đa mục tiêu (MOEA/D, NSGA-II) hoặc các toán tử tìm kiếm cục bộ \cite{Baraa2021}.
-    \end{enumerate}
-    \item \textbf{Hạn chế:}
-    \begin{enumerate}
+    \end{itemize}
+
+\textbf{Nhược điểm:}
+    \begin{itemize}
         \item \textit{Dễ mất đa dạng quần thể:} Sự ảnh hưởng quá lớn của hạt gbest có thể khiến toàn đàn hội tụ sớm về một cực trị cục bộ kém chất lượng \cite{Baraa2021, Beldi2025}.
         \item \textit{Yêu cầu toán tử tinh chỉnh chuyên biệt:} Cần tích hợp thêm các toán tử đột biến ngẫu nhiên hoặc chiến lược tìm kiếm cục bộ (Memetic PSO) để duy trì tính đa dạng và tinh chỉnh ranh giới cộng đồng trên các mạng quy mô siêu lớn \cite{Baraa2021, Beldi2025}.
-    \end{enumerate}
-\end{itemize}
+    \end{itemize}
 
 \subsection{Các phương pháp phát hiện cộng đồng làm cơ sở so sánh}
 
@@ -1077,7 +1092,7 @@ Bài toán được mô hình hóa dưới dạng tối ưu hóa đa mục tiêu
 
 \subsubsection{Không gian nghiệm và biểu diễn phân hoạch}
 
-Số lượng phân hoạch của tập $n$ phần tử được xác định bởi số Bell $B_n$, tăng rất nhanh theo $n$. Vì vậy, việc tìm kiếm phân hoạch tối ưu bằng phương pháp vét cạn là không khả thi đối với các mạng có kích thước lớn. Bài toán tối ưu Modularity cũng được biết là NP-hard \cite{Fortunato2010}.
+Số lượng phân hoạch của tập $n$ phần tử được xác định bởi số Bell $B_n$, tăng rất nhanh theo $n$. Vì vậy, việc tìm kiếm phân hoạch tối ưu bằng phương pháp vét cạn là không khả thi đối với các mạng có kích thước lớn. Bài toán tối ưu Modularity cũng được biết là NP-khó \cite{Fortunato2010}.
 
 
 Đề tài sử dụng \textbf{Locus-based Adjacency Representation (LAR)} để biểu diễn cá thể. Một nhiễm sắc thể có dạng:
@@ -1703,6 +1718,36 @@ Chương 2 đã phát biểu bài toán phát hiện cộng đồng dưới dạ
 
 \newpage
 \section{Phương pháp đề xuất cho bài toán phát hiện cộng đồng}
+
+\subsection{Môi trường thực nghiệm}
+\subsubsection{Phần cứng và phần mềm}
+\subsubsection{Công cụ và thư viện sử dụng}
+
+\subsection{Kết quả thực nghiệm}
+\subsubsection{Kết quả của Genetic Algorithm}
+\subsubsection{Kết quả của Hybrid Genetic Algorithm}
+\subsubsection{Kết quả của Louvain và Leiden}
+
+\subsection{So sánh và đánh giá}
+\subsubsection{So sánh Modularity}
+\subsubsection{So sánh NMI và ARI}
+\subsubsection{So sánh thời gian thực thi}
+\subsubsection{Phân tích độ ổn định của kết quả}
+
+\subsection{Phân tích ảnh hưởng của Local Search}
+\subsubsection{So sánh GA và GA + Local Search}
+\subsubsection{Ảnh hưởng của các tham số Local Search}
+\subsubsection{Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}
+
+\subsection{Thảo luận kết quả}
+\subsubsection{Ưu điểm của phương pháp đề xuất}
+\subsubsection{Hạn chế của phương pháp}
+\subsubsection{Khả năng áp dụng và mở rộng}
+
+\subsection{Kết luận chương}
+
+\subsection{Kết luận và hướng phát triển}
+
 
 \renewcommand{\refname}{\mbox{Danh mục tài liệu tham khảo}}
 \bibliographystyle{ieeetr}
