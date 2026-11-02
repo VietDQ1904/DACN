@@ -1,0 +1,9 @@
+numpy
+scipy
+networkx>=3.2
+scikit-learn
+pandas
+matplotlib
+# baseline Leiden (tùy chọn nhưng cần cho mục 3.2.3):
+igraph
+leidenalg
