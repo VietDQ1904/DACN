@@ -1,0 +1,73 @@
+﻿Bộ dữ liệu,So sánh,Chỉ số,n cặp,Hiệu trung bình,p (Wilcoxon signed-rank),Có ý nghĩa (p<0.05)
+amazon:top=4,MO-HGA-LS vs GA,Q,8,+0.0326,0.007812,có
+amazon:top=4,MO-HGA-LS vs GA,hv_final,8,+0.2168,0.007812,có
+amazon:top=4,MO-HGA-LS vs GA,NMI,8,+0.0712,0.007812,có
+amazon:top=4,MO-HGA-LS vs HGA (GA+LS),Q,8,-0.0005,0.5,không
+amazon:top=4,MO-HGA-LS vs HGA (GA+LS),hv_final,8,-0.0148,0.5,không
+amazon:top=4,MO-HGA-LS vs HGA (GA+LS),NMI,8,-0.0063,0.5,không
+amazon:top=4,MO-HGA-LS vs NSGA-II,Q,8,+0.0283,0.007812,có
+amazon:top=4,MO-HGA-LS vs NSGA-II,hv_final,8,+0.1247,0.007812,có
+amazon:top=4,MO-HGA-LS vs NSGA-II,NMI,8,+0.0535,0.007812,có
+amazon:top=4,MO-HGA-LS vs Louvain,Q,8,-0.0005,0.5,không
+amazon:top=4,MO-HGA-LS vs Louvain,hv_final,8,-0.0148,0.5,không
+amazon:top=4,MO-HGA-LS vs Louvain,NMI,8,-0.0063,0.5,không
+email,MO-HGA-LS vs GA,Q,8,+0.2290,0.007812,có
+email,MO-HGA-LS vs GA,hv_final,8,+0.3976,0.007812,có
+email,MO-HGA-LS vs GA,NMI,8,+0.4183,0.007812,có
+email,MO-HGA-LS vs HGA (GA+LS),Q,8,-0.0000,1,không
+email,MO-HGA-LS vs HGA (GA+LS),hv_final,8,+0.0224,0.007812,có
+email,MO-HGA-LS vs HGA (GA+LS),NMI,8,+0.0000,1,không
+email,MO-HGA-LS vs NSGA-II,Q,8,+0.2293,0.007812,có
+email,MO-HGA-LS vs NSGA-II,hv_final,8,+0.3138,0.007812,có
+email,MO-HGA-LS vs NSGA-II,NMI,8,+0.4511,0.007812,có
+email,MO-HGA-LS vs Louvain,Q,8,-0.0000,1,không
+email,MO-HGA-LS vs Louvain,hv_final,8,+0.0224,0.007812,có
+email,MO-HGA-LS vs Louvain,NMI,8,+0.0000,1,không
+football,MO-HGA-LS vs GA,Q,8,+0.0197,0.03125,có
+football,MO-HGA-LS vs GA,hv_final,8,+0.0871,0.007812,có
+football,MO-HGA-LS vs GA,NMI,8,+0.0454,0.125,không
+football,MO-HGA-LS vs HGA (GA+LS),Q,8,+0.0000,1,không
+football,MO-HGA-LS vs HGA (GA+LS),hv_final,8,+0.0608,0.007812,có
+football,MO-HGA-LS vs HGA (GA+LS),NMI,8,+0.0000,1,không
+football,MO-HGA-LS vs NSGA-II,Q,8,+0.0400,0.007812,có
+football,MO-HGA-LS vs NSGA-II,hv_final,8,+0.0455,0.007812,có
+football,MO-HGA-LS vs NSGA-II,NMI,8,+0.0963,0.007812,có
+football,MO-HGA-LS vs Louvain,Q,8,+0.0027,0.75,không
+football,MO-HGA-LS vs Louvain,hv_final,8,+0.0618,0.007812,có
+football,MO-HGA-LS vs Louvain,NMI,8,+0.0086,1,không
+karate,MO-HGA-LS vs GA,Q,8,+0.0008,0.03125,có
+karate,MO-HGA-LS vs GA,hv_final,8,+0.0792,0.007812,có
+karate,MO-HGA-LS vs GA,NMI,8,+0.0233,0.5,không
+karate,MO-HGA-LS vs HGA (GA+LS),Q,8,+0.0000,0.125,không
+karate,MO-HGA-LS vs HGA (GA+LS),hv_final,8,+0.0778,0.007812,có
+karate,MO-HGA-LS vs HGA (GA+LS),NMI,8,+0.0000,1,không
+karate,MO-HGA-LS vs NSGA-II,Q,8,+0.0052,0.01562,có
+karate,MO-HGA-LS vs NSGA-II,hv_final,8,+0.0046,0.01562,có
+karate,MO-HGA-LS vs NSGA-II,NMI,8,+0.0133,0.75,không
+karate,MO-HGA-LS vs Louvain,Q,8,+0.0022,0.01562,có
+karate,MO-HGA-LS vs Louvain,hv_final,8,+0.0796,0.007812,có
+karate,MO-HGA-LS vs Louvain,NMI,8,+0.0572,0.07031,không
+polblogs,MO-HGA-LS vs GA,Q,8,+0.0188,0.01562,có
+polblogs,MO-HGA-LS vs GA,hv_final,8,+0.0983,0.01562,có
+polblogs,MO-HGA-LS vs GA,NMI,8,-0.0744,0.2969,không
+polblogs,MO-HGA-LS vs HGA (GA+LS),Q,8,-0.0024,0.5781,không
+polblogs,MO-HGA-LS vs HGA (GA+LS),hv_final,8,+0.0675,0.007812,có
+polblogs,MO-HGA-LS vs HGA (GA+LS),NMI,8,-0.0204,0.8125,không
+polblogs,MO-HGA-LS vs NSGA-II,Q,8,+0.0207,0.007812,có
+polblogs,MO-HGA-LS vs NSGA-II,hv_final,8,+0.0457,0.007812,có
+polblogs,MO-HGA-LS vs NSGA-II,NMI,8,-0.0969,0.09375,không
+polblogs,MO-HGA-LS vs Louvain,Q,8,+0.0054,0.07812,không
+polblogs,MO-HGA-LS vs Louvain,hv_final,8,+0.0925,0.007812,có
+polblogs,MO-HGA-LS vs Louvain,NMI,8,-0.0194,0.8438,không
+polbooks,MO-HGA-LS vs GA,Q,8,+0.0103,0.007812,có
+polbooks,MO-HGA-LS vs GA,hv_final,8,+0.0625,0.007812,có
+polbooks,MO-HGA-LS vs GA,NMI,8,+0.0748,0.01562,có
+polbooks,MO-HGA-LS vs HGA (GA+LS),Q,8,-0.0000,0.03125,có
+polbooks,MO-HGA-LS vs HGA (GA+LS),hv_final,8,+0.0256,0.007812,có
+polbooks,MO-HGA-LS vs HGA (GA+LS),NMI,8,+0.0104,0.5,không
+polbooks,MO-HGA-LS vs NSGA-II,Q,8,+0.0148,0.007812,có
+polbooks,MO-HGA-LS vs NSGA-II,hv_final,8,+0.0304,0.007812,có
+polbooks,MO-HGA-LS vs NSGA-II,NMI,8,+0.0644,0.01562,có
+polbooks,MO-HGA-LS vs Louvain,Q,8,+0.0007,0.01562,có
+polbooks,MO-HGA-LS vs Louvain,hv_final,8,+0.0184,0.007812,có
+polbooks,MO-HGA-LS vs Louvain,NMI,8,-0.0259,0.125,không

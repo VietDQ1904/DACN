@@ -1,0 +1,38 @@
+{
+ "base_cfg": {},
+ "args": {
+  "datasets": [
+   "karate",
+   "polbooks",
+   "football"
+  ],
+  "algos": [
+   "GA",
+   "HGA",
+   "NSGA2",
+   "MO-HGA-LS",
+   "Louvain",
+   "Leiden"
+  ],
+  "runs": 30,
+  "seed0": 0,
+  "out": "results/main",
+  "jobs": 4,
+  "grid": null,
+  "preset": "paper",
+  "max_ga_nodes": 20000,
+  "save_labels_max_n": 3000,
+  "mu": null,
+  "lam": null,
+  "pc": null,
+  "pm": null,
+  "tournament": null,
+  "i_ls": null,
+  "p_ls": null,
+  "rho": null,
+  "a_max": null,
+  "g_max": null,
+  "k_stag": null,
+  "eps_stop": null
+ }
+}

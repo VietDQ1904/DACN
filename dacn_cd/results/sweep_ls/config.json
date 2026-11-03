@@ -1,0 +1,31 @@
+{
+ "base_cfg": {},
+ "args": {
+  "datasets": [
+   "football"
+  ],
+  "algos": [
+   "MO-HGA-LS"
+  ],
+  "runs": 10,
+  "seed0": 0,
+  "out": "results/sweep_ls",
+  "jobs": 4,
+  "grid": "p_ls=0,0.1,0.2,0.5,1;i_ls=1,5,10,30",
+  "preset": "paper",
+  "max_ga_nodes": 20000,
+  "save_labels_max_n": 3000,
+  "mu": null,
+  "lam": null,
+  "pc": null,
+  "pm": null,
+  "tournament": null,
+  "i_ls": null,
+  "p_ls": null,
+  "rho": null,
+  "a_max": null,
+  "g_max": null,
+  "k_stag": null,
+  "eps_stop": null
+ }
+}

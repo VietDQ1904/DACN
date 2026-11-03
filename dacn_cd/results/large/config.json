@@ -1,0 +1,44 @@
+{
+ "base_cfg": {
+  "mu": 50,
+  "lam": 50,
+  "g_max": 100,
+  "k_stag": 20,
+  "i_ls": 5,
+  "p_ls": 0.1
+ },
+ "args": {
+  "datasets": [
+   "email",
+   "polblogs"
+  ],
+  "algos": [
+   "GA",
+   "HGA",
+   "NSGA2",
+   "MO-HGA-LS",
+   "Louvain",
+   "Leiden"
+  ],
+  "runs": 20,
+  "seed0": 0,
+  "out": "results/large",
+  "jobs": 4,
+  "grid": null,
+  "preset": "fast",
+  "max_ga_nodes": 20000,
+  "save_labels_max_n": 3000,
+  "mu": null,
+  "lam": null,
+  "pc": null,
+  "pm": null,
+  "tournament": null,
+  "i_ls": null,
+  "p_ls": null,
+  "rho": null,
+  "a_max": null,
+  "g_max": null,
+  "k_stag": null,
+  "eps_stop": null
+ }
+}

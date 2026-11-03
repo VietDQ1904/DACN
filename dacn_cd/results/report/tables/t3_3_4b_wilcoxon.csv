@@ -1,0 +1,46 @@
+﻿Bộ dữ liệu,So sánh,Chỉ số,n cặp,Hiệu trung bình,p (Wilcoxon signed-rank),Có ý nghĩa (p<0.05)
+email,MO-HGA-LS vs GA,Q,20,+0.0214,0.0001678,có
+email,MO-HGA-LS vs GA,hv_final,20,+0.1760,1.907e-06,có
+email,MO-HGA-LS vs GA,NMI,20,+0.0071,0.4304,không
+email,MO-HGA-LS vs HGA (GA+LS),Q,20,-0.0406,1.907e-06,có
+email,MO-HGA-LS vs HGA (GA+LS),hv_final,20,+0.0573,1.907e-06,có
+email,MO-HGA-LS vs HGA (GA+LS),NMI,20,-0.0554,8.202e-05,có
+email,MO-HGA-LS vs NSGA-II,Q,20,+0.0411,1.907e-06,có
+email,MO-HGA-LS vs NSGA-II,hv_final,20,+0.0831,1.907e-06,có
+email,MO-HGA-LS vs NSGA-II,NMI,20,+0.0567,3.815e-06,có
+football,MO-HGA-LS vs GA,Q,30,+0.0004,5.974e-05,có
+football,MO-HGA-LS vs GA,hv_final,30,+0.1018,1.733e-06,có
+football,MO-HGA-LS vs GA,NMI,30,+0.0253,4.763e-05,có
+football,MO-HGA-LS vs HGA (GA+LS),Q,30,-0.0000,0.3628,không
+football,MO-HGA-LS vs HGA (GA+LS),hv_final,30,+0.1086,1.732e-06,có
+football,MO-HGA-LS vs HGA (GA+LS),NMI,30,-0.0023,0.1573,không
+football,MO-HGA-LS vs NSGA-II,Q,30,+0.0023,1.69e-06,có
+football,MO-HGA-LS vs NSGA-II,hv_final,30,-0.0053,0.04491,có
+football,MO-HGA-LS vs NSGA-II,NMI,30,+0.0612,1.593e-06,có
+karate,MO-HGA-LS vs GA,Q,30,+0.0000,0.0002727,có
+karate,MO-HGA-LS vs GA,hv_final,30,+0.0778,1.205e-06,có
+karate,MO-HGA-LS vs GA,NMI,30,+0.0000,1,không
+karate,MO-HGA-LS vs HGA (GA+LS),Q,30,+0.0000,0.08924,không
+karate,MO-HGA-LS vs HGA (GA+LS),hv_final,30,+0.0778,1.595e-06,có
+karate,MO-HGA-LS vs HGA (GA+LS),NMI,30,+0.0000,1,không
+karate,MO-HGA-LS vs NSGA-II,Q,30,+0.0000,0.0002727,có
+karate,MO-HGA-LS vs NSGA-II,hv_final,30,+0.0000,0.0001173,có
+karate,MO-HGA-LS vs NSGA-II,NMI,30,+0.0000,1,không
+polblogs,MO-HGA-LS vs GA,Q,20,+0.0068,1.907e-06,có
+polblogs,MO-HGA-LS vs GA,hv_final,20,+0.1837,1.907e-06,có
+polblogs,MO-HGA-LS vs GA,NMI,20,+0.0654,1.907e-06,có
+polblogs,MO-HGA-LS vs HGA (GA+LS),Q,20,-0.0006,0.002325,có
+polblogs,MO-HGA-LS vs HGA (GA+LS),hv_final,20,+0.1509,1.907e-06,có
+polblogs,MO-HGA-LS vs HGA (GA+LS),NMI,20,+0.0179,0.0008507,có
+polblogs,MO-HGA-LS vs NSGA-II,Q,20,+0.0060,1.907e-06,có
+polblogs,MO-HGA-LS vs NSGA-II,hv_final,20,+0.0326,0.0007076,có
+polblogs,MO-HGA-LS vs NSGA-II,NMI,20,+0.0380,3.815e-06,có
+polbooks,MO-HGA-LS vs GA,Q,30,-0.0000,0.2396,không
+polbooks,MO-HGA-LS vs GA,hv_final,30,+0.1229,1.725e-06,có
+polbooks,MO-HGA-LS vs GA,NMI,30,-0.0021,0.4688,không
+polbooks,MO-HGA-LS vs HGA (GA+LS),Q,30,-0.0002,6.815e-05,có
+polbooks,MO-HGA-LS vs HGA (GA+LS),hv_final,30,+0.1410,1.679e-06,có
+polbooks,MO-HGA-LS vs HGA (GA+LS),NMI,30,-0.0004,0.5872,không
+polbooks,MO-HGA-LS vs NSGA-II,Q,30,-0.0000,0.8429,không
+polbooks,MO-HGA-LS vs NSGA-II,hv_final,30,+0.0006,0.07515,không
+polbooks,MO-HGA-LS vs NSGA-II,NMI,30,-0.0036,0.1317,không
