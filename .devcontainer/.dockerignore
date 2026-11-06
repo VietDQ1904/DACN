@@ -1,0 +1,5 @@
+.git
+.github
+results/
+*.tar.gz
+.DS_Store
