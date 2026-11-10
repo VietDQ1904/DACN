@@ -8,21 +8,6 @@ using DataFrames
 using Statistics
 using Printf
 
-# ============================================================
-# Phase-level profiler
-# ============================================================
-# Examples:
-#   julia --project=. scripts/profile.jl --dataset email --algo MO-HGA-LS --seed 1 --repeats 1
-#   julia --project=. scripts/profile.jl --dataset football --algos GA,HGA,NSGA2,MO-HGA-LS --seed 1 --repeats 3
-#   julia --project=. scripts/profile.jl --dataset football --algos Louvain,Leiden --seed 1 --repeats 3
-#
-# Evolutionary algorithms are profiled by major internal phases.
-# Louvain/Leiden are reported as a single baseline phase because their
-# internal implementation is external to the evolutionary engine.
-#
-# Memory = cumulative @allocated bytes, NOT peak RSS.
-# ============================================================
-
 function argval(args, flag, default=nothing)
     i = findfirst(==(flag), args)
     i === nothing ? default : (i < length(args) ? args[i + 1] : default)
@@ -354,9 +339,7 @@ function main(args)
 
         algo_file = replace(algo, "-" => "_")
 
-        # ----------------------------------------------------
         # Phase CSV
-        # ----------------------------------------------------
         CSV.write(
             joinpath(out, "$(dataset_name)_$(algo_file)_phases.csv"),
             DataFrame(phase_rows(stats_list)),

@@ -1,7 +1,5 @@
 # MO-HGA-LS — Julia experimental implementation
 
-Đây là bản viết lại phần thực nghiệm theo đúng kiến trúc đang mô tả trong `dacn(2).tex`, với core MO-HGA-LS viết thuần Julia để giảm overhead của vòng lặp GA/Local Search.
-
 ## Thiết kế giữ nguyên
 
 - LAR + CC-biased initialization, `rho=0.7`.
@@ -90,27 +88,12 @@ julia --project=. scripts/analyze.jl results/main/runs.jsonl results/amazon/runs
 ```bash
 julia --project=. scripts/profile.jl --dataset email --algo MO-HGA-LS --seed 1 --repeats 1
 ```
-
-## Local Search ablation
-
-```bash
-for pls in 0.0 0.1 0.2 0.5 1.0; do
-  for ils in 1 5 10 30; do
-    julia --project=. scripts/run_experiments.jl \
-      --datasets football --algos MO-HGA-LS --runs 10 \
-      --p_ls $pls --i_ls $ils --out results/sweep_pls_${pls}_ils_${ils}
-done; done
-```
-
-Không gọi kết quả sweep là "tối ưu" nếu chưa định nghĩa protocol chọn cấu hình. Nếu dùng sweep để hiệu chỉnh, chọn cấu hình trên tập calibration rồi **đóng băng** trước khi chạy 5 dataset đánh giá.
-
 ## Output
 
 - `runs.jsonl`: một dòng cho mỗi `(dataset, algorithm, seed)`.
 - `config.json`: cấu hình bất biến của lần chạy.
 - `results/report/tables/*.csv`: bảng trung bình, độ lệch chuẩn, median, Q1/Q3.
-- `dataset_metadata_postprocessed.csv`: thống kê đúng graph đưa vào thuật toán.
-
+- `results/report/figures/<dataset>/*.png`: đồ thị so sánh kết quả thuật toán baseline trên từng tập dữ liệu.
 ## Lưu ý reproducibility
 
 Không gộp các run có `mu/lam/g_max/p_ls/i_ls` khác nhau vào cùng một bảng. Một bảng chính phải có cùng configuration key. HV chỉ dùng để so sánh các thuật toán đa mục tiêu (`NSGA2` và `MO-HGA-LS`); GA/HGA nên so sánh Q/NMI/ARI/runtime.

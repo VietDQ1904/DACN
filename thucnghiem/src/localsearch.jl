@@ -1,19 +1,3 @@
-# ============================================================================
-# Local search for MO-HGA-LS  (same algorithm: boundary sweeps, incremental
-# Q/phi, per-node Pareto filter, knee move, Pareto archive with crowding).
-#
-# Engineering changes vs. the reference version:
-#   * lock-step multi-source connectivity test (cost ~ smaller side of a cut)
-#     + lazy evaluation (only when a move would really act) + per-node cache
-#   * boundary maintained incrementally in O(deg(u)) per move through
-#     "external-neighbour counters" (no is_boundary rescans, no Set)
-#   * archive stores a move JOURNAL, not a full label copy per entry
-#     (memory O(#moves) instead of O(n * #insertions))
-#   * all scratch buffers live in a reusable LSWorkspace (one per thread),
-#     so a call allocates ~nothing besides the returned labels
-#   * returned (Q, phi) are recomputed exactly (no incremental drift)
-# ============================================================================
-
 mutable struct ConnWS
     seen::Vector{Int}
     own::Vector{Int}
@@ -21,6 +5,7 @@ mutable struct ConnWS
     queues::Vector{Vector{Int}}
     stamp::Int
 end
+
 ConnWS(n::Int) = ConnWS(zeros(Int, n), zeros(Int, n), Int[], Vector{Int}[], 0)
 
 @inline function _find!(parent::Vector{Int}, i::Int)
@@ -34,7 +19,6 @@ ConnWS(n::Int) = ConnWS(zeros(Int, n), zeros(Int, n), Int[], Vector{Int}[], 0)
     return r
 end
 
-# Does community `a` stay connected after removing `u`?  (exact)
 function connected_without(g::GraphData, labels, a, u, ws::ConnWS)
     adj = g.adj
     ws.stamp += 1
@@ -99,8 +83,7 @@ end
 
 # set LS_CHECK[]=true in tests: verifies archive bookkeeping against exact Q/phi
 const LS_CHECK = Ref(false)
-# Reference behaviour: if exactly ONE point is non-dominated and it is a move (it dominates the
-# current solution) it is archived but NOT applied (`length(nd)==1 && continue`). Set true to apply it.
+
 const APPLY_SINGLE_DOMINATING = Ref(true)
 
 struct ArchEntry
@@ -114,13 +97,13 @@ end
 # Reusable scratch space. One per thread; never shared between concurrent calls.
 mutable struct LSWorkspace
     conn::ConnWS
-    ext::Vector{Int}          # #neighbours with a different label
-    pos::Vector{Int}          # position in blist (0 = not boundary)
+    ext::Vector{Int}         
+    pos::Vector{Int}          
     blist::Vector{Int}
     boundary::Vector{Int}
-    c_ver::Vector{Int}        # connectivity cache: version stamp per node
+    c_ver::Vector{Int}       
     c_res::Vector{Bool}
-    clock::Int                # globally unique community-version generator
+    clock::Int             
     cnt::Vector{Int}
     comm_ver::Vector{Int}
     touched::Vector{Int}
@@ -267,7 +250,7 @@ function local_search(g, labels0, i_ls, rng, multi=true, archive_max=20;
 
             nd_indices!(ndl, ndkeep, pts)
             single = length(ndl) == 1
-            single && ndl[1] == 1 && continue          # only "stay" is non-dominated
+            single && ndl[1] == 1 && continue    
 
             # lazy validity: connectivity is only tested if something would act
             jk = (single && !APPLY_SINGLE_DOMINATING[]) ? 1 : knee_index_idx(pts, ndl)
@@ -351,10 +334,6 @@ function local_search(g, labels0, i_ls, rng, multi=true, archive_max=20;
             push!(jr_u, u); push!(jr_b, b)
         end
 
-        # A move can be applied even when its point is already represented by,
-        # or dominated by, the local archive.  Do not terminate a sweep merely
-        # because the archive did not grow: terminate only when neither the
-        # archive nor the working partition changed.
         !al_changed && !pass_moved && break
     end
 
@@ -381,6 +360,7 @@ function local_search(g, labels0, i_ls, rng, multi=true, archive_max=20;
     if LS_CHECK[] && (abs(qx - e.q) > 1e-9 || abs(phix - e.phi) > 1e-9)
         error("journal/archive mismatch: exact=($qx,$phix) archive=($(e.q),$(e.phi)) jlen=$(e.jlen)")
     end
+
     return (out, qx, phix, true)
 end
 

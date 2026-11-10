@@ -5,9 +5,8 @@ end
 # Pure-Julia Louvain (modularity), randomised node order for seed-dependence.
 function louvain_labels(g::GraphData,seed::Int)
     rng=MersenneTwister(seed); n=g.n; m2=2.0*g.m
-    # level-0 weighted graph as adjacency lists with weights
     nbr=[copy(g.adj[u]) for u in 1:n]; wt=[ones(Float64,length(g.adj[u])) for u in 1:n]; selfw=zeros(n)
-    node2comm=collect(1:n)           # original node -> current super-node
+    node2comm=collect(1:n)    
     while true
         N=length(nbr); comm=collect(1:N); k=[sum(wt[u])+2selfw[u] for u in 1:N]; tot=copy(k)
         improved=false; moved=true; order=collect(1:N)

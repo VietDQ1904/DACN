@@ -189,11 +189,8 @@ function exec_task(idx, d, a, s)
             lab = r.lab
             local_results[idx] =
                 RunResult(
-                    d,
-                    a,
-                    s,
-                    r.q,
-                    r.phi,
+                    d, a, s,
+                    r.q, r.phi,
                     MOHGALS.truth_nmi(
                         g.truth,
                         lab
@@ -202,28 +199,14 @@ function exec_task(idx, d, a, s)
                         g.truth,
                         lab
                     ),
-                    maximum(lab),
-                    r.runtime,
-                    0,
-                    0,
-                    1,
-                    NaN,
-                    Float64[],
-                    Float64[],
-                    Float64[],
-                    0,
-                    0,
-                    0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    lab
+                    maximum(lab), r.runtime, 0, 0,
+                    1, NaN, Float64[], Float64[],
+                    Float64[], 0, 0,
+                    0, 0.0, 0.0, 0.0, lab
                 )
 
         else
-
             error("Unsupported algorithm: $algo")
-
         end
 
         lock(lk) do
@@ -267,11 +250,8 @@ if "Leiden" in algos && !skip_leiden
             lab = r.lab
             local_results[idx] =
                 RunResult(
-                    d,
-                    "Leiden",
-                    s,
-                    r.q,
-                    r.phi,
+                    d, "Leiden",
+                    s, r.q, r.phi,
                     MOHGALS.truth_nmi(
                         g.truth,
                         lab
@@ -280,22 +260,10 @@ if "Leiden" in algos && !skip_leiden
                         g.truth,
                         lab
                     ),
-                    maximum(lab),
-                    r.runtime,
-                    0,
-                    0,
-                    1,
-                    NaN,
-                    Float64[],
-                    Float64[],
-                    Float64[],
-                    0,
-                    0,
-                    0,
-                    0.0,
-                    0.0,
-                    0.0,
-                    lab
+                    maximum(lab), r.runtime,
+                    0, 0, 1,
+                    NaN, Float64[], Float64[], Float64[],
+                    0, 0, 0, 0.0, 0.0, 0.0, lab
                 )
 
             @info @sprintf("done %s / Leiden / seed=%d", d, s)

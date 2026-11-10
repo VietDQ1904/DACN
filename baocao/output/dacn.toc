@@ -67,25 +67,26 @@
 \contentsline {section}{\numberline {3}Phương pháp đề xuất cho bài toán phát hiện cộng đồng}{57}{section.3}%
 \contentsline {subsection}{\numberline {3.1}Môi trường thực nghiệm}{57}{subsection.3.1}%
 \contentsline {subsubsection}{\numberline {3.1.1}Phần cứng và phần mềm}{57}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Công cụ và thư viện sử dụng}{57}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Kết quả thực nghiệm}{57}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Kết quả của Genetic Algorithm}{57}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Kết quả của Hybrid Genetic Algorithm}{57}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Kết quả của Louvain và Leiden}{57}{subsubsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.3}So sánh và đánh giá}{57}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}So sánh Modularity}{57}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}So sánh NMI và ARI}{57}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}So sánh thời gian thực thi}{57}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Phân tích độ ổn định của kết quả}{57}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Phân tích ảnh hưởng của Local Search}{57}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}So sánh GA và GA + Local Search}{57}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Ảnh hưởng của các tham số Local Search}{57}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}{57}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Thảo luận kết quả}{57}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Ưu điểm của phương pháp đề xuất}{57}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Hạn chế của phương pháp}{57}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Khả năng áp dụng và mở rộng}{57}{subsubsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.6}Kết luận chương}{57}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Kết luận và hướng phát triển}{57}{subsection.3.7}%
-\contentsline {section}{\mbox {Danh mục tài liệu tham khảo}}{57}{subsection.3.7}%
-\contentsline {section}{Phụ lục}{60}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.1.2}Công cụ và thư viện sử dụng}{58}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Kết quả thực nghiệm}{60}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Kết quả của Genetic Algorithm}{60}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Kết quả của Hybrid Genetic Algorithm}{61}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Kết quả của Louvain và Leiden}{62}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Kết quả thực nghiệm của NSGA-II và MO-HGA-LS}{64}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}So sánh và đánh giá}{66}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}So sánh Modularity}{66}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}So sánh NMI và ARI}{67}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}So sánh thời gian thực thi}{67}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Phân tích độ ổn định của kết quả}{69}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Phân tích ảnh hưởng của Local Search}{70}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}So sánh GA và GA kết hợp Local Search}{70}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Ảnh hưởng của các tham số Local Search}{71}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Ảnh hưởng của các tham số Local Search}{71}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Thảo luận kết quả}{71}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Ưu điểm của phương pháp đề xuất}{71}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Hạn chế của phương pháp}{71}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Khả năng áp dụng và mở rộng}{71}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Kết luận chương}{71}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Kết luận và hướng phát triển}{71}{subsection.3.7}%
+\contentsline {section}{\mbox {Danh mục tài liệu tham khảo}}{71}{subsection.3.7}%
+\contentsline {section}{Phụ lục}{74}{subsection.3.7}%

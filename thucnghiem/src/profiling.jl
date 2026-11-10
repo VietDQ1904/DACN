@@ -31,16 +31,6 @@ end
 
 profile_block!(f::F, ::Nothing, ::Symbol) where {F} = f()
 
-# ============================================================
-# Phase-level profiler for MOHGALS
-# ============================================================
-# Measures only major algorithmic phases. It intentionally does
-# not instrument small operations such as individual Q/Phi calls.
-#
-# Memory = cumulative bytes allocated by @allocated in that phase,
-# NOT peak RSS/process memory.
-# ============================================================
-
 mutable struct ProfileStats
     time::Dict{String,Float64}
     bytes::Dict{String,Int}
@@ -66,9 +56,7 @@ ProfileStats() = ProfileStats(
     return nothing
 end
 
-# IMPORTANT: do-block syntax in Julia passes the anonymous function
-# as the FIRST argument. Therefore the signature must be (f, stats, phase),
-# not (stats, phase, f).
+
 function _profile_phase!(f::Function, s::ProfileStats, phase::String)
     t0 = time_ns()
     result = nothing
@@ -165,13 +153,6 @@ function profile_dict(s::ProfileStats)
     return out
 end
 
-"""
-    run_algorithm_profile(g, algo, cfg, seed; evaluator=CPUEvaluator())
-
-Same algorithmic behavior as `run_algorithm`, but records timing and
-allocation for major phases. The profiler should not be used as the
-official runtime benchmark because instrumentation itself has overhead.
-"""
 function run_algorithm_profile(
     g::GraphData,
     algo::String,
@@ -192,9 +173,7 @@ function run_algorithm_profile(
     t_total = time_ns()
     lspool = use_ls ? make_ls_pool(g) : LSWorkspace[]
 
-    # --------------------------------------------------------
     # Initialization + initial fitness
-    # --------------------------------------------------------
     genes = _profile_phase!(stats, "initialization") do
         init_population(f, cfg.mu, rng)
     end
@@ -202,6 +181,7 @@ function run_algorithm_profile(
     labels, qs, ps = _profile_phase!(stats, "initial_fitness") do
         evaluate_batch(evaluator, g, genes)
     end
+
     n_eval = cfg.mu
 
     P = [F(qs[i], ps[i], multi) for i in 1:cfg.mu]
@@ -212,10 +192,7 @@ function run_algorithm_profile(
     archive = _profile_phase!(stats, "archive_update") do
         archive_update(
             Tuple{Vector{Int},Float64,Float64}[],
-            labels,
-            qs,
-            ps,
-            multi,
+            labels, qs, ps, multi,
             cfg.a_max,
         )
     end
@@ -223,6 +200,7 @@ function run_algorithm_profile(
     hv = _profile_phase!(stats, "hypervolume_stopping") do
         hypervolume([F(x[2], x[3], multi) for x in archive])
     end
+
     hvbest = hv
     stag = 0
     gen = 0
@@ -238,9 +216,7 @@ function run_algorithm_profile(
     ls_dq = 0.0
     ls_dp = 0.0
 
-    # --------------------------------------------------------
     # Generation loop
-    # --------------------------------------------------------
     while gen < cfg.g_max && stag < cfg.k_stag
 
         # Selection
@@ -297,9 +273,6 @@ function run_algorithm_profile(
             ls_time += elapsed_ls
         end
 
-        # Survivor pool + NSGA selection.
-        # Keep exactly the same data flow as run_algorithm: no extra
-        # rank/crowding recomputation is introduced by the profiler.
         genes, labels, qs, ps, rank, crowd = _profile_phase!(
             stats,
             "survivor_selection",
@@ -372,9 +345,7 @@ function run_algorithm_profile(
         gen += 1
     end
 
-    # --------------------------------------------------------
     # Final metrics
-    # --------------------------------------------------------
     chosen = _profile_phase!(stats, "final_metrics") do
         reps = select_representative(archive, multi)
         reps["maxQ"]
@@ -390,40 +361,16 @@ function run_algorithm_profile(
     stats.time["total"] = (time_ns() - t_total) / 1e9
 
     result = RunResult(
-        g.name,
-        algo,
-        seed,
-        q,
-        phi,
-        nmi,
-        ari,
-        maximum(lab),
-        stats.time["total"],
-        gen,
-        n_eval,
-        length(archive),
-        hv,
-        hvh,
-        qh,
-        th,
-        ls_calls,
-        ls_changed,
-        ls_improved,
-        ls_time,
-        ls_dq,
-        ls_dp,
-        lab,
+        g.name, algo, seed, q, phi, nmi,
+        ari, maximum(lab), stats.time["total"],
+        gen, n_eval,length(archive), hv, hvh,
+        qh, th, ls_calls, ls_changed, ls_improved,
+        ls_time, ls_dq, ls_dp, lab,
     )
 
     return result, stats
 end
 
-"""
-    run_baseline_profile(g, algo, seed)
-
-Profile Louvain/Leiden as a baseline. Baselines do not expose the same
-internal evolutionary phases, so they are reported as one `baseline` phase.
-"""
 function run_baseline_profile(g::GraphData, algo::String, seed::Int)
     @assert algo in ("Louvain", "Leiden")
 
@@ -441,29 +388,11 @@ function run_baseline_profile(g::GraphData, algo::String, seed::Int)
 
     lab = r.lab
     result = RunResult(
-        g.name,
-        algo,
-        seed,
-        r.q,
-        r.phi,
-        truth_nmi(g.truth, lab),
-        truth_ari(g.truth, lab),
-        maximum(lab),
-        elapsed,
-        0,
-        0,
-        1,
-        NaN,
-        Float64[],
-        Float64[],
-        Float64[],
-        0,
-        0,
-        0,
-        0.0,
-        0.0,
-        0.0,
-        lab,
+        g.name, algo, seed, r.q,
+        r.phi, truth_nmi(g.truth, lab), truth_ari(g.truth, lab),
+        maximum(lab), elapsed, 0, 0, 1, NaN,
+        Float64[], Float64[], Float64[], 0, 0, 0,
+        0.0, 0.0, 0.0, lab,
     )
 
     return result, stats

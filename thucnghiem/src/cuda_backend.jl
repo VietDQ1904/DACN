@@ -1,15 +1,3 @@
-# Optional CUDA backend for MO-HGA-LS (batch fitness evaluation on the GPU).
-#
-# Usage (needs `] add CUDA` in the project; NOT loaded by MOHGALS itself, so the CPU build never needs CUDA):
-#     using MOHGALS, CUDA
-#     include("src/cuda_backend.jl"); using .MOHGALSCuda
-#     ev = GPUEvaluator(g)                      # g::GraphData
-#     r  = run_algorithm(g, "MO-HGA-LS", cfg, seed; evaluator=ev)
-#
-# What runs on the GPU, for a whole offspring batch (n nodes x B individuals) at once:
-#   1. decode  : weakly-connected components of u -> genes[u]   (parallel hooking + pointer jumping)
-#   2. Q, phi  : community volumes / internal edges via atomics, then per-community reduction
-# Variation, selection and local search stay on the CPU (local search is sequential and data-dependent).
 module MOHGALSCuda
 
 using CUDA
@@ -28,7 +16,7 @@ end
 
 const TPB=256
 
-# ---------------- kernels (1-based, column b of every n x B matrix is one individual) ----------------
+# kernels (1-based, column b of every n x B matrix is one individual)
 function k_hook!(parent,genes,flag,n,N)
     i=(blockIdx().x-1)*blockDim().x+threadIdx().x
     if i<=N
@@ -92,7 +80,7 @@ function k_reduce!(acc,vol,intl,n,N,mf)
     return
 end
 
-# ---------------- host side ----------------
+# host side
 function fast_canonical(col::AbstractVector{Int32},n)
     mp=zeros(Int32,n); out=Vector{Int}(undef,n); k=Int32(0)
     @inbounds for u in 1:n

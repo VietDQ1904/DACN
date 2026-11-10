@@ -1,3 +1,12 @@
 \contentsline {table}{\numberline {2.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Độ phức tạp thời gian của các thành phần trong MO-HGA-LS}}{50}{table.caption.5}%
 \contentsline {table}{\numberline {2.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Độ phức tạp không gian của MO-HGA-LS}}{51}{table.caption.6}%
 \contentsline {table}{\numberline {2.3}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Thông số thống kê chi tiết của các bộ dữ liệu thực nghiệm}}{53}{table.caption.7}%
+\contentsline {table}{\numberline {3.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Cấu hình môi trường phần mềm thực nghiệm}}{57}{table.caption.8}%
+\contentsline {table}{\numberline {3.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Cấu hình phần cứng của máy thực nghiệm}}{58}{table.caption.9}%
+\contentsline {table}{\numberline {3.3}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Các công cụ và thư viện sử dụng trong hệ thống thực nghiệm}}{59}{table.caption.10}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của thuật toán GA trên các bộ dữ liệu}}{60}{table.caption.11}%
+\contentsline {table}{\numberline {3.5}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của thuật toán HGA trên các bộ dữ liệu}}{61}{table.caption.12}%
+\contentsline {table}{\numberline {3.6}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của Louvain và Leiden trên các bộ dữ liệu}}{63}{table.caption.13}%
+\contentsline {table}{\numberline {3.7}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của NSGA-II và MO-HGA-LS trên các bộ dữ liệu}}{65}{table.caption.14}%
+\contentsline {table}{\numberline {3.8}{\ignorespaces \xpg@aux {}{latex}\ignorespaces So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}}{68}{table.caption.15}%
+\contentsline {table}{\numberline {3.9}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Các tham số của cơ chế Local Search}}{71}{table.caption.16}%

@@ -93,8 +93,7 @@ end
 
 function community_stats(g::GraphData, labels::Vector{Int})
     K=maximum(labels); l=zeros(Int,K); d=zeros(Int,K)
-    # FIX: volume d[c] = sum of node degrees in c. The old code added deg[a],deg[b]
-    # once per EDGE, inflating d by roughly the degree and giving Q << -1 and phi > 1.
+    
     @inbounds for u in 1:g.n
         d[labels[u]]+=g.deg[u]
     end
@@ -119,9 +118,7 @@ function q_phi_from(g::GraphData, l::Vector{Int}, d::Vector{Int})
         q+=l[i]/m-(d[i]/m2)^2; ph+=conductance(g,l[i],d[i])
     end
     phi=ph/K
-    # A one-community partition has modularity exactly zero under the
-    # standard Newman-Girvan definition.  Conductance is conventionally 1
-    # when the denominator min(vol(C), 2m-vol(C)) is zero.
+
     if K<=1; q=0.0; phi=1.0; end
     return q,phi
 end
