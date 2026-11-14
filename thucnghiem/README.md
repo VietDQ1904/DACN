@@ -26,16 +26,17 @@ Email được báo cáo theo **đồ thị sau preprocessing** (undirected, b�
 
 ## Yêu cầu
 
-CSV = "0.10"
-CodecZlib = "0.7"
-DataFrames = "1"
-Graphs = "1.15"
-JSON3 = "1"
+CSV = "0.10" \
+CodecZlib = "0.7" \
+DataFrames = "1" \
+Graphs = "1.15" \
+JSON3 = "1" \
 julia = "1.10"
 
 ## Cài đặt
 
 ```bash
+cd ./thucnghiem
 julia --project=. -e "using Pkg; Pkg.instantiate()"
 ```
 
@@ -76,7 +77,6 @@ Nếu chạy với tham số đầu vào nhẹ hơn (phù hợp hơn với dữ 
 JULIA_NUM_THREADS=20 julia --project=. scripts/run_experiments.jl   --datasets amazon --algos GA,HGA,NSGA2,MO-HGA-LS,Louvain,Leiden   --runs 30 --out results/main --preset-fast
 ```
 
-
 ## Phân tích:
 
 ```bash
@@ -88,12 +88,20 @@ julia --project=. scripts/analyze.jl results/main/runs.jsonl results/amazon/runs
 ```bash
 julia --project=. scripts/profile.jl --dataset email --algo MO-HGA-LS --seed 1 --repeats 1
 ```
+
+## Xuất đồ thị trực quan của kết quả thực nghiệm:
+
+```bash
+julia --project=. scripts/plot_report.jl
+```
+
 ## Output
 
 - `runs.jsonl`: một dòng cho mỗi `(dataset, algorithm, seed)`.
 - `config.json`: cấu hình bất biến của lần chạy.
 - `results/report/tables/*.csv`: bảng trung bình, độ lệch chuẩn, median, Q1/Q3.
 - `results/report/figures/<dataset>/*.png`: đồ thị so sánh kết quả thuật toán baseline trên từng tập dữ liệu.
+
 ## Lưu ý reproducibility
 
 Không gộp các run có `mu/lam/g_max/p_ls/i_ls` khác nhau vào cùng một bảng. Một bảng chính phải có cùng configuration key. HV chỉ dùng để so sánh các thuật toán đa mục tiêu (`NSGA2` và `MO-HGA-LS`); GA/HGA nên so sánh Q/NMI/ARI/runtime.

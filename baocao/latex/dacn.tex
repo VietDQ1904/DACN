@@ -138,6 +138,9 @@
 \renewcommand{\cftsecpresnum}{Chương~}
 \renewcommand{\cftsecaftersnum}{:~}
 \setlength{\cftsecnumwidth}{5em}
+\setlength{\cftbeforesecskip}{2pt}
+\setlength{\cftbeforesubsecskip}{0pt}
+\setlength{\cftbeforesubsubsecskip}{0pt}
 
 % Dấu chấm dẫn cho Section (Chương)
 \renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}
@@ -1601,7 +1604,7 @@ Một đóng góp cần được kiểm chứng bằng thực nghiệm là liệ
 \subsubsection{Bộ dữ liệu thực nghiệm}
 
 \noindent a) Mô tả các bộ dữ liệu thực tế \\ \indent
-Để đánh giá toàn diện hiệu năng của giải thuật đề xuất trên cả các mạng quy mô nhỏ (benchmark cơ bản) và mạng quy mô lớn (thực tế từ SNAP), thực nghiệm sử dụng 5 tập dữ liệu mạng lưới phổ biến sau:
+Để đánh giá toàn diện hiệu năng của giải thuật đề xuất trên cả các mạng quy mô nhỏ (benchmark cơ bản) và mạng quy mô lớn (thực tế từ SNAP), thực nghiệm sử dụng 4 tập dữ liệu mạng lưới phổ biến sau:
 \begin{itemize}
     \item \textbf{Zachary's Karate Club (Karate):}
     \begin{itemize}
@@ -1627,11 +1630,11 @@ Một đóng góp cần được kiểm chứng bằng thực nghiệm là liệ
         \item \textit{Đặc điểm cấu trúc:} Gồm 1,005 nút và 25,571 cạnh với hệ số gom cụm trung bình 0.3994. Mỗi cá nhân thuộc chính xác một trong 42 phòng ban, tạo thành hệ thống cộng đồng thực tế.
     \end{itemize}
 
-    \item \textbf{Amazon Co-purchasing Network (Amazon):}
-    \begin{itemize}
-        \item \textit{Mô tả:} Mạng lưới đồng mua sản phẩm trên nền tảng thương mại điện tử Amazon (thuộc SNAP).
-        \item \textit{Đặc điểm cấu trúc:} Mạng quy mô lớn, thưa, với các cộng đồng thực tế phản ánh danh mục sản phẩm (product categories và sub-categories).
-    \end{itemize}
+    % \item \textbf{Amazon Co-purchasing Network (Amazon):}
+    % \begin{itemize}
+    %     \item \textit{Mô tả:} Mạng lưới đồng mua sản phẩm trên nền tảng thương mại điện tử Amazon (thuộc SNAP).
+    %     \item \textit{Đặc điểm cấu trúc:} Mạng quy mô lớn, thưa, với các cộng đồng thực tế phản ánh danh mục sản phẩm (product categories và sub-categories).
+    % \end{itemize}
 \end{itemize}
 
 \noindent b) Thông số cấu trúc của các bộ dữ liệu thực nghiệm \\ \indent
@@ -1647,7 +1650,7 @@ Karate & 34 & 78 & 4.59 & 0.5706 & 2 nhóm (Rạn nứt CLB) \\ \hline
 Polbooks & 105 & 441 & 8.40 & 0.4879 & 3 nhóm (Chính trị) \\ \hline
 Football & 115 & 613 & 10.66 & 0.4034 & 12 nhóm (Liên đoàn) \\ \hline
 Email & 1,005 & 25,571 & 50.89 & 0.3994 & 42 phòng ban viện nghiên cứu \\ \hline
-Amazon & 334,863 & 925,872 & 5.53 & 0.3967 & Danh mục sản phẩm thương mại điện tử \\ \hline
+% Amazon & 334,863 & 925,872 & 5.53 & 0.3967 & Danh mục sản phẩm thương mại điện tử \\ \hline
 \end{tabularx}
 \caption{Thông số thống kê chi tiết của các bộ dữ liệu thực nghiệm}
 \label{tab:datasets_info}
@@ -1803,119 +1806,57 @@ Genetic Algorithm (GA) được sử dụng làm phương pháp cơ sở để �
 
 GA thực hiện tối đa 200 thế hệ và sử dụng điều kiện dừng dựa trên số thế hệ liên tiếp không ghi nhận sự cải thiện. Thuật toán tập trung tối ưu hóa Modularity ($Q$), trong khi Conductance ($\Phi$), Normalized Mutual Information (NMI) và Adjusted Rand Index (ARI) được sử dụng để đánh giá chất lượng nghiệm.
 
-Kết quả trung bình trên 30 lần chạy độc lập của GA được trình bày trong Bảng~\ref{tab:ga_results}.
+Kết quả trung bình trên 30 lần chạy độc lập của GA được trình bày trong Hình~\ref{fig:ga_metrics}:
 
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabularx}{\textwidth}{
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X|
-    }
-        \hline
-        \textbf{Bộ dữ liệu} &
-        \textbf{$Q$} &
-        \textbf{$\Phi$} &
-        \textbf{NMI} &
-        \textbf{ARI} \\ \hline
-        Karate & 0.4198 & 0.2875 & 0.6873 & 0.5414 \\ \hline
-        Polbooks & 0.5272 & 0.2678 & 0.5592 & 0.6544 \\ \hline
-        Football & 0.6041 & 0.2830 & 0.8592 & 0.7183 \\ \hline
-        Email & 0.3893 & 0.4294 & 0.4979 & 0.2170 \\ \hline
-    \end{tabularx}
+    \includegraphics[width=1.0\textwidth]{GA_metrics.png}
     \caption{Kết quả thực nghiệm trung bình của thuật toán GA trên các bộ dữ liệu}
-    \label{tab:ga_results}
-\end{table}
+    \label{fig:ga_metrics}
+\end{figure}
 
-Trong các bộ dữ liệu được khảo sát, Football đạt giá trị Modularity và NMI tương đối cao, lần lượt là 0.6041 và 0.8592. Điều này cho thấy cấu trúc cộng đồng của bộ dữ liệu này được GA phát hiện tương đối tốt khi đối chiếu với nhãn tham chiếu. Đồng thời, ARI đạt 0.7183, phản ánh mức độ tương đồng tương đối cao giữa phân hoạch thu được và phân hoạch chuẩn.
+Trong các bộ dữ liệu được khảo sát, Football đạt giá trị Modularity và NMI tương đối cao, lần lượt là 0.6041 và 0.8582. Điều này cho thấy cấu trúc cộng đồng của bộ dữ liệu này được GA phát hiện tương đối tốt khi đối chiếu với nhãn tham chiếu. Đồng thời, ARI đạt 0.7152, phản ánh mức độ tương đồng tương đối cao giữa phân hoạch thu được và phân hoạch chuẩn.
 
-Đối với Karate, GA đạt Modularity $Q = 0.4198$, NMI bằng 0.6873 và ARI bằng 0.5414. Các kết quả giữa những lần chạy gần như không thay đổi, cho thấy thuật toán có khả năng hội tụ ổn định trên đồ thị nhỏ này.
+Đối với Karate, GA đạt Modularity $Q = 0.4198$, NMI bằng 0.6873 và ARI bằng 0.5414. Các kết quả giữa những lần chạy không thay đổi, cho thấy thuật toán có khả năng hội tụ ổn định trên đồ thị nhỏ này.
 
-Ngược lại, Email có NMI bằng 0.4979 và ARI bằng 0.2170, thấp hơn đáng kể so với Football và Karate. Điều này cho thấy việc phát hiện cộng đồng trên Email khó khăn hơn khi xét theo mức độ tương đồng với phân hoạch tham chiếu. Đặc biệt, giá trị ARI tương đối thấp phản ánh sự khác biệt đáng kể giữa các cặp phân hoạch khi so sánh theo quan hệ đồng cụm và khác cụm.
+Ngược lại, Email có NMI bằng 0.4978 và ARI bằng 0.2167, thấp hơn đáng kể so với Football và Karate. Điều này cho thấy việc phát hiện cộng đồng trên Email khó khăn hơn khi xét theo mức độ tương đồng với phân hoạch tham chiếu. Đặc biệt, giá trị ARI tương đối thấp phản ánh sự khác biệt đáng kể giữa các cặp phân hoạch khi so sánh theo quan hệ đồng cụm và khác cụm.
+
 \subsubsection{Kết quả của Hybrid Genetic Algorithm}
 Hybrid Genetic Algorithm (HGA) kết hợp Genetic Algorithm với Local Search nhằm cải thiện chất lượng nghiệm thông qua việc khai thác các phép di chuyển đỉnh giữa những cộng đồng lân cận.
 
 Khác với GA, HGA sử dụng Local Search để tinh chỉnh các cá thể trong quá trình tiến hóa. Trong cài đặt thực nghiệm, HGA tối ưu một mục tiêu là Modularity ($Q$). Local Search được thực hiện với xác suất $p_{LS} = 0.2$ và tối đa 30 vòng lặp cho mỗi lần gọi.
 
-Kết quả thực nghiệm trung bình trên 30 lần chạy độc lập của HGA được trình bày trong Bảng~\ref{tab:hga_results}.
+Kết quả thực nghiệm trung bình trên 30 lần chạy độc lập của HGA được trình bày trong Hình~\ref{fig:hga_metrics}:
 
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabularx}{\textwidth}{
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X|
-    }
-        \hline
-        \textbf{Bộ dữ liệu} &
-        \textbf{$Q$} &
-        \textbf{$\Phi$} &
-        \textbf{NMI} &
-        \textbf{ARI} \\ \hline
-        Karate & 0.4198 & 0.2875 & 0.6873 & 0.5414 \\ \hline
-        Polbooks & 0.5272 & 0.2778 & 0.5603 & 0.6567 \\ \hline
-        Football & 0.6046 & 0.2941 & 0.8903 & 0.8069 \\ \hline
-        Email & 0.4035 & 0.3957 & 0.5091 & 0.2396 \\ \hline
-    \end{tabularx}
+    \includegraphics[width=1.0\textwidth]{HGA_metrics.png} % Thay tên file của bạn vào đây
     \caption{Kết quả thực nghiệm trung bình của thuật toán HGA trên các bộ dữ liệu}
-    \label{tab:hga_results}
-\end{table}
+    \label{fig:hga_metrics}
+\end{figure}
 
-So với GA, HGA cho thấy sự cải thiện rõ rệt trên Football. Giá trị NMI tăng từ 0.8592 lên 0.8903, trong khi ARI tăng từ 0.7183 lên 0.8069. Modularity cũng tăng nhẹ từ 0.6041 lên 0.6046. Những kết quả này cho thấy việc kết hợp Local Search giúp HGA cải thiện chất lượng phân hoạch cộng đồng, đặc biệt khi xét theo mức độ tương đồng với nhãn tham chiếu.
+So với GA, HGA cho thấy sự cải thiện rõ rệt trên Football. Giá trị NMI tăng từ 0.8582 lên 0.8903, trong khi ARI tăng từ 0.7152 lên 0.8069. Modularity cũng tăng nhẹ từ 0.6041 lên 0.6046. Những kết quả này cho thấy việc kết hợp Local Search giúp HGA cải thiện chất lượng phân hoạch cộng đồng, đặc biệt khi xét theo mức độ tương đồng với nhãn tham chiếu.
 
-Trên Email, HGA cải thiện Modularity từ 0.3893 lên 0.4035, đồng thời NMI tăng từ 0.4979 lên 0.5091 và ARI tăng từ 0.2170 lên 0.2396. Bên cạnh đó, Conductance giảm từ 0.4294 xuống 0.3957, thể hiện sự cải thiện theo cả hai nhóm chỉ số cấu trúc và chỉ số đánh giá dựa trên nhãn tham chiếu.
+Trên Email, HGA cải thiện Modularity từ 0.3893 lên 0.4035, đồng thời NMI tăng từ 0.4978 lên 0.5107 và ARI tăng từ 0.2167 lên 0.2402. Bên cạnh đó, Conductance giảm từ 0.4277 xuống 0.3963, thể hiện sự cải thiện theo cả hai nhóm chỉ số cấu trúc và chỉ số đánh giá dựa trên nhãn tham chiếu.
 
-Đối với Polbooks, HGA có sự cải thiện nhẹ về Modularity, NMI và ARI, nhưng Conductance tăng từ 0.2678 lên 0.2778. Điều này cho thấy việc cải thiện Modularity không đồng nghĩa với việc tất cả các chỉ số đánh giá đều được cải thiện, phản ánh sự khác biệt giữa các tiêu chí tối ưu hóa và đánh giá chất lượng phân hoạch.
+Đối với Polbooks, HGA có sự cải thiện nhẹ về NMI và ARI (giữ nguyên Modularity ở mức 0.5272), nhưng Conductance tăng từ 0.2683 lên 0.2778. Điều này cho thấy việc cải thiện Modularity không đồng nghĩa với việc tất cả các chỉ số đánh giá đều được cải thiện, phản ánh sự khác biệt giữa các tiêu chí tối ưu hóa và đánh giá chất lượng phân hoạch.
 
-Trên Karate, GA và HGA đạt kết quả gần như giống nhau. Điều này cho thấy Local Search không tạo ra khác biệt đáng kể khi thuật toán đã tìm được nghiệm tốt trên một đồ thị nhỏ có cấu trúc tương đối rõ ràng.
+Trên Karate, GA và HGA đạt kết quả giống nhau. Điều này cho thấy Local Search không tạo ra khác biệt đáng kể khi thuật toán đã tìm được nghiệm tốt trên một đồ thị nhỏ có cấu trúc tương đối rõ ràng.
 
 Nhìn chung, HGA cho thấy lợi ích rõ rệt hơn trên những bộ dữ liệu có cấu trúc phức tạp như Football và Email. Tuy nhiên, hiệu quả của Local Search phụ thuộc vào đặc điểm của từng đồ thị và không thể khẳng định rằng việc bổ sung Local Search luôn cải thiện tất cả các chỉ số đánh giá.
+
 \subsubsection{Kết quả của Louvain và Leiden}
 
 Louvain và Leiden được sử dụng làm các phương pháp đối chứng dựa trên tối ưu Modularity. Hai thuật toán này có cơ chế tìm kiếm khác với các phương pháp tiến hóa, do đó kết quả được sử dụng để đánh giá khả năng phát hiện cộng đồng và chi phí tính toán của phương pháp đề xuất.
 
-Kết quả thực nghiệm trung bình của hai thuật toán trên các bộ dữ liệu được trình bày trong Bảng~\ref{tab:louvain_leiden_results}.
+Kết quả thực nghiệm trung bình của hai thuật toán trên các bộ dữ liệu được trình bày trong Hình~\ref{fig:louvain_leiden_metrics}:
 
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabularx}{\textwidth}{
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X|
-    }
-        \hline
-        \textbf{Bộ dữ liệu} &
-        \textbf{Thuật toán} &
-        \textbf{$Q$} &
-        \textbf{$\Phi$} &
-        \textbf{NMI} &
-        \textbf{ARI} \\ \hline
-
-        Karate & Louvain & 0.4169 & 0.2895 & 0.6271 & 0.5103 \\ \hline
-        Karate & Leiden & 0.4198 & 0.2875 & 0.6873 & 0.5414 \\ \hline
-
-        Polbooks & Louvain & 0.5265 & 0.2397 & 0.5444 & 0.6288 \\ \hline
-        Polbooks & Leiden & 0.5269 & 0.2259 & 0.5587 & 0.6427 \\ \hline
-
-        Football & Louvain & 0.6036 & 0.2892 & 0.8735 & 0.7654 \\ \hline
-        Football & Leiden & 0.6045 & 0.2924 & 0.8860 & 0.7948 \\ \hline
-
-        Email & Louvain & 0.4136 & 0.4150 & 0.5779 & 0.3087 \\ \hline
-        Email & Leiden & 0.4157 & 0.4096 & 0.5769 & 0.3121 \\ \hline
-    \end{tabularx}
+    \includegraphics[width=1.0\textwidth]{Louvain_Leiden_metrics.png}
     \caption{Kết quả thực nghiệm trung bình của Louvain và Leiden trên các bộ dữ liệu}
-    \label{tab:louvain_leiden_results}
-\end{table}
+    \label{fig:louvain_leiden_metrics}
+\end{figure}
 
 Trên Karate, Leiden đạt kết quả tương đương GA và HGA, với Modularity bằng 0.4198, NMI bằng 0.6873 và ARI bằng 0.5414. Trong khi đó, Louvain có kết quả thấp hơn ở cả ba chỉ số này. Điều này cho thấy Leiden có khả năng phát hiện cấu trúc cộng đồng phù hợp hơn với phân hoạch tham chiếu trên bộ dữ liệu Karate.
 
@@ -1927,57 +1868,29 @@ Trên Email, Leiden đạt Modularity cao nhất trong hai thuật toán đượ
 
 Nhìn chung, Leiden đạt kết quả tốt hơn Louvain trên phần lớn các chỉ số đánh giá và bộ dữ liệu được khảo sát. Tuy nhiên, ưu thế này không xuất hiện đồng nhất trên tất cả các tiêu chí, thể hiện rõ qua kết quả Conductance trên Football và NMI trên Email. Do đó, cần xem xét đồng thời các chỉ số đánh giá thay vì chỉ dựa trên Modularity để đưa ra nhận xét về chất lượng phân cụm.
 
-
 \subsubsection{Kết quả thực nghiệm của NSGA-II và MO-HGA-LS}
 
 Bên cạnh GA và HGA, thực nghiệm còn sử dụng NSGA-II làm phương pháp đối chứng đa mục tiêu và MO-HGA-LS làm phương pháp đề xuất.
 
 NSGA-II tối ưu đồng thời hai mục tiêu Modularity và Conductance nhưng không sử dụng Local Search. Trong khi đó, MO-HGA-LS kết hợp tối ưu đa mục tiêu với Pareto-Lamarck Local Search nhằm cải thiện chất lượng nghiệm và duy trì các nghiệm không bị trội trong tập lưu trữ Pareto.
 
-Kết quả thực nghiệm trung bình trên 30 lần chạy độc lập của hai thuật toán được trình bày trong Bảng~\ref{tab:nsga2_mohgals_results}.
+Kết quả thực nghiệm trung bình trên 30 lần chạy độc lập của hai thuật toán được trình bày trong Hình~\ref{fig:NSGA_MO-HGA-LS_metrics}:
 
-\begin{table}[H]
+\begin{figure}[H]
     \centering
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabularx}{\textwidth}{
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X|
-    }
-        \hline
-        \textbf{Bộ dữ liệu} &
-        \textbf{Thuật toán} &
-        \textbf{$Q$} &
-        \textbf{$\Phi$} &
-        \textbf{NMI} &
-        \textbf{ARI} \\ \hline
-
-        Karate & NSGA-II & 0.4198 & 0.2875 & 0.6873 & 0.5414 \\ \hline
-        Karate & MO-HGA-LS & 0.4198 & 0.2875 & 0.6873 & 0.5414 \\ \hline
-
-        Polbooks & NSGA-II & 0.5271 & 0.2355 & 0.5653 & 0.6640 \\ \hline
-        Polbooks & MO-HGA-LS & 0.5272 & 0.2712 & 0.5643 & 0.6617 \\ \hline
-
-        Football & NSGA-II & 0.6016 & 0.2698 & 0.8275 & 0.6467 \\ \hline
-        Football & MO-HGA-LS & 0.6045 & 0.2907 & 0.8811 & 0.7808 \\ \hline
-
-        Email & NSGA-II & 0.3673 & 0.3702 & 0.4514 & 0.1764 \\ \hline
-        Email & MO-HGA-LS & 0.3731 & 0.3949 & 0.4506 & 0.1984 \\ \hline
-    \end{tabularx}
+    \includegraphics[width=1.0\textwidth]{NSGA_MO-HGA-LS_metrics.png}
     \caption{Kết quả thực nghiệm trung bình của NSGA-II và MO-HGA-LS trên các bộ dữ liệu}
-    \label{tab:nsga2_mohgals_results}
-\end{table}
+    \label{fig:NSGA_MO-HGA-LS_metrics}
+\end{figure}
 
-Trên Football, MO-HGA-LS cải thiện đáng kể Modularity, NMI và ARI so với NSGA-II. Cụ thể, Modularity tăng từ 0.6016 lên 0.6045, NMI tăng từ 0.8275 lên 0.8811 và ARI tăng từ 0.6467 lên 0.7808. Tuy nhiên, Conductance cũng tăng từ 0.2698 lên 0.2907, cho thấy sự đánh đổi giữa hai mục tiêu tối ưu hóa. Mặc dù vậy, kết quả về NMI và ARI cho thấy phương pháp đề xuất tạo ra phân hoạch có mức độ tương đồng cao hơn với nhãn tham chiếu trên bộ dữ liệu này.
 
-Trên Email, MO-HGA-LS có Modularity và ARI cao hơn NSGA-II, nhưng NMI thấp hơn nhẹ và Conductance tăng. Điều này cho thấy phương pháp đề xuất tạo ra sự đánh đổi giữa các mục tiêu thay vì cải thiện đồng thời tất cả các chỉ số đánh giá.
+Trên Football, MO-HGA-LS cải thiện đáng kể Modularity, NMI và ARI so với NSGA-II. Cụ thể, Modularity tăng từ 0.6016 lên 0.6045, NMI tăng từ 0.8264 lên 0.8811 và ARI tăng từ 0.6452 lên 0.7808. Tuy nhiên, Conductance cũng tăng từ 0.2693 lên 0.2907, cho thấy sự đánh đổi giữa hai mục tiêu tối ưu hóa. Mặc dù vậy, kết quả về NMI và ARI cho thấy phương pháp đề xuất tạo ra phân hoạch có mức độ tương đồng cao hơn với nhãn tham chiếu trên bộ dữ liệu này.
+
+Trên Email, MO-HGA-LS có Modularity và ARI cao hơn NSGA-II (tăng lần lượt từ 0.3692 lên 0.3731 và từ 0.1806 lên 0.1992), nhưng NMI thấp hơn nhẹ (0.4511 so với 0.4542) và Conductance tăng từ 0.3705 lên 0.3960. Điều này cho thấy phương pháp đề xuất tạo ra sự đánh đổi giữa các mục tiêu thay vì cải thiện đồng thời tất cả các chỉ số đánh giá.
 
 Trên Karate, hai thuật toán đạt kết quả tương đương ở cả bốn chỉ số. Điều này cho thấy việc bổ sung Pareto-Lamarck Local Search chưa tạo ra sự khác biệt về chất lượng nghiệm đại diện trên bộ dữ liệu nhỏ này.
 
-Đối với Polbooks, MO-HGA-LS đạt Modularity cao hơn nhẹ so với NSGA-II. Tuy nhiên, NSGA-II có Conductance thấp hơn, NMI cao hơn nhẹ và ARI cao hơn nhẹ. Kết quả này tiếp tục thể hiện sự khác biệt trong khả năng cân bằng giữa các mục tiêu của hai thuật toán.
+Đối với Polbooks, MO-HGA-LS đạt Modularity, NMI và ARI cao hơn nhẹ so với NSGA-II (lần lượt là 0.5272, 0.5647 và 0.6623 so với 0.5271, 0.5637 và 0.6613). Tuy nhiên, NSGA-II có Conductance thấp hơn (0.2366 so với 0.2681). Kết quả này tiếp tục thể hiện sự khác biệt trong khả năng cân bằng giữa các mục tiêu của hai thuật toán.
 
 Do MO-HGA-LS và NSGA-II là các thuật toán đa mục tiêu, việc đánh giá không nên chỉ dựa vào một nghiệm đại diện. Tập nghiệm Pareto và chỉ số Hypervolume cần được xem xét để phản ánh khả năng tìm kiếm, duy trì các phương án không bị trội và mức độ bao phủ không gian mục tiêu của từng thuật toán. Đây cũng là cơ sở quan trọng để đánh giá hiệu quả của cơ chế tối ưu đa mục tiêu kết hợp Local Search trong phương pháp đề xuất.
 
@@ -1987,26 +1900,27 @@ Do MO-HGA-LS và NSGA-II là các thuật toán đa mục tiêu, việc đánh g
 Modularity ($Q$) phản ánh mức độ liên kết bên trong các cộng đồng so với cấu trúc liên kết kỳ vọng trong một mô hình mạng ngẫu nhiên. Giá trị $Q$ càng lớn thường thể hiện phân hoạch cộng đồng càng rõ theo tiêu chí Modularity.
 Trên Karate, GA, HGA, Leiden, NSGA-II và MO-HGA-LS đều đạt giá trị $Q$ xấp xỉ 0.4198. Louvain đạt 0.4169, thấp hơn một lượng nhỏ. Điều này cho thấy nhiều thuật toán có thể tìm được nghiệm có chất lượng tương đương trên đồ thị nhỏ này.
 
-Trên Polbooks, HGA đạt $Q = 0.5272$, MO-HGA-LS đạt $Q = 0.5272$ và GA cũng đạt $Q = 0.5272$ khi làm tròn đến bốn chữ số thập phân. Các phương pháp Louvain và Leiden cũng đạt giá trị gần tương đương. Nhìn chung, sự khác biệt về Modularity giữa các thuật toán trên bộ dữ liệu này không lớn.
+Trên Polbooks, GA, HGA và MO-HGA-LS đều đạt $Q = 0.5272$ khi làm tròn đến bốn chữ số thập phân. Các phương pháp NSGA-II, Leiden và Louvain cũng đạt giá trị gần tương đương (từ 0.5265 đến 0.5271). Nhìn chung, sự khác biệt về Modularity giữa các thuật toán trên bộ dữ liệu này không lớn.
 Trên Football, HGA đạt $Q$ cao nhất với giá trị 0.6046, tiếp theo là Leiden và MO-HGA-LS với giá trị xấp xỉ 0.6045. Kết quả cho thấy việc kết hợp Local Search có thể cải thiện khả năng tìm kiếm nghiệm có Modularity cao.
 
-Trên Email, Leiden đạt $Q = 0.4157$ và Louvain đạt 0.4136, cao hơn các thuật toán tiến hóa trong cấu hình hiện tại. HGA đạt 0.4035, cao hơn GA nhưng vẫn thấp hơn hai phương pháp đối chứng này. MO-HGA-LS đạt 0.3731, phản ánh sự đánh đổi do tối ưu đồng thời hai mục tiêu $Q$ và $\Phi$.
-Từ kết quả trên có thể nhận thấy HGA có khả năng cải thiện Modularity so với GA trên cả bốn bộ dữ liệu, mặc dù mức độ cải thiện khác nhau. MO-HGA-LS không nhất thiết đạt $Q$ cao nhất do phải cân bằng hai mục tiêu tối ưu.
+Trên Email, Leiden đạt $Q = 0.4157$ và Louvain đạt 0.4136, cao hơn các thuật toán tiến hóa trong cấu hình hiện tại. HGA đạt 0.4035, cao hơn GA (0.3893) nhưng vẫn thấp hơn hai phương pháp đối chứng này. MO-HGA-LS đạt 0.3731, phản ánh sự đánh đổi do tối ưu đồng thời hai mục tiêu $Q$ và $\Phi$.
+Từ kết quả trên có thể nhận thấy HGA có khả năng cải thiện hoặc duy trì Modularity tối đa so với GA trên cả bốn bộ dữ liệu, mặc dù mức độ cải thiện khác nhau. MO-HGA-LS không nhất thiết đạt $Q$ cao nhất do phải cân bằng hai mục tiêu tối ưu.
+
 \subsubsection{So sánh NMI và ARI}
 NMI và ARI được sử dụng để đánh giá mức độ tương đồng giữa phân hoạch cộng đồng tìm được và phân hoạch tham chiếu. Hai chỉ số này càng cao thì kết quả phân cụm càng tương đồng với nhãn tham chiếu.
 Trên Karate, các thuật toán GA, HGA, Leiden, NSGA-II và MO-HGA-LS đều đạt NMI xấp xỉ 0.6873 và ARI xấp xỉ 0.5414. Louvain có kết quả thấp hơn với NMI bằng 0.6271 và ARI bằng 0.5103.
 
-Trên Polbooks, NSGA-II đạt NMI cao nhất với 0.5653, trong khi MO-HGA-LS đạt 0.5643. Xét ARI, NSGA-II đạt 0.6640 và MO-HGA-LS đạt 0.6617. HGA đạt NMI bằng 0.5603 và ARI bằng 0.6567. Các kết quả cho thấy sự khác biệt giữa các thuật toán không quá lớn.
+Trên Polbooks, MO-HGA-LS đạt NMI và ARI cao nhất với giá trị lần lượt là 0.5647 và 0.6623, theo sát là NSGA-II với NMI bằng 0.5637 và ARI bằng 0.6613. HGA đạt NMI bằng 0.5603 và ARI bằng 0.6567. Các kết quả cho thấy sự khác biệt giữa các thuật toán không quá lớn.
 Trên Football, HGA đạt kết quả tốt nhất trong các thuật toán được khảo sát, với NMI bằng 0.8903 và ARI bằng 0.8069. Leiden đứng tiếp theo với NMI bằng 0.8860 và ARI bằng 0.7948. MO-HGA-LS đạt NMI bằng 0.8811 và ARI bằng 0.7808, cao hơn đáng kể so với NSGA-II.
 
 Trên Email, Louvain đạt NMI cao nhất với 0.5779, trong khi Leiden đạt ARI cao nhất với 0.3121. Các thuật toán tiến hóa có NMI và ARI thấp hơn. HGA cải thiện cả hai chỉ số so với GA, còn MO-HGA-LS có ARI cao hơn NSGA-II nhưng NMI thấp hơn nhẹ.
-Như vậy, HGA thể hiện hiệu quả tốt trên Football và cải thiện kết quả của GA trên Email. Tuy nhiên, không có một thuật toán duy nhất đạt kết quả tốt nhất trên mọi bộ dữ liệu và mọi chỉ số. Điều này cho thấy chất lượng phân cụm cần được đánh giá đồng thời thông qua nhiều thước đo.
+Như vậy, HGA thể hiện hiệu quả tốt trên Football và cải thiện kết quả của GA trên Email, trong khi MO-HGA-LS dẫn đầu về NMI và ARI trên Polbooks. Tuy nhiên, không có một thuật toán duy nhất đạt kết quả tốt nhất trên mọi bộ dữ liệu và mọi chỉ số. Điều này cho thấy chất lượng phân cụm cần được đánh giá đồng thời thông qua nhiều thước đo.
 
 \subsubsection{So sánh thời gian thực thi}
 
 Thời gian thực thi là một tiêu chí quan trọng nhằm đánh giá khả năng áp dụng thuật toán trên các mạng có kích thước và cấu trúc khác nhau.
 
-Bảng~\ref{tab:runtime_comparison} trình bày thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán theo kết quả tổng hợp từ tệp \texttt{runs\_summary.csv}.
+Bảng~\ref{tab:runtime_comparison} trình bày thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán được tổng hợp trực tiếp từ tệp dữ liệu thực nghiệm gốc \texttt{runs.jsonl}.
 
 \begin{table}[H]
     \centering
@@ -2032,36 +1946,36 @@ Bảng~\ref{tab:runtime_comparison} trình bày thời gian thực thi trung bì
         \textbf{Leiden} \\ \hline
 
         Karate &
-        0.578 $\pm$ 2.738 &
-        0.075 $\pm$ 0.007 &
-        0.082 $\pm$ 0.007 &
-        0.073 $\pm$ 0.005 &
-        0.001 $\pm$ 0.003 &
-        0.153 $\pm$ 0.821 \\ \hline
+        0.588 $\pm$ 2.806 &
+        0.070 $\pm$ 0.015 &
+        0.075 $\pm$ 0.008 &
+        0.078 $\pm$ 0.013 &
+        0.001 $\pm$ 0.002 &
+        0.107 $\pm$ 0.578 \\ \hline
 
         Polbooks &
-        0.184 $\pm$ 0.029 &
-        0.112 $\pm$ 0.013 &
-        0.230 $\pm$ 0.043 &
-        0.141 $\pm$ 0.027 &
+        0.174 $\pm$ 0.038 &
+        0.106 $\pm$ 0.017 &
+        0.216 $\pm$ 0.052 &
+        0.139 $\pm$ 0.031 &
         0.003 $\pm$ 0.002 &
-        0.006 $\pm$ 0.001 \\ \hline
+        0.004 $\pm$ 0.004 \\ \hline
 
         Football &
-        0.183 $\pm$ 0.028 &
-        0.134 $\pm$ 0.020 &
-        0.321 $\pm$ 0.073 &
-        0.254 $\pm$ 0.046 &
-        0.003 $\pm$ 0.003 &
-        0.007 $\pm$ 0.001 \\ \hline
+        0.175 $\pm$ 0.040 &
+        0.139 $\pm$ 0.019 &
+        0.339 $\pm$ 0.080 &
+        0.292 $\pm$ 0.063 &
+        0.006 $\pm$ 0.012 &
+        0.003 $\pm$ 0.002 \\ \hline
 
         Email &
-        0.913 $\pm$ 0.116 &
-        16.812 $\pm$ 3.062 &
-        0.937 $\pm$ 0.064 &
-        92.208 $\pm$ 123.334 &
-        0.300 $\pm$ 0.056 &
-        0.087 $\pm$ 0.030 \\ \hline
+        1.151 $\pm$ 0.279 &
+        8.138 $\pm$ 1.513 &
+        0.934 $\pm$ 0.107 &
+        25.510 $\pm$ 3.229 &
+        0.142 $\pm$ 0.025 &
+        0.040 $\pm$ 0.018 \\ \hline
     \end{tabularx}
 
     \caption{So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}
@@ -2070,67 +1984,141 @@ Bảng~\ref{tab:runtime_comparison} trình bày thời gian thực thi trung bì
 
 Đơn vị: giây. Các giá trị được trình bày dưới dạng trung bình $\pm$ độ lệch chuẩn.
 
-Trên Karate, thời gian chạy của các thuật toán tiến hóa tương đối nhỏ. HGA và MO-HGA-LS có thời gian trung bình gần với GA, trong khi Louvain có thời gian thực thi rất thấp. Độ lệch chuẩn lớn của GA và Leiden cần được xem xét cùng với ảnh hưởng của lần chạy đầu tiên và chi phí khởi tạo môi trường.
+Trên Karate, thời gian chạy của các thuật toán tiến hóa tương đối nhỏ. HGA và MO-HGA-LS có thời gian trung bình lần lượt là 0.070 giây và 0.078 giây, trong khi Louvain có thời gian thực thi rất thấp (0.001 giây). Độ lệch chuẩn lớn của GA ($2.806$ giây) và Leiden ($0.578$ giây) chủ yếu xuất phát từ chi phí biên dịch JIT (Just-In-Time) ở lượt chạy đầu tiên (\texttt{seed = 0}) trong môi trường thực nghiệm.
 
-Trên Polbooks và Football, HGA có thời gian thực thi thấp hơn GA theo bảng tổng hợp. MO-HGA-LS và NSGA-II có chi phí tính toán cao hơn do phải duy trì và xử lý nhiều mục tiêu. Louvain và Leiden có thời gian thực thi thấp hơn đáng kể so với các thuật toán tiến hóa trong các phép đo hiện tại.
+Trên Polbooks và Football, HGA và MO-HGA-LS có thời gian thực thi thấp hơn lần lượt so với GA và NSGA-II do cơ chế Local Search giúp quần thể hội tụ sớm hơn (giảm số thế hệ cần thiết). Louvain và Leiden vẫn có thời gian thực thi thấp hơn đáng kể so với các thuật toán tiến hóa trong các phép đo hiện tại.
 
-Trên Email, thời gian thực thi của HGA và đặc biệt là MO-HGA-LS tăng mạnh. Nguyên nhân chủ yếu liên quan đến chi phí Local Search và việc xử lý đồ thị lớn hơn. MO-HGA-LS phải thực hiện nhiều lần tìm kiếm cục bộ trên các cá thể, đồng thời duy trì tập nghiệm Pareto.
-
-Tuy nhiên, số liệu thời gian của Email trong các tệp kết quả hiện chưa hoàn toàn nhất quán. Giá trị thời gian trong \texttt{runs.jsonl} khác với \texttt{runs\_normalized.csv} và \texttt{runs\_summary.csv}, trong khi các chỉ số chất lượng nghiệm tương ứng khớp nhau. Do đó, các giá trị thời gian của Email trong bảng trên cần được xác minh lại từ kết quả chạy gốc trước khi sử dụng làm kết luận định lượng cuối cùng.
+Trên Email, thời gian thực thi của HGA (8.138 giây) và đặc biệt là MO-HGA-LS (25.510 giây) tăng mạnh. Nguyên nhân chủ yếu liên quan đến chi phí Local Search và việc xử lý đồ thị lớn hơn. MO-HGA-LS phải thực hiện nhiều lần tìm kiếm cục bộ theo cơ chế Pareto-Lamarck trên các cá thể, đồng thời duy trì tập nghiệm Pareto.
 
 Ngoài ra, thời gian thực thi giữa các thuật toán cần được diễn giải thận trọng do các phương pháp sử dụng backend khác nhau. Leiden chạy thông qua PythonCall, Louvain sử dụng cài đặt Julia, còn các thuật toán tiến hóa có thể sử dụng CUDA cho đánh giá fitness. Vì vậy, thời gian hiện tại phản ánh hiệu năng của các cài đặt thực nghiệm cụ thể, chưa phải phép so sánh hoàn toàn độc lập với ảnh hưởng của ngôn ngữ và backend.
+
 \subsubsection{Phân tích độ ổn định của kết quả}
 
 Độ ổn định được đánh giá thông qua độ lệch chuẩn của các chỉ số $Q$, $\Phi$, NMI và ARI trên 30 lần chạy với các seed khác nhau. Độ lệch chuẩn nhỏ cho thấy kết quả ít biến động giữa các lần chạy.
 
-Trên Karate, các thuật toán GA, HGA, Leiden, NSGA-II và MO-HGA-LS có độ lệch chuẩn của $Q$ gần bằng 0. NMI và ARI cũng gần như không thay đổi. Đây là dấu hiệu cho thấy các thuật toán tìm được phân hoạch ổn định trên bộ dữ liệu nhỏ này.
+Trên Karate, các thuật toán GA, HGA, Leiden, NSGA-II và MO-HGA-LS có độ lệch chuẩn của cả bốn chỉ số $Q$, $\Phi$, NMI và ARI đều bằng 0. Đây là dấu hiệu cho thấy các thuật toán tìm được phân hoạch hoàn toàn ổn định trên bộ dữ liệu nhỏ này.
 
-Trên Polbooks, HGA có độ lệch chuẩn $Q$ gần bằng 0, trong khi GA và MO-HGA-LS cũng có độ biến động tương đối thấp. Độ lệch chuẩn NMI của các phương pháp tiến hóa nằm trong khoảng nhỏ, cho thấy kết quả tương đối ổn định qua các seed.
+Trên Polbooks, HGA có độ lệch chuẩn của cả bốn chỉ số bằng 0, trong khi GA và MO-HGA-LS cũng có độ biến động rất thấp (độ lệch chuẩn $Q$ bằng 0.0001). Độ lệch chuẩn NMI của các phương pháp tiến hóa nằm trong khoảng nhỏ (từ 0.0000 đến 0.0099), cho thấy kết quả tương đối ổn định qua các seed.
 
-Trên Football, HGA đạt độ lệch chuẩn $Q$ gần bằng 0 và độ lệch chuẩn NMI, ARI cũng gần bằng 0 trong bảng tổng hợp. MO-HGA-LS có độ lệch chuẩn $Q$ nhỏ, nhưng NMI và ARI biến động lớn hơn HGA. Điều này cho thấy HGA có tính ổn định cao trong cấu hình hiện tại trên bộ dữ liệu này.
+Trên Football, HGA đạt độ lệch chuẩn bằng 0 trên tất cả các chỉ số đánh giá. MO-HGA-LS có độ lệch chuẩn $Q$ rất nhỏ (0.0003), nhưng NMI (0.0181) và ARI (0.0502) biến động lớn hơn HGA. Điều này cho thấy HGA có tính ổn định cao trong cấu hình hiện tại trên bộ dữ liệu này.
 
-Trên Email, kết quả có độ biến động lớn hơn. MO-HGA-LS có độ lệch chuẩn $Q$ bằng 0.0072, NMI bằng 0.0245 và ARI bằng 0.0245. HGA có độ lệch chuẩn $Q$ thấp hơn, nhưng NMI và ARI vẫn có sự biến động giữa các lần chạy.
+Trên Email, kết quả có độ biến động lớn hơn. MO-HGA-LS có độ lệch chuẩn $Q$ bằng 0.0074, NMI bằng 0.0245 và ARI bằng 0.0243. HGA có độ lệch chuẩn $Q$ thấp hơn (0.0066), nhưng NMI (0.0273) và ARI (0.0255) vẫn có sự biến động giữa các lần chạy.
 
 Nhìn chung, độ ổn định phụ thuộc vào cả cấu trúc đồ thị và cơ chế tìm kiếm của thuật toán. Các đồ thị nhỏ như Karate thường cho kết quả ít biến động, trong khi Email có sự khác biệt lớn hơn giữa các lần chạy.
 
-Cần lưu ý rằng độ lệch chuẩn gần bằng 0 không đồng nghĩa với việc thuật toán luôn tìm được nghiệm tối ưu toàn cục. Nó chỉ cho thấy các lần chạy trong cấu hình hiện tại hội tụ về kết quả tương tự nhau.
+Cần lưu ý rằng độ lệch chuẩn bằng 0 không đồng nghĩa với việc thuật toán luôn tìm được nghiệm tối ưu toàn cục. Nó chỉ cho thấy các lần chạy trong cấu hình hiện tại hội tụ về kết quả tương tự nhau.
 
 \subsection{Phân tích ảnh hưởng của Local Search}
 \subsubsection{So sánh GA và GA kết hợp Local Search}
 
 Để đánh giá vai trò của cơ chế tìm kiếm cục bộ (Local Search), thuật toán GA được so sánh với HGA. Trong thiết lập thực nghiệm, hai thuật toán sử dụng cùng cơ chế tối ưu hóa Modularity, tuy nhiên HGA được bổ sung Local Search nhằm cải thiện chất lượng nghiệm sau quá trình tiến hóa.
 
-Trên bộ dữ liệu Karate, GA và HGA đạt kết quả giống nhau với Modularity $Q = 0.4198$, NMI bằng $0.6873$ và ARI bằng $0.5414$. Kết quả này cho thấy Local Search không tạo ra sự cải thiện đáng kể trên bộ dữ liệu này. Một nguyên nhân có thể là GA đã tìm được phân hoạch có chất lượng tốt, khiến không gian cải thiện thông qua tìm kiếm cục bộ bị hạn chế.
+Trên bộ dữ liệu Karate, GA và HGA đạt kết quả giống nhau với Modularity $Q = 0.4198$, Conductance $\Phi = 0.2875$, NMI bằng $0.6873$ và ARI bằng $0.5414$. Kết quả này cho thấy Local Search không tạo ra sự cải thiện đáng kể trên bộ dữ liệu này. Một nguyên nhân có thể là GA đã tìm được phân hoạch có chất lượng tốt, khiến không gian cải thiện thông qua tìm kiếm cục bộ bị hạn chế.
 
-Trên Polbooks, Modularity của hai thuật toán gần như không thay đổi, đều đạt khoảng $0.5272$ khi làm tròn đến bốn chữ số thập phân. Tuy nhiên, HGA cải thiện NMI từ $0.5592$ lên $0.5603$ và ARI từ $0.6544$ lên $0.6567$. Ngược lại, Conductance tăng từ $0.2678$ lên $0.2778$. Điều này cho thấy Local Search có thể cải thiện mức độ tương đồng với phân hoạch tham chiếu, nhưng không đảm bảo cải thiện đồng thời tất cả các chỉ số đánh giá.
+Trên Polbooks, Modularity của hai thuật toán giữ nguyên ở mức $0.5272$ khi làm tròn đến bốn chữ số thập phân. Tuy nhiên, HGA cải thiện NMI từ $0.5589$ lên $0.5603$ và ARI từ $0.6544$ lên $0.6567$. Ngược lại, Conductance tăng từ $0.2683$ lên $0.2778$. Điều này cho thấy Local Search có thể cải thiện mức độ tương đồng với phân hoạch tham chiếu, nhưng không đảm bảo cải thiện đồng thời tất cả các chỉ số đánh giá.
 
-Trên Football, HGA thể hiện hiệu quả rõ rệt hơn so với GA. Modularity tăng từ $0.6041$ lên $0.6046$, NMI tăng từ $0.8592$ lên $0.8903$ và ARI tăng từ $0.7183$ lên $0.8069$. Đặc biệt, mức cải thiện của NMI và ARI cho thấy Local Search hỗ trợ đáng kể quá trình tìm kiếm các phân hoạch có cấu trúc gần với phân hoạch tham chiếu. Đây là bộ dữ liệu thể hiện rõ lợi ích của việc kết hợp tìm kiếm tiến hóa với tìm kiếm cục bộ.
+Trên Football, HGA thể hiện hiệu quả rõ rệt hơn so với GA. Modularity tăng từ $0.6041$ lên $0.6046$, NMI tăng từ $0.8582$ lên $0.8903$ và ARI tăng từ $0.7152$ lên $0.8069$. Đặc biệt, mức cải thiện của NMI và ARI cho thấy Local Search hỗ trợ đáng kể quá trình tìm kiếm các phân hoạch có cấu trúc gần với phân hoạch tham chiếu. Đây là bộ dữ liệu thể hiện rõ lợi ích của việc kết hợp tìm kiếm tiến hóa với tìm kiếm cục bộ.
 
-Trên Email, HGA cải thiện cả ba chỉ số Modularity, NMI và ARI. Cụ thể, $Q$ tăng từ $0.3893$ lên $0.4035$, NMI tăng từ $0.4979$ lên $0.5091$ và ARI tăng từ $0.2170$ lên $0.2396$. Đồng thời, Conductance giảm từ $0.4294$ xuống $0.3957$, thể hiện sự cải thiện theo cả hai hướng đánh giá chất lượng phân hoạch. Tuy nhiên, lợi ích này đi kèm với chi phí tính toán tăng đáng kể do HGA phải thực hiện nhiều lời gọi Local Search.
+Trên Email, HGA cải thiện cả ba chỉ số Modularity, NMI và ARI. Cụ thể, $Q$ tăng từ $0.3893$ lên $0.4035$, NMI tăng từ $0.4978$ lên $0.5107$ và ARI tăng từ $0.2167$ lên $0.2402$. Đồng thời, Conductance giảm từ $0.4277$ xuống $0.3963$, thể hiện sự cải thiện theo cả hai hướng đánh giá chất lượng phân hoạch. Tuy nhiên, lợi ích này đi kèm với chi phí tính toán tăng đáng kể (thời gian trung bình tăng từ 1.151 giây lên 8.138 giây) do HGA phải thực hiện nhiều lời gọi Local Search.
 
 Nhìn chung, kết quả thực nghiệm cho thấy Local Search có khả năng cải thiện chất lượng phân hoạch, đặc biệt trên hai bộ dữ liệu Football và Email. Tuy nhiên, mức độ cải thiện phụ thuộc vào đặc điểm của từng mạng và không đồng đều trên tất cả các chỉ số. Do đó, việc tích hợp Local Search cần được đánh giá đồng thời dựa trên chất lượng nghiệm và chi phí tính toán, thay vì chỉ xét mức cải thiện của một chỉ số riêng lẻ.
-\subsubsection{Ảnh hưởng của các tham số Local Search}
-\subsubsection{Ảnh hưởng của các tham số Local Search}
 
-Trong cấu hình thực nghiệm chính, Local Search sử dụng các tham số được trình bày trong Bảng~\ref{tab:local_search_params}.
+% \subsubsection{Ảnh hưởng của các tham số Local Search}
+
+% Trong cấu hình thực nghiệm chính, Local Search sử dụng các tham số được trình bày trong Bảng~\ref{tab:local_search_params}.
+% \begin{table}[H]
+%     \centering
+%     \caption{Các tham số của cơ chế Local Search}
+%     \label{tab:local_search_params}
+%     \renewcommand{\arraystretch}{1.3}
+%     \begin{tabularx}{0.7\textwidth}{|>{\centering\arraybackslash}p{0.25\textwidth}|>{\centering\arraybackslash}X|}
+%         \hline
+%         \textbf{Tham số} & \textbf{Giá trị} \\
+%         \hline
+%         $p_{LS}$ & 0.2 \\
+%         \hline
+%         $I_{LS}$ & 30 \\
+%         \hline
+%         $\rho$ & Chưa xác định \\
+%         \hline
+%     \end{tabularx}
+% \end{table}
+
+\subsubsection{Ảnh hưởng của các tham số và cơ chế vận hành Local Search}
+
+Trong thiết lập thực nghiệm chính, cơ chế tìm kiếm cục bộ (Local Search) được cấu hình cố định thông qua các tham số điều khiển tần suất kích hoạt và ngân sách lặp nội bộ như trình bày trong Bảng~\ref{tab:local_search_params}. Cụ thể, xác suất áp dụng tìm kiếm cục bộ lên cá thể là $p_{LS} = 0.2$ và số bước lặp tối đa cho mỗi lần gọi là $I_{LS} = 30$. Việc giới hạn các tham số này ở mức vừa phải nhằm cân bằng giữa khả năng khai thác cục bộ (exploitation) và chi phí tính toán trên mỗi thế hệ tiến hóa.
+
 \begin{table}[H]
     \centering
-    \caption{Các tham số của cơ chế Local Search}
-    \label{tab:local_search_params}
     \renewcommand{\arraystretch}{1.3}
-    \begin{tabularx}{0.7\textwidth}{|>{\centering\arraybackslash}p{0.25\textwidth}|>{\centering\arraybackslash}X|}
+    \begin{tabularx}{0.85\textwidth}{
+        |>{\centering\arraybackslash}p{0.2\textwidth}
+        |>{\centering\arraybackslash}p{0.2\textwidth}
+        |>{\raggedright\arraybackslash}X|
+    }
         \hline
-        \textbf{Tham số} & \textbf{Giá trị} \\
+        \textbf{Tham số} & \textbf{Giá trị} & \textbf{Vai trò trong quá trình tiến hóa} \\
         \hline
-        $p_{LS}$ & 0.2 \\
+        $p_{LS}$ & 0.2 & Xác suất kích hoạt Local Search trên mỗi cá thể được chọn ở từng thế hệ. \\
         \hline
-        $I_{LS}$ & 30 \\
-        \hline
-        $\rho$ & Chưa xác định \\
+        $I_{LS}$ & 30 & Số vòng lặp di chuyển đỉnh tối đa cho mỗi lần gọi Local Search. \\
         \hline
     \end{tabularx}
+    \caption{Cấu hình tham số của cơ chế Local Search trong thực nghiệm chính}
+    \label{tab:local_search_params}
 \end{table}
-% \subsubsection{Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}
+
+Để đánh giá mức độ tác động thực tế của cấu hình tham số này, Bảng~\ref{tab:ls_behavior_stats} tổng hợp các chỉ số vận hành nội bộ của Local Search trong hai thuật toán HGA và MO-HGA-LS (trung bình trên 30 lần chạy), bao gồm: số lần gọi Local Search (\texttt{ls\_calls}), số lần tìm được nghiệm cải thiện (\texttt{ls\_improved}), tổng mức cải thiện tích lũy của hai hàm mục tiêu ($\sum \Delta Q$, $\sum \Delta \Phi$) và thời gian tiêu tốn riêng cho Local Search ($T_{LS}$).
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \begin{tabularx}{\textwidth}{
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X|
+    }
+        \hline
+        \textbf{Bộ dữ liệu} &
+        \textbf{Thuật toán} &
+        \textbf{Số lần gọi} &
+        \textbf{Số lần cải thiện} &
+        \textbf{$\sum \Delta Q$} &
+        \textbf{$\sum \Delta \Phi$} &
+        \textbf{$T_{LS}$ (giây)} \\ \hline
+
+        Karate & HGA & 623.9 & 543.0 & +15.64 & -14.62 & 0.007 \\ \hline
+        Karate & MO-HGA-LS & 639.5 & 546.5 & +21.25 & -23.44 & 0.007 \\ \hline
+
+        Polbooks & HGA & 744.2 & 680.2 & +7.75 & -8.54 & 0.023 \\ \hline
+        Polbooks & MO-HGA-LS & 943.6 & 593.1 & +12.17 & -14.81 & 0.036 \\ \hline
+
+        Football & HGA & 785.8 & 646.5 & +20.83 & -21.58 & 0.047 \\ \hline
+        Football & MO-HGA-LS & 1450.1 & 1229.7 & +53.33 & -63.21 & 0.090 \\ \hline
+
+        Email & HGA & 3357.1 & 3120.0 & +55.22 & -29.62 & 6.739 \\ \hline
+        Email & MO-HGA-LS & 3769.3 & 3103.3 & +209.11 & -228.33 & 23.176 \\ \hline
+    \end{tabularx}
+    \caption{Thống kê hoạt động nội bộ của cơ chế Local Search trên HGA và MO-HGA-LS}
+    \label{tab:ls_behavior_stats}
+\end{table}
+
+Từ số liệu trong Bảng~\ref{tab:ls_behavior_stats}, có thể rút ra một số nhận xét quan trọng về ảnh hưởng của thiết lập $p_{LS} = 0.2$ và $I_{LS} = 30$:
+
+\begin{itemize}
+    \item \textbf{Tỷ lệ cải thiện nghiệm cao:} Trên tất cả các bộ dữ liệu, tỷ lệ số lần gọi Local Search tạo ra sự cải thiện thực sự (\texttt{ls\_improved} / \texttt{ls\_calls}) duy trì ở mức cao, dao động từ 62.9\% (MO-HGA-LS trên Polbooks) đến trên 92.9\% (HGA trên Email). Điều này chứng tỏ ngưỡng lặp $I_{LS} = 30$ đủ lớn để thực hiện các phép di chuyển đỉnh có ích mà không rơi vào trạng thái dư thừa quá mức.
+    \item \textbf{Sự khác biệt giữa đơn mục tiêu và đa mục tiêu:} Trong HGA, mọi bước di chuyển đều hướng tới việc tăng $Q$ ($\sum \Delta Q > 0$). Ngược lại, trong MO-HGA-LS, cơ chế Pareto-Lamarck Local Search đồng thời thúc đẩy tăng $Q$ và giảm Conductance $\Phi$ ($\sum \Delta \Phi < 0$), dẫn đến tổng biến thiên tích lũy trên cả hai mục tiêu lớn hơn đáng kể so với HGA (ví dụ trên Email, $\sum \Delta Q$ đạt $+209.11$ và $\sum \Delta \Phi$ đạt $-228.33$).
+    \item \textbf{Chi phí tính toán chiếm tỷ trọng chi phối trên mạng lớn:} Với $p_{LS} = 0.2$, trên các đồ thị nhỏ như Karate, Polbooks và Football, thời gian dành cho Local Search ($T_{LS}$) chỉ dưới $0.1\text{ giây}$. Tuy nhiên, trên bộ dữ liệu Email, số lần gọi Local Search tăng lên trên 3300 lần, khiến $T_{LS}$ chiếm tới 82.8\% tổng thời gian chạy của HGA ($6.739\text{s} / 8.138\text{s}$) và 90.8\% tổng thời gian chạy của MO-HGA-LS ($23.176\text{s} / 25.510\text{s}$).
+\end{itemize}
+
+Cần lưu ý rằng trong phạm vi thực nghiệm hiện tại, các tham số $p_{LS}$ và $I_{LS}$ được giữ cố định để đảm bảo tính công bằng khi so sánh giữa các thuật toán, chưa thực hiện khảo sát độ nhạy (sensitivity analysis) với nhiều mức giá trị khác nhau. Việc điều chỉnh giảm $p_{LS}$ hoặc thiết lập cơ chế giảm dần $I_{LS}$ theo số thế hệ là hướng cải tiến tiềm năng nhằm tiết kiệm chi phí tính toán trên các mạng quy mô lớn như Email.
+
+\subsubsection{Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}
 
 \subsection{Thảo luận kết quả}
 \subsubsection{Ưu điểm của phương pháp đề xuất}

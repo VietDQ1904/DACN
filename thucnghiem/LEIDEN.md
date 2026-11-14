@@ -1,12 +1,11 @@
 # Leiden backend
 
-The proposed algorithm and all GA variants are pure Julia. For the Leiden baseline, the project intentionally uses an optional PythonCall bridge because a stable, current Julia-native Leiden API is not part of the core Graphs.jl API.
+Thuật toán được đề xuất và tất cả các biến thể GA hoàn toàn viết bằng ngôn ngữ Julia. Đối với đường cơ sở Leiden, dự án cố ý sử dụng cầu nối PythonCall tùy chọn vì một API Leiden thuần túy, ổn định và hiện đại của Julia chưa nằm trong lõi của API Graphs.jl.
 
-Install in Julia:
-
-```julia
+Cài đặt trong Julia:
+```Julia
 using Pkg
 Pkg.add("PythonCall")
 ```
 
-Then make sure the Python environment visible to PythonCall contains `python-igraph` and `leidenalg`. If Leiden is not installed, run the main experiment with `--skip-leiden`; do not silently substitute Louvain and label it Leiden.
+Sau đó, hãy đảm bảo môi trường Python mà PythonCall nhìn thấy có chứa python-igraph và leidenalg. Nếu Leiden chưa được cài đặt, hãy chạy thí nghiệm chính với tham số `--skip-leiden`; tuyệt đối không âm thầm thay thế bằng Louvain mà lại gán nhãn là Leiden.
