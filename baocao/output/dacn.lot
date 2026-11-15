@@ -4,6 +4,4 @@
 \contentsline {table}{\numberline {3.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Cấu hình môi trường phần mềm thực nghiệm}}{56}{table.caption.8}%
 \contentsline {table}{\numberline {3.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Cấu hình phần cứng của máy thực nghiệm}}{57}{table.caption.9}%
 \contentsline {table}{\numberline {3.3}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Các công cụ và thư viện sử dụng trong hệ thống thực nghiệm}}{58}{table.caption.10}%
-\contentsline {table}{\numberline {3.4}{\ignorespaces \xpg@aux {}{latex}\ignorespaces So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}}{67}{table.caption.15}%
-\contentsline {table}{\numberline {3.5}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Cấu hình tham số của cơ chế Local Search trong thực nghiệm chính}}{70}{table.caption.16}%
-\contentsline {table}{\numberline {3.6}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Thống kê hoạt động nội bộ của cơ chế Local Search trên HGA và MO-HGA-LS}}{71}{table.caption.17}%
+\contentsline {table}{\numberline {3.4}{\ignorespaces \xpg@aux {}{latex}\ignorespaces So sánh chi phí tính toán của MO-HGA-LS với các thuật toán đối chứng}}{72}{table.caption.17}%

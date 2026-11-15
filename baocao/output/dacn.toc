@@ -81,12 +81,12 @@
 \contentsline {subsection}{\numberline {3.4}Phân tích ảnh hưởng của Local Search}{69}{subsection.3.4}%
 \contentsline {subsubsection}{\numberline {3.4.1}So sánh GA và GA kết hợp Local Search}{69}{subsubsection.3.4.1}%
 \contentsline {subsubsection}{\numberline {3.4.2}Ảnh hưởng của các tham số và cơ chế vận hành Local Search}{70}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}{72}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Thảo luận kết quả}{72}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Ưu điểm của phương pháp đề xuất}{72}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Hạn chế của phương pháp}{72}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Khả năng áp dụng và mở rộng}{72}{subsubsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.6}Kết luận chương}{72}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Kết luận và hướng phát triển}{72}{subsection.3.7}%
-\contentsline {section}{\mbox {Danh mục tài liệu tham khảo}}{72}{subsection.3.7}%
-\contentsline {section}{Phụ lục}{75}{subsection.3.7}%
+\contentsline {subsubsection}{\numberline {3.4.3}Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}{71}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Thảo luận kết quả}{74}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Ưu điểm của phương pháp đề xuất}{75}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Hạn chế của phương pháp}{76}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Khả năng áp dụng và mở rộng}{77}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Kết luận chương}{79}{subsection.3.6}%
+\contentsline {subsection}{\numberline {3.7}Kết luận và hướng phát triển}{80}{subsection.3.7}%
+\contentsline {section}{\mbox {Danh mục tài liệu tham khảo}}{82}{Item.32}%
+\contentsline {section}{Phụ lục}{84}{Item.32}%

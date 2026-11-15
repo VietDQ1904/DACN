@@ -41,6 +41,19 @@ const METRIC_ALIASES = Dict(
     :ls_calls => [:ls_calls],
     :ls_changed => [:ls_changed],
     :ls_improved => [:ls_improved],
+    :ls_delta_q => [
+        :ls_delta_q,
+        :sum_delta_q,
+        :ls_sum_delta_q,
+        :total_delta_q
+    ],
+
+    :ls_delta_phi => [
+        :ls_delta_phi,
+        :sum_delta_phi,
+        :ls_sum_delta_phi,
+        :total_delta_phi
+    ],
     :k => [:k, :maxQ_K],
     :generations => [:generations],
     :seed => [:seed],
@@ -64,6 +77,769 @@ algo_color(a) = get(COLORS, a, "#666666")
 
 function to_string_dict(x)
     Dict{String,Any}(String(k) => v for (k, v) in pairs(x))
+end
+
+function ls_bar_color(metric::Symbol, algo::AbstractString)
+
+    palette = Dict(
+        :ls_calls => Dict(
+            "HGA"       => "#9ecae1",
+            "MO-HGA-LS" => "#2171b5"
+        ),
+
+        :ls_improved => Dict(
+            "HGA"       => "#a1d99b",
+            "MO-HGA-LS" => "#238b45"
+        ),
+
+        :ls_dq => Dict(
+            "HGA"       => "#9ecae1",
+            "MO-HGA-LS" => "#2171b5"
+        ),
+
+        :ls_dphi => Dict(
+            "HGA"       => "#fcae91",
+            "MO-HGA-LS" => "#cb181d"
+        )
+    )
+
+    metric_palette = get(palette, metric, nothing)
+
+    isnothing(metric_palette) && return :gray
+
+    return get(metric_palette, String(algo), :gray)
+end
+
+
+function ls_metric_mean(
+    sub::DataFrame,
+    dataset::AbstractString,
+    metric::Symbol
+)
+    metric in propertynames(sub) || return NaN
+
+    values = finite_values(sub, dataset, metric)
+    return mean_or_nan(values)
+end
+
+function ls_add_bar_label!(
+    ax,
+    x::Real,
+    y::Real;
+    digits::Int = 1,
+    color = :black,
+    fontsize::Int = 9
+)
+    isfinite(y) || return
+
+    label = @sprintf("%.*f", digits, y)
+
+    offset = max(abs(y) * 0.012, 0.015)
+
+    text!(
+        ax,
+        x,
+        y >= 0 ? y + offset : y - offset;
+        text = label,
+        align = (:center, y >= 0 ? :bottom : :top),
+        fontsize = fontsize,
+        color = color
+    )
+end
+
+function ls_add_point_label!(
+    ax,
+    x::Real,
+    y::Real;
+    digits::Int = 3,
+    color = :black,
+    fontsize::Int = 9
+)
+    isfinite(y) || return
+
+    label = @sprintf("%.*f", digits, y)
+
+    offset = max(abs(y) * 0.025, 0.015)
+
+    text!(
+        ax,
+        x,
+        y + offset;
+        text = label,
+        align = (:center, :bottom),
+        fontsize = fontsize,
+        color = color
+    )
+end
+
+
+function add_ls_activity_panel!(
+    ax,
+    df::DataFrame,
+    datasets::Vector{String}
+)
+    algos = ["HGA", "MO-HGA-LS"]
+
+    metrics = [
+        (:ls_calls, "Calls"),
+        (:ls_improved, "Improvements")
+    ]
+
+    metric_centers = [-0.22, 0.22]
+    algo_offsets = [-0.075, 0.075]
+
+    bar_width = 0.14
+    has_data = false
+
+    for (dataset_idx, dataset) in enumerate(datasets)
+        for (metric_idx, (metric, _)) in enumerate(metrics)
+            center = dataset_idx + metric_centers[metric_idx]
+
+            for (algo_idx, algo) in enumerate(algos)
+                algo_data = df[df.algo .== algo, :]
+
+                value = ls_metric_mean(
+                    algo_data,
+                    dataset,
+                    metric
+                )
+
+                isfinite(value) || continue
+
+                has_data = true
+
+                x = center + algo_offsets[algo_idx]
+                color = ls_bar_color(metric, algo)
+
+                barplot!(
+                    ax,
+                    [x],
+                    [value];
+                    width = bar_width,
+                    color = color,
+                    strokecolor = :transparent
+                )
+
+                ls_add_bar_label!(
+                    ax,
+                    x,
+                    value;
+                    digits = 1,
+                    color = color,
+                    fontsize = 9
+                )
+            end
+        end
+    end
+
+    if !has_data
+        add_no_data!(ax, "No Local Search activity data")
+    end
+
+    return has_data
+end
+
+function add_ls_objective_panel!(
+    fig,
+    position,
+    df::DataFrame,
+    datasets::Vector{String}
+)
+    algos = ["HGA", "MO-HGA-LS"]
+
+    ax = Axis(
+        fig[position...],
+        title = "(b) Objective Variation and LS Cost",
+        xlabel = "Dataset",
+        ylabel = "Cumulative objective variation",
+        xticks = (1:length(datasets), datasets)
+    )
+
+    ax.titlesize = 15
+    ax.xlabelsize = 12
+    ax.ylabelsize = 12
+    ax.xticklabelsize = 11
+    ax.yticklabelsize = 11
+
+    ax.xgridvisible = false
+    ax.ygridvisible = true
+    ax.ygridcolor = (:gray, 0.22)
+    ax.ygridwidth = 0.8
+
+    metrics = [
+        :ls_dq,
+        :ls_dphi
+    ]
+
+    metric_centers = [-0.20, 0.20]
+    algo_offsets = [-0.075, 0.075]
+
+    bar_width = 0.14
+    has_bar_data = false
+
+    all_objective_values = Float64[]
+
+    for (dataset_idx, dataset) in enumerate(datasets)
+        for (metric_idx, metric) in enumerate(metrics)
+            center = dataset_idx + metric_centers[metric_idx]
+
+            for (algo_idx, algo) in enumerate(algos)
+                algo_data = df[df.algo .== algo, :]
+
+                value = ls_metric_mean(
+                    algo_data,
+                    dataset,
+                    metric
+                )
+
+                isfinite(value) || continue
+
+                has_bar_data = true
+                push!(all_objective_values, value)
+
+                x = center + algo_offsets[algo_idx]
+                color = ls_bar_color(metric, algo)
+
+                barplot!(
+                    ax,
+                    [x],
+                    [value];
+                    width = bar_width,
+                    color = color,
+                    strokecolor = :transparent
+                )
+
+                ls_add_bar_label!(
+                    ax,
+                    x,
+                    value;
+                    digits = 2,
+                    color = color,
+                    fontsize = 9
+                )
+            end
+        end
+    end
+
+    if !has_bar_data
+        add_no_data!(ax, "No objective variation data")
+    end
+
+    if !isempty(all_objective_values)
+        ymin = min(0.0, minimum(all_objective_values))
+        ymax = max(0.0, maximum(all_objective_values))
+
+        margin = max((ymax - ymin) * 0.15, 1.0)
+
+        ylims!(ax, ymin - margin, ymax + margin)
+    end
+
+    axr = Axis(
+        fig[position...],
+        yaxisposition = :right,
+        ylabel = "Local Search time (seconds)",
+        backgroundcolor = :transparent
+    )
+
+    axr.ylabelsize = 12
+    axr.yticklabelsize = 11
+
+    axr.xgridvisible = false
+    axr.ygridvisible = false
+
+    axr.xticksvisible = false
+    axr.xticklabelsvisible = false
+    axr.xlabelvisible = false
+
+    axr.leftspinevisible = false
+    axr.bottomspinevisible = false
+    axr.topspinevisible = false
+    axr.rightspinevisible = true
+
+    # Thu thập thời gian trung bình.
+    all_time_values = Float64[]
+
+    time_data = Dict{String, Vector{Float64}}()
+
+    for algo in algos
+        algo_data = df[df.algo .== algo, :]
+
+        values = [
+            ls_metric_mean(
+                algo_data,
+                dataset,
+                :ls_time
+            )
+            for dataset in datasets
+        ]
+
+        time_data[algo] = values
+
+        append!(
+            all_time_values,
+            filter(isfinite, values)
+        )
+    end
+
+    if !isempty(all_time_values)
+        ymax_time = maximum(all_time_values)
+        ylims!(
+            axr,
+            0,
+            ymax_time > 0 ? ymax_time * 1.30 : 1.0
+        )
+    end
+
+    for algo in algos
+        values = time_data[algo]
+
+        valid_indices = findall(isfinite, values)
+
+        isempty(valid_indices) && continue
+
+        color = algo_color(algo)
+
+        lines!(
+            axr,
+            valid_indices,
+            values[valid_indices];
+            color = color,
+            linewidth = 2.5
+        )
+
+        scatter!(
+            axr,
+            valid_indices,
+            values[valid_indices];
+            color = color,
+            markersize = 10
+        )
+
+        for idx in valid_indices
+            ls_add_point_label!(
+                axr,
+                idx,
+                values[idx];
+                digits = 3,
+                color = color,
+                fontsize = 9
+            )
+        end
+    end
+
+    return ax, axr
+end
+
+function fig_runtime_comparison(
+    df::DataFrame,
+    figure_root::AbstractString
+)
+    algos = ORDER
+
+    preferred_order = [
+        "karate",
+        "polbooks",
+        "football",
+        "email"
+    ]
+
+    available_datasets = Set(lowercase.(String.(df.dataset)))
+
+    datasets = filter(
+        d -> d in available_datasets,
+        preferred_order
+    )
+
+    isempty(datasets) && begin
+        @warn "No datasets available for runtime comparison."
+        return false
+    end
+
+    runtime_stats = Dict{Tuple{String,String},Tuple{Float64,Float64}}()
+    all_lower = Float64[]
+    all_upper = Float64[]
+
+    for dataset in datasets
+        for algo in algos
+            sub = df[df.algo .== algo, :]
+            values = finite_values(sub, dataset, :runtime)
+
+            filter!(>(0), values)
+            isempty(values) && continue
+
+            μ = mean(values)
+            σ = std_or_zero(values)
+
+            runtime_stats[(dataset, algo)] = (μ, σ)
+
+            lower = max(μ - σ, μ * 0.05)
+            upper = μ + σ
+            push!(all_lower, lower)
+            push!(all_upper, upper)
+        end
+    end
+
+    isempty(all_lower) && begin
+        @warn "No valid runtime data."
+        return false
+    end
+
+    fig = Figure(
+        size = (1650, 850),
+        fontsize = 13,
+        backgroundcolor = :white
+    )
+
+    ax = Axis(
+        fig[1, 1],
+        title = "(a) Runtime Comparison Across Algorithms",
+        xlabel = "Dataset",
+        ylabel = "Runtime (seconds, logarithmic scale)",
+        yscale = log10
+    )
+
+    ax.titlesize = 17
+    ax.xlabelsize = 13
+    ax.ylabelsize = 13
+    ax.xticklabelsize = 12
+    ax.yticklabelsize = 11
+
+    ax.xgridvisible = true
+    ax.xgridcolor = (:gray, 0.22)
+    ax.ygridvisible = true
+    ax.ygridcolor = (:gray, 0.22)
+    ax.ygridwidth = 0.8
+
+    n_algos = length(algos)
+    
+    group_width = 0.78
+    bar_width = group_width / n_algos
+    offsets = range(
+        -group_width / 2 + bar_width / 2,
+        group_width / 2 - bar_width / 2;
+        length = n_algos
+    )
+
+    for (dataset_idx, dataset) in enumerate(datasets)
+        for (algo_idx, algo) in enumerate(algos)
+
+            key = (dataset, algo)
+            haskey(runtime_stats, key) || continue
+
+            μ, σ = runtime_stats[key]
+            x = dataset_idx + offsets[algo_idx]
+            color = algo_color(algo)
+
+            lower = max(μ - σ, μ * 0.05)
+            upper = μ + σ
+
+            barplot!(
+                ax,
+                [x],
+                [μ];
+                width = bar_width * 0.88,
+                color = color
+            )
+
+            rangebars!(
+                ax,
+                [x],
+                [lower],
+                [upper];
+                color = :black,
+                linewidth = 1.6,
+                whiskerwidth = 7
+            )
+
+            mean_str = @sprintf("%.3f", μ)
+            delta_str = @sprintf("±%.3f", σ)
+
+            text!(
+                ax,
+                x,
+                upper * 1.12;
+                text = mean_str,
+                align = (:center, :bottom),
+                fontsize = 9.5,
+                color = :black
+            )
+
+            text!(
+                ax,
+                x + bar_width * 0.14,
+                μ;
+                text = delta_str,
+                align = (:left, :center),
+                fontsize = 8.5,
+                color = :black
+            )
+        end
+    end
+
+    ax.xticks = (1:length(datasets), datasets)
+
+    ymin = minimum(all_lower) * 0.4
+    ymax = maximum(all_upper) * 2.5
+    ylims!(ax, ymin, ymax)
+
+    legend_elements = [
+        PolyElement(color = algo_color(algo))
+        for algo in algos
+    ]
+
+    legend_labels = [
+        algo_label(algo)
+        for algo in algos
+    ]
+
+    Legend(
+        fig[2, 1],
+        legend_elements,
+        legend_labels;
+        orientation = :horizontal,
+        framevisible = false,
+        tellwidth = false,
+        tellheight = true,
+        halign = :center,
+        labelsize = 12,
+        patchsize = (16, 12),
+        colgap = 25
+    )
+
+    rowgap!(fig.layout, 20)
+
+    out = joinpath(figure_root, "runtime")
+    mkpath(out)
+
+    save_figure(
+        fig,
+        joinpath(out, "runtime_comparison.png")
+    )
+
+    return true
+end
+
+function fig_ls_behavior(
+    df::DataFrame,
+    figure_root::AbstractString
+)
+    selected_algos = ["HGA", "MO-HGA-LS"]
+
+    sub = df[in.(df.algo, Ref(selected_algos)), :]
+
+    if isempty(sub)
+        @warn "No HGA or MO-HGA-LS records available for Local Search analysis."
+        return false
+    end
+
+    preferred_order = [
+        "karate",
+        "polbooks",
+        "football",
+        "email"
+    ]
+
+    available_datasets = Set(lowercase.(String.(sub.dataset)))
+
+    datasets = filter(
+        d -> d in available_datasets,
+        preferred_order
+    )
+
+    if isempty(datasets)
+        @warn "No recognized datasets found."
+        return false
+    end
+
+    required_metrics = [
+        :ls_calls,
+        :ls_improved,
+        :ls_dq,
+        :ls_dphi,
+        :ls_time
+    ]
+
+    missing_metrics = filter(
+        metric -> !(metric in propertynames(sub)),
+        required_metrics
+    )
+
+    if !isempty(missing_metrics)
+        @warn "Missing Local Search fields in JSONL" missing_metrics
+    end
+
+    fig = Figure(
+        size = (1950, 1200),
+        fontsize = 13,
+        backgroundcolor = :white
+    )
+
+    # Label(
+    #     fig[1, 1:2],
+    #     "LOCAL SEARCH BEHAVIOR ANALYSIS",
+    #     fontsize = 23,
+    #     font = :bold
+    # )
+
+    ax1 = Axis(
+        fig[3, 1],
+        title = "(a) Local Search Activity",
+        xlabel = "Dataset",
+        ylabel = "Number of operations",
+        xticks = (1:length(datasets), datasets)
+    )
+
+    ax1.titlesize = 15
+    ax1.xlabelsize = 12
+    ax1.ylabelsize = 12
+    ax1.xticklabelsize = 11
+    ax1.yticklabelsize = 11
+
+    ax1.xgridvisible = false
+    ax1.ygridvisible = true
+    ax1.ygridcolor = (:gray, 0.22)
+    ax1.ygridwidth = 0.8
+
+    add_ls_activity_panel!(
+        ax1,
+        sub,
+        datasets
+    )
+
+    ax2, ax2r = add_ls_objective_panel!(
+        fig,
+        (3, 2),
+        sub,
+        datasets
+    )
+
+    algorithm_elements = [
+        PolyElement(
+            color = "#9ecae1",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#2171b5",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#a1d99b",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#238b45",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#fcae91",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#cb181d",
+            strokecolor = :transparent
+        )
+    ]
+
+    algorithm_labels = [
+        "HGA — Calls",
+        "MO-HGA-LS — Calls",
+        "HGA — Improvements",
+        "MO-HGA-LS — Improvements",
+        "HGA — Objective Δ",
+        "MO-HGA-LS — Objective Δ"
+    ]
+
+    Label(
+        fig[4, 1:2],
+        "ALGORITHM",
+        fontsize = 12,
+        font = :bold,
+        color = :gray25,
+        halign = :center
+    )
+
+    Legend(
+        fig[5, 1:2],
+        algorithm_elements,
+        algorithm_labels;
+        orientation = :horizontal,
+        framevisible = false,
+        tellwidth = false,
+        tellheight = true,
+        halign = :center,
+        labelsize = 11,
+        patchsize = (22, 14),
+        padding = (10, 5, 10, 5),
+        colgap = 25
+    )
+
+    metric_elements = [
+        PolyElement(
+            color = "#2171b5",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#238b45",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#2171b5",
+            strokecolor = :transparent
+        ),
+        PolyElement(
+            color = "#cb181d",
+            strokecolor = :transparent
+        ),
+        LineElement(
+            color = :gray25,
+            linewidth = 2.5
+        )
+    ]
+
+    metric_labels = [
+        "LS calls",
+        "LS improvements",
+        "ΣΔQ",
+        "ΣΔΦ",
+        "LS execution time"
+    ]
+
+    Label(
+        fig[6, 1:2],
+        "METRIC REPRESENTATION",
+        fontsize = 12,
+        font = :bold,
+        color = :gray25,
+        halign = :center
+    )
+
+    Legend(
+        fig[7, 1:2],
+        metric_elements,
+        metric_labels;
+        orientation = :horizontal,
+        framevisible = false,
+        tellwidth = false,
+        tellheight = true,
+        halign = :center,
+        labelsize = 11,
+        patchsize = (22, 14),
+        padding = (10, 5, 10, 5),
+        colgap = 25
+    )
+
+    colgap!(fig.layout, 55)
+    rowgap!(fig.layout, 15)
+
+    out = joinpath(figure_root, "local_search")
+    mkpath(out)
+
+    save_figure(
+        fig,
+        joinpath(out, "ls_behavior_comparison.png")
+    )
+
+    return true
 end
 
 function parse_json_records(raw::String)
@@ -346,6 +1122,26 @@ function main()
     # Duyệt qua từng thuật toán thay vì Dataset để xuất thư mục thuật toán
     for algo in algorithms_in(df)
         made += length(per_algo_figures(df, algo, figure_dir))
+    end
+
+    try
+    if fig_ls_behavior(df, figure_dir)
+        made += 1
+    end
+    catch err
+        @warn "Could not create Local Search behavior figure" exception=(
+            err, catch_backtrace()
+        )
+    end
+
+    try
+    if fig_runtime_comparison(df, figure_dir)
+        made += 1
+    end
+    catch err
+        @warn "Could not create Runtime comparison figure" exception=(
+            err, catch_backtrace()
+        )
     end
 
     println()

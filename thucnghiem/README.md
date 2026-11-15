@@ -71,12 +71,6 @@ Nếu chạy theo phạm vi seed (ví dụ chạy seed từ 10 đến 20):
 JULIA_NUM_THREADS=20 julia --project=. scripts/run_experiments.jl   --datasets karate,polbooks,football,email   --algos GA,HGA,NSGA2,MO-HGA-LS,Louvain,Leiden --runs 10 --seed-start 10 --seed-end 20 --out results/main
 ```
 
-Nếu chạy với tham số đầu vào nhẹ hơn (phù hợp hơn với dữ liệu lớn như Amazon):
-
-```bash
-JULIA_NUM_THREADS=20 julia --project=. scripts/run_experiments.jl   --datasets amazon --algos GA,HGA,NSGA2,MO-HGA-LS,Louvain,Leiden   --runs 30 --out results/main --preset-fast
-```
-
 ## Phân tích:
 
 ```bash

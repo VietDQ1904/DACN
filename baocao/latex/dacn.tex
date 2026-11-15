@@ -516,8 +516,8 @@ Cấu trúc mạng phức tạp xuất hiện phổ biến trong nhiều lĩnh v
         \item Trong đồ thị có trọng số, các phần tử ma trận mang giá trị trọng số $A_{ij} = w_{ij}$ phản ánh cường độ quan hệ \cite{Traag2014}.
     \end{itemize}
     
-    \item \textbf{Biểu diễn đại số và ma trận khối (Algebraic \& Blockmodelling):} Các nút có kiểu mẫu liên kết tương tự nhau được coi là tương đương cấu trúc (\textit{structurally equivalent}) và có thể thay thế cho nhau về mặt vai trò. Phương pháp blockmodelling gộp các nhóm nút tương đương thành các "siêu nút" (\textit{super-points}) để tạo thành đồ thị hình ảnh thu nhỏ cấu trúc mạng \cite{Scott2012}.
-    \item \textbf{Biểu diễn không gian và bản đồ (Spatial \& Cartographical Approaches):} Sử dụng kỹ thuật định vị đa chiều (\textit{Multidimensional Scaling}) để đặt các nút vào không gian hình học 2D hoặc 3D, trong đó khoảng cách thẳng giữa hai điểm phản ánh mức độ tương đồng hoặc độ xa cách quan hệ thực tế giữa các nút \cite{Scott2012}.
+    \item \textbf{Biểu diễn đại số và ma trận khối (Algebraic \& Blockmodelling):} Các nút có kiểu mẫu liên kết tương tự nhau được coi là tương đương cấu trúc (structurally equivalent) và có thể thay thế cho nhau về mặt vai trò. Phương pháp blockmodelling gộp các nhóm nút tương đương thành các "siêu nút" (super-points) để tạo thành đồ thị hình ảnh thu nhỏ cấu trúc mạng \cite{Scott2012}.
+    \item \textbf{Biểu diễn không gian và bản đồ (Spatial \& Cartographical Approaches):} Sử dụng kỹ thuật định vị đa chiều (Multidimensional Scaling) để đặt các nút vào không gian hình học 2D hoặc 3D, trong đó khoảng cách thẳng giữa hai điểm phản ánh mức độ tương đồng hoặc độ xa cách quan hệ thực tế giữa các nút \cite{Scott2012}.
 \end{itemize}
 
 \subsubsection{Các đặc trưng cơ bản của mạng phức tạp}
@@ -525,34 +525,34 @@ Cấu trúc mạng phức tạp xuất hiện phổ biến trong nhiều lĩnh v
 \begin{itemize}
     \item \textbf{Bậc của nút:}
     \begin{itemize}
-        \item \textit{Bậc ($k_i$):} Là tổng số cạnh nối trực tiếp tới nút $i$.
-        \item \textit{Bậc vào / Bậc ra:} Trong mạng có hướng, bậc được phân thành \textit{indegree} (số liên kết đi vào nút) và \textit{outdegree} (số liên kết đi ra từ nút)~\cite{Scott2012}.
+        \item Bậc ($k_i$): Là tổng số cạnh nối trực tiếp tới nút $i$.
+        \item Bậc vào / Bậc ra: Trong mạng có hướng, bậc được phân thành indegree (số liên kết đi vào nút) và outdegree (số liên kết đi ra từ nút)~\cite{Scott2012}.
     \end{itemize}
 
     \item \textbf{Đường đi ngắn nhất và khoảng cách:}
     \begin{itemize}
-        \item \textit{Khoảng cách ($d_{ij}$):} Được đo bằng số lượng cạnh ít nhất cần đi qua để kết nối nút $i$ và nút $j$.
-        \item \textit{Hiện tượng thế giới nhỏ (Small-world property):} Mặc dù quy mô mạng rất lớn, khoảng cách đường đi trung bình giữa hai nút ngẫu nhiên lại rất ngắn (trung bình qua khoảng 5--6 liên kết trung gian, hay "sáu mức độ kết nối")~\cite{Scott2012}.
+        \item Khoảng cách ($d_{ij}$): Được đo bằng số lượng cạnh ít nhất cần đi qua để kết nối nút $i$ và nút $j$.
+        \item Hiện tượng thế giới nhỏ (Small-world property): Mặc dù quy mô mạng rất lớn, khoảng cách đường đi trung bình giữa hai nút ngẫu nhiên lại rất ngắn (trung bình qua khoảng 5--6 liên kết trung gian, hay "sáu mức độ kết nối")~\cite{Scott2012}.
     \end{itemize}
 
     \item \textbf{Mật độ mạng (Density):}
     \begin{itemize}
-        \item \textit{Mật độ toàn cục (Global Density):} Tỷ lệ giữa số lượng cạnh thực tế hiện có ($m$) so với tổng số cạnh tối đa có thể tồn tại giữa $n$ nút. Khi quy mô mạng $n$ tăng lên, mật độ toàn cục thường có xu hướng giảm do giới hạn duy trì quan hệ của các nút.
-        \item \textit{Mật độ lân cận (Neighbourhood Density):} Tỷ lệ liên kết thực tế giữa các nút tiếp xúc trực tiếp trong vùng lân cận của một nút trung tâm~\cite{Scott2012}.
+        \item Mật độ toàn cục (Global Density): Tỷ lệ giữa số lượng cạnh thực tế hiện có ($m$) so với tổng số cạnh tối đa có thể tồn tại giữa $n$ nút. Khi quy mô mạng $n$ tăng lên, mật độ toàn cục thường có xu hướng giảm do giới hạn duy trì quan hệ của các nút.
+        \item Mật độ lân cận (Neighbourhood Density): Tỷ lệ liên kết thực tế giữa các nút tiếp xúc trực tiếp trong vùng lân cận của một nút trung tâm~\cite{Scott2012}.
     \end{itemize}
 
     \item \textbf{Các chỉ số độ trung tâm (Centrality Measures):}
     \begin{itemize}
-        \item \textit{Độ trung tâm cục bộ (Local / Degree Centrality):} Đo lường mức độ kết nối trực tiếp của một nút trong vùng lân cận trực tiếp của nó.
-        \item \textit{Độ trung tâm cận kề (Closeness Centrality):} Bằng nghịch đảo tổng khoảng cách từ một nút tới tất cả các nút khác trong mạng; nút có tổng khoảng cách ngắn nhất là nút trung tâm toàn cục.
-        \item \textit{Độ trung tâm trung gian (Betweenness Centrality):} Đo lường tần suất một nút nằm trên đường đi ngắn nhất nối giữa các cặp nút khác. Nút có độ trung tâm cao đóng vai trò là cầu nối lấp đầy các lỗ hổng cấu trúc (\textit{structural holes}) và kiểm soát luồng thông tin trong mạng~\cite{Scott2012}.
+        \item Độ trung tâm cục bộ (Local / Degree Centrality): Đo lường mức độ kết nối trực tiếp của một nút trong vùng lân cận trực tiếp của nó.
+        \item Độ trung tâm cận kề (Closeness Centrality): Bằng nghịch đảo tổng khoảng cách từ một nút tới tất cả các nút khác trong mạng; nút có tổng khoảng cách ngắn nhất là nút trung tâm toàn cục.
+        \item Độ trung tâm trung gian (Betweenness Centrality): Đo lường tần suất một nút nằm trên đường đi ngắn nhất nối giữa các cặp nút khác. Nút có độ trung tâm cao đóng vai trò là cầu nối lấp đầy các lỗ hổng cấu trúc (structural holes) và kiểm soát luồng thông tin trong mạng~\cite{Scott2012}.
     \end{itemize}
 
     \item \textbf{Mức độ tập trung và cấu trúc phân nhánh (Centralisation \& Subgraphs):}
     \begin{itemize}
-        \item \textit{Mức độ tập trung toàn mạng (Centralisation):} Đánh giá xem toàn bộ cấu trúc mạng có tổ chức xoay quanh một hoặc một nhóm nút trung tâm hay không.
-        \item \textit{Thành phần (Component):} Đồ thị con trong đó mọi nút đều được kết nối trực tiếp hoặc gián tiếp với nhau. Phân thành thành phần yếu (\textit{weak component}) và thành phần mạnh (\textit{strong component}) tùy theo việc có xét đến hướng của cạnh hay không.
-        \item \textit{Clique:} Nhóm nút trong đó mọi cặp nút đều có kết nối trực tiếp và đối ứng với nhau. Khái niệm này được mở rộng thành \textit{n-clique}, \textit{clan}, \textit{k-plex} và vòng xã hội (\textit{social circle})~\cite{Scott2012}.
+        \item Mức độ tập trung toàn mạng (Centralisation): Đánh giá xem toàn bộ cấu trúc mạng có tổ chức xoay quanh một hoặc một nhóm nút trung tâm hay không.
+        \item Thành phần (Component): Đồ thị con trong đó mọi nút đều được kết nối trực tiếp hoặc gián tiếp với nhau. Phân thành thành phần yếu (weak component) và thành phần mạnh (strong component) tùy theo việc có xét đến hướng của cạnh hay không.
+        \item Clique: Nhóm nút trong đó mọi cặp nút đều có kết nối trực tiếp và đối ứng với nhau. Khái niệm này được mở rộng thành n-clique, clan, k-plex và vòng xã hội (social circle)~\cite{Scott2012}.
     \end{itemize}
 \end{itemize}
 
@@ -561,15 +561,15 @@ Cấu trúc mạng phức tạp xuất hiện phổ biến trong nhiều lĩnh v
 \begin{itemize}
     \item \textbf{Phân loại theo hướng và trọng số cạnh:}
     \begin{itemize}
-        \item \textit{Mạng vô hướng và mạng có hướng:}
+        \item Mạng vô hướng và mạng có hướng:
         \begin{itemize}
             \item Mạng vô hướng: Các mối quan hệ mang tính đối ứng hoặc cùng tham gia một sự kiện (ví dụ: cùng tham gia một hội đồng quản trị).
             \item Mạng có hướng: Cạnh có chiều từ nút nguồn tới nút đích, áp dụng cho các quan hệ không bắt buộc đối ứng như sự lựa chọn bạn bè, luồng truyền thông tin hay giao dịch tài chính~\cite{Scott2012}.
         \end{itemize}
-        \item \textit{Mạng không trọng số và mạng có trọng số:}
+        \item Mạng không trọng số và mạng có trọng số:
         \begin{itemize}
             \item Mạng không trọng số: Chỉ ghi nhận sự tồn tại ($1$) hoặc không tồn tại ($0$) của liên kết.
-            \item Mạng có trọng số: Mỗi cạnh được gán giá trị $w_{ij}$ thể hiện cường độ quan hệ, tần suất tương tác hoặc độ bội liên kết (\textit{multiplicity})~\cite{Traag2014}.
+            \item Mạng có trọng số: Mỗi cạnh được gán giá trị $w_{ij}$ thể hiện cường độ quan hệ, tần suất tương tác hoặc độ bội liên kết (multiplicity)~\cite{Traag2014}.
         \end{itemize}
     \end{itemize}
 
@@ -577,16 +577,16 @@ Cấu trúc mạng phức tạp xuất hiện phổ biến trong nhiều lĩnh v
     \newline
     Mạng có dấu gán nhãn tích cực ($+$) hoặc tiêu cực ($-$) cho các cạnh:
     \begin{itemize}
-        \item \textit{Liên kết tích cực ($+$):} Biểu thị tình bạn, sự hợp tác, liên minh hoặc sự tin tưởng.
-        \item \textit{Liên kết tiêu cực ($-$):} Biểu thị sự thù địch, mâu thuẫn, xung đột hoặc bất đồng quan điểm. Mạng có dấu là nền tảng để nghiên cứu thuyết cân bằng xã hội và sự hình thành các phe phái đối lập~\cite{Traag2014}.
+        \item Liên kết tích cực ($+$): Biểu thị tình bạn, sự hợp tác, liên minh hoặc sự tin tưởng.
+        \item Liên kết tiêu cực ($-$): Biểu thị sự thù địch, mâu thuẫn, xung đột hoặc bất đồng quan điểm. Mạng có dấu là nền tảng để nghiên cứu thuyết cân bằng xã hội và sự hình thành các phe phái đối lập~\cite{Traag2014}.
     \end{itemize}
 
     \item \textbf{Phân loại theo mô hình cấu trúc toán học:}
     \begin{itemize}
-        \item \textit{Mạng ngẫu nhiên (Random Networks - Erd\H{o}s--R\'enyi):} Mỗi cặp nút được nối với xác suất độc lập $p = m/n^2$. Mạng ngẫu nhiên có phân bố bậc tuân theo phân bố Poisson, trong đó hầu hết các nút đều có bậc xấp xỉ bằng bậc trung bình $\langle k \rangle$~\cite{Traag2014}.
-        \item \textit{Mạng thế giới nhỏ (Small-World Networks - Watts--Strogatz):} Đặc trưng bởi hệ số gom cụm cục bộ rất cao (các nút có xu hướng tạo thành cụm dày đặc) nhưng khoảng cách đường đi trung bình giữa hai nút bất kỳ lại rất ngắn. Cấu trúc này được duy trì nhờ sự đan xen giữa các liên kết địa phương mạnh và các liên kết yếu (\textit{weak ties}) nối xa~\cite{Scott2012}.
-        \item \textit{Mạng không phụ thuộc quy mô (Scale-Free Networks - Barab\'asi--Albert):} Phân bố bậc của mạng tuân theo luật lũy thừa: $P(r) \sim k^{-\gamma}$. Mạng chứa phần lớn các nút có rất ít kết nối và một số ít các nút có số lượng kết nối khổng lồ đóng vai trò làm trung tâm mạng lưới (\textit{hubs})~\cite{Traag2014}.
-        \item \textit{Mạng nhiều lớp và mạng động (Multi-layer \& Dynamic Networks):} Mạng nhiều lớp biểu diễn nhiều loại mối quan hệ khác nhau giữa cùng một tập hợp nút trên các tầng (\textit{layers}) riêng biệt. Mạng động theo dõi sự biến đổi cấu trúc và sự dịch chuyển trạng thái (\textit{phase transition}) của mạng theo thời gian~\cite{Traag2014, Scott2012}.
+        \item Mạng ngẫu nhiên (Random Networks - Erd\H{os--R\'enyi):} Mỗi cặp nút được nối với xác suất độc lập $p = m/n^2$. Mạng ngẫu nhiên có phân bố bậc tuân theo phân bố Poisson, trong đó hầu hết các nút đều có bậc xấp xỉ bằng bậc trung bình $\langle k \rangle$~\cite{Traag2014}.
+        \item Mạng thế giới nhỏ (Small-World Networks - Watts--Strogatz): Đặc trưng bởi hệ số gom cụm cục bộ rất cao (các nút có xu hướng tạo thành cụm dày đặc) nhưng khoảng cách đường đi trung bình giữa hai nút bất kỳ lại rất ngắn. Cấu trúc này được duy trì nhờ sự đan xen giữa các liên kết địa phương mạnh và các liên kết yếu (weak ties) nối xa~\cite{Scott2012}.
+        \item Mạng không phụ thuộc quy mô (Scale-Free Networks - Barab\'asi--Albert): Phân bố bậc của mạng tuân theo luật lũy thừa: $P(r) \sim k^{-\gamma}$. Mạng chứa phần lớn các nút có rất ít kết nối và một số ít các nút có số lượng kết nối khổng lồ đóng vai trò làm trung tâm mạng lưới (hubs)~\cite{Traag2014}.
+        \item Mạng nhiều lớp và mạng động (Multi-layer \& Dynamic Networks): Mạng nhiều lớp biểu diễn nhiều loại mối quan hệ khác nhau giữa cùng một tập hợp nút trên các tầng (layers) riêng biệt. Mạng động theo dõi sự biến đổi cấu trúc và sự dịch chuyển trạng thái (phase transition) của mạng theo thời gian~\cite{Traag2014, Scott2012}.
     \end{itemize}
 \end{itemize}
 
@@ -619,20 +619,20 @@ Các thuật toán này vận hành theo tập hợp quy tắc xác định nh�
 \begin{itemize}
     \item \textbf{Phân cấp (Hierarchical Clustering):}
     \begin{itemize}
-        \item \textit{Phân chia (Divisive):} Loại bỏ dần các cạnh cầu nối có độ trung gian (Edge Betweenness) cao \cite{Bedi2016}.
-        \item \textit{Gộp cụm (Agglomerative):} Nhóm dần các cặp đỉnh/cụm có độ tương đồng cao nhất để tăng hàm Modularity $Q$ \cite{Traag2014}.
+        \item Phân chia (Divisive): Loại bỏ dần các cạnh cầu nối có độ trung gian (Edge Betweenness) cao \cite{Bedi2016}.
+        \item Gộp cụm (Agglomerative): Nhóm dần các cặp đỉnh/cụm có độ tương đồng cao nhất để tăng hàm Modularity $Q$ \cite{Traag2014}.
     \end{itemize}
     
     \item \textbf{Tối ưu Modularity tham lam \& đa cấp:}
     \begin{itemize}
-        \item \textit{Louvain:} Thuật toán tham lam đa cấp hai giai đoạn, thực thi siêu nhanh trên mạng lớn \cite{Baraa2021}.
-        \item \textit{Leiden:} Bản cải tiến từ Louvain bổ sung pha tinh chỉnh (refinement step), bảo đảm các cộng đồng luôn liên thông chặt chẽ \cite{Pourabbasi2022}.
+        \item Louvain: Thuật toán tham lam đa cấp hai giai đoạn, thực thi siêu nhanh trên mạng lớn \cite{Baraa2021}.
+        \item Leiden: Bản cải tiến từ Louvain bổ sung pha tinh chỉnh (refinement step), bảo đảm các cộng đồng luôn liên thông chặt chẽ \cite{Pourabbasi2022}.
     \end{itemize}
     
     \item \textbf{Động lực học \& Lan truyền:}
     \begin{itemize}
-        \item \textit{Random Walk:} Dựa trên xác suất bước nhảy ngẫu nhiên mắc kẹt bên trong cộng đồng (ví dụ: Walktrap, Infomap).
-        \item \textit{Lan truyền nhãn (Label Propagation - LPA):} Cập nhật nhãn theo số đông lân cận với độ phức tạp tiệm cận tuyến tính $\mathcal{O}(m)$ \cite{Gong2016}.
+        \item Random Walk: Dựa trên xác suất bước nhảy ngẫu nhiên mắc kẹt bên trong cộng đồng (ví dụ: Walktrap, Infomap).
+        \item Lan truyền nhãn (Label Propagation - LPA): Cập nhật nhãn theo số đông lân cận với độ phức tạp tiệm cận tuyến tính $\mathcal{O}(m)$ \cite{Gong2016}.
     \end{itemize}
     
     \item \textbf{Suy diễn thống kê \& phân cụm phổ:} Khớp dữ liệu vào mô hình đồ thị ngẫu nhiên Stochastic Block Model (SBM) \cite{Baraa2021} hoặc phân tích trị riêng ma trận Laplacian (Spectral Clustering) \cite{Chen2019}.
@@ -651,8 +651,8 @@ Tiếp cận phát hiện cộng đồng dưới dạng bài toán tối ưu hó
 \begin{itemize}
     \item \textbf{Hybrid Metaheuristics:} Kết hợp khả năng tìm kiếm rộng (exploration) của thuật toán tiến hóa với khả năng tìm kiếm sâu (exploitation) của các toán tử tìm kiếm cục bộ (Local Search, Label Propagation, Simulated Annealing):
     \begin{itemize}
-        \item \textit{Low-level teamwork (LT-HMCD):} Nhúng trực tiếp cơ chế Local Search vào toán tử đột biến/tiến hóa \cite{Baraa2021}.
-        \item \textit{High-level relay (HR-HMCD):} Dùng heuristic khởi tạo quần thể ban đầu hoặc tinh chỉnh lại nghiệm ở bước cuối \cite{Baraa2021}.
+        \item Low-level teamwork (LT-HMCD): Nhúng trực tiếp cơ chế Local Search vào toán tử đột biến/tiến hóa \cite{Baraa2021}.
+        \item High-level relay (HR-HMCD): Dùng heuristic khởi tạo quần thể ban đầu hoặc tinh chỉnh lại nghiệm ở bước cuối \cite{Baraa2021}.
     \end{itemize}
     
     \item \textbf{Hyper-heuristics:} Phân tách không gian tìm kiếm thành không gian nghiệm và không gian thuật toán, tự động học để chọn lựa giải thuật heuristic cấp thấp tối ưu nhất cho từng mạng cụ thể \cite{Baraa2021}.
@@ -804,8 +804,8 @@ Nhược điểm lớn nhất của Rand Index là giá trị kỳ vọng ngẫu
 \begin{itemize}
     \item \textbf{Quy tắc chấp nhận bước đi (Metropolis Criterion):} Tại mỗi bước, thuật toán chọn ngẫu nhiên một bước chuyển $m$ và tính chênh lệch chi phí $\Delta f = f(s_m) - f(s)$ \cite{Taillard2023}:
     \begin{itemize}
-        \item \textit{Bước đi cải thiện ($\Delta f < 0$):} Lời giải mới luôn được chấp nhận \cite{Taillard2023}.
-        \item \textit{Bước đi xấu đi ($\Delta f \ge 0$):} Lời giải mới vẫn có thể được chấp nhận với xác suất $P = e^{-\Delta f / T}$, trong đó $T$ là tham số nhiệt độ \cite{Luke2009}.
+        \item Bước đi cải thiện ($\Delta f < 0$): Lời giải mới luôn được chấp nhận \cite{Taillard2023}.
+        \item Bước đi xấu đi ($\Delta f \ge 0$): Lời giải mới vẫn có thể được chấp nhận với xác suất $P = e^{-\Delta f / T}$, trong đó $T$ là tham số nhiệt độ \cite{Luke2009}.
     \end{itemize}
     \item \textbf{Lịch trình làm nguội (Cooling Schedule):}
     \begin{itemize}
@@ -820,15 +820,15 @@ Nhược điểm lớn nhất của Rand Index là giá trị kỳ vọng ngẫu
 \\ \indent
 \textbf{Ưu điểm:}
 \begin{itemize}
-    \item \textit{Thoát khỏi tối ưu địa phương:} Việc chấp nhận các bước đi làm xấu lời giải ở nhiệt độ cao giúp làm thay đổi cấu trúc lời giải ban đầu, từ đó vượt qua các bẫy tối ưu địa phương để tìm kiếm vùng lời giải tốt hơn \cite{Taillard2023, Luke2009}.
-    \item \textit{Đảm bảo tối ưu theo lý thuyết:} Về mặt lý thuyết, thuật toán gần như chắc chắn tìm được lời giải tối ưu toàn cục nếu chấp nhận thời gian/công sức tính toán vô hạn \cite{Taillard2023}.
+    \item Thoát khỏi tối ưu địa phương: Việc chấp nhận các bước đi làm xấu lời giải ở nhiệt độ cao giúp làm thay đổi cấu trúc lời giải ban đầu, từ đó vượt qua các bẫy tối ưu địa phương để tìm kiếm vùng lời giải tốt hơn \cite{Taillard2023, Luke2009}.
+    \item Đảm bảo tối ưu theo lý thuyết: Về mặt lý thuyết, thuật toán gần như chắc chắn tìm được lời giải tối ưu toàn cục nếu chấp nhận thời gian/công sức tính toán vô hạn \cite{Taillard2023}.
 \end{itemize}
 
 \textbf{Nhược điểm:}
 \begin{itemize}
-    \item \textit{Nhạy cảm với lịch trình làm nguội:} Tốc độ giảm nhiệt độ (schedule) ảnh hưởng trực tiếp đến hiệu năng; nếu lịch trình không phù hợp, thuật toán có thể hội tụ quá nhanh hoặc mất quá nhiều thời gian \cite{Luke2009}.
-    \item \textit{Tốn thời gian tính toán dư thừa:} Thuật toán có thể chạy tốn nhiều vòng lặp không cần thiết khi lời giải tốt nhất đã ngừng cải thiện nhưng nhiệt độ vẫn chưa giảm hết về $T_{\text{end}}$ \cite{Taillard2023}.
-    \item \textit{Phụ thuộc đơn vị đo hàm mục tiêu:} Các tham số nhiệt độ $T_{\text{init}}$ và $T_{\text{end}}$ bị ảnh hưởng bởi đơn vị đo của hàm mục tiêu nếu không áp dụng cơ chế tự động quy đổi tỉ lệ chấp nhận \cite{Taillard2023}.
+    \item Nhạy cảm với lịch trình làm nguội: Tốc độ giảm nhiệt độ (schedule) ảnh hưởng trực tiếp đến hiệu năng; nếu lịch trình không phù hợp, thuật toán có thể hội tụ quá nhanh hoặc mất quá nhiều thời gian \cite{Luke2009}.
+    \item Tốn thời gian tính toán dư thừa: Thuật toán có thể chạy tốn nhiều vòng lặp không cần thiết khi lời giải tốt nhất đã ngừng cải thiện nhưng nhiệt độ vẫn chưa giảm hết về $T_{\text{end}}$ \cite{Taillard2023}.
+    \item Phụ thuộc đơn vị đo hàm mục tiêu: Các tham số nhiệt độ $T_{\text{init}}$ và $T_{\text{end}}$ bị ảnh hưởng bởi đơn vị đo của hàm mục tiêu nếu không áp dụng cơ chế tự động quy đổi tỉ lệ chấp nhận \cite{Taillard2023}.
 \end{itemize}
 
 \subsubsection{Extremal Optimization}
@@ -887,8 +887,8 @@ Giải thuật di truyền (GA) là phương pháp siêu tìm kiếm tiến hóa
     \item \textbf{Nguồn gốc:} Tối ưu hóa bầy đàn (Particle Swarm Optimization - PSO) do Kennedy và Eberhart (1995) phát minh, là phương pháp siêu tìm kiếm ngẫu nhiên mô phỏng hành vi xã hội và trí tuệ tập thể của đàn chim hoặc đàn cá trong quá trình tìm kiếm thức ăn \cite{Baraa2021}.
     \item \textbf{Cơ chế vận hành:} Trong PSO, mỗi giải pháp phân hoạch mạng được xem là một "hạt" (particle) di chuyển trong không gian tìm kiếm đa chiều \cite{Baraa2021, Beldi2025}. Hạt cập nhật vận tốc và vị trí của mình ở mỗi bước lặp dựa trên hai thông tin cốt lõi:
     \begin{itemize}
-        \item \textit{pbest (personal best):} Vị trí tốt nhất mà chính hạt đó từng đạt được \cite{Beldi2025}.
-        \item \textit{gbest (global best):} Vị trí tốt nhất mà bất kỳ hạt nào trong toàn đàn từng khám phá được \cite{Beldi2025}.
+        \item pbest (personal best): Vị trí tốt nhất mà chính hạt đó từng đạt được \cite{Beldi2025}.
+        \item gbest (global best): Vị trí tốt nhất mà bất kỳ hạt nào trong toàn đàn từng khám phá được \cite{Beldi2025}.
     \end{itemize}
 \end{itemize}
 
@@ -907,15 +907,15 @@ Giải thuật di truyền (GA) là phương pháp siêu tìm kiếm tiến hóa
 \begin{itemize}
     \item \textbf{Mô hình đơn mục tiêu (Single-Objective DPSO):}
     \begin{itemize}
-        \item \textit{Tối ưu Modularity ($Q$):} Shi et al. (2009) và Xiaodong et al. (2008) ứng dụng DPSO để tối đa hóa hàm Modularity $Q$ trên mạng phức tạp \cite{Baraa2021, Gong2016}.
-        \item \textit{Mạng có dấu (Signed Networks):} Cai et al. (2014) đề xuất giải thuật Discrete PSO để tối đa hóa hàm Signed Modularity ($Q_{sw}$), tối ưu hóa phân hoạch trên các mạng chứa cả liên kết tích cực và tiêu cực \cite{Baraa2021, Gong2016}.
-        \item \textit{Mạng quy mô lớn:} Cai et al. (2015) xây dựng thuật toán GDPSO (Greedy DPSO) thiết kế lại chiến lược di chuyển hạt giúp tìm kiếm hiệu quả trên các mạng xã hội quy mô lớn mà không bị kẹt tại cực trị cục bộ \cite{Baraa2021, Beldi2025}.
+        \item Tối ưu Modularity ($Q$): Shi et al. (2009) và Xiaodong et al. (2008) ứng dụng DPSO để tối đa hóa hàm Modularity $Q$ trên mạng phức tạp \cite{Baraa2021, Gong2016}.
+        \item Mạng có dấu (Signed Networks): Cai et al. (2014) đề xuất giải thuật Discrete PSO để tối đa hóa hàm Signed Modularity ($Q_{sw}$), tối ưu hóa phân hoạch trên các mạng chứa cả liên kết tích cực và tiêu cực \cite{Baraa2021, Gong2016}.
+        \item Mạng quy mô lớn: Cai et al. (2015) xây dựng thuật toán GDPSO (Greedy DPSO) thiết kế lại chiến lược di chuyển hạt giúp tìm kiếm hiệu quả trên các mạng xã hội quy mô lớn mà không bị kẹt tại cực trị cục bộ \cite{Baraa2021, Beldi2025}.
     \end{itemize}
     \item \textbf{Mô hình đa mục tiêu (Multi-Objective PSO - MOPSO):}
     \begin{itemize}
-        \item \textit{Tối ưu trên mạng có dấu:} Gong et al. (2014) đề xuất thuật toán MODPSO (Multi-objective Discrete PSO dựa trên phân rã MOEA/D), tối ưu hóa đồng thời hai hàm mục tiêu: Signed Ratio Association (SRA) và Signed Ratio Cut (SRC) \cite{Baraa2021}.
-        \item \textit{Mạng có cộng đồng chồng lấp (Overlapping Communities):} Li et al. (2015) phát triển thuật toán IMOQPSO (Improved Multi-objective Quantum-behaved PSO) kết hợp biểu diễn đồ thị đường (Line Graph) để phát hiện cấu trúc cộng đồng chồng lấp \cite{Baraa2021}.
-        \item \textit{Mạng động (Dynamic Networks):} Gao et al. (2018) ứng dụng Discrete MOPSO để theo dõi sự tiến hóa của các cộng đồng qua các mốc thời gian \cite{Baraa2021}.
+        \item Tối ưu trên mạng có dấu: Gong et al. (2014) đề xuất thuật toán MODPSO (Multi-objective Discrete PSO dựa trên phân rã MOEA/D), tối ưu hóa đồng thời hai hàm mục tiêu: Signed Ratio Association (SRA) và Signed Ratio Cut (SRC) \cite{Baraa2021}.
+        \item Mạng có cộng đồng chồng lấp (Overlapping Communities): Li et al. (2015) phát triển thuật toán IMOQPSO (Improved Multi-objective Quantum-behaved PSO) kết hợp biểu diễn đồ thị đường (Line Graph) để phát hiện cấu trúc cộng đồng chồng lấp \cite{Baraa2021}.
+        \item Mạng động (Dynamic Networks): Gao et al. (2018) ứng dụng Discrete MOPSO để theo dõi sự tiến hóa của các cộng đồng qua các mốc thời gian \cite{Baraa2021}.
     \end{itemize}
 \end{itemize}
 
@@ -924,15 +924,15 @@ Giải thuật di truyền (GA) là phương pháp siêu tìm kiếm tiến hóa
 \textbf{Ưu điểm:}
 
     \begin{itemize}
-        \item \textit{Tốc độ hội tụ nhanh:} Cơ chế chia sẻ thông tin trực tiếp từ gbest giúp các hạt nhanh chóng hướng về vùng nghiệm tiềm năng \cite{Baraa2021, Beldi2025}.
-        \item \textit{Số lượng tham số ít:} Dễ cài đặt và cấu hình so với các giải thuật tiến hóa phức tạp \cite{Baraa2021}.
-        \item \textit{Tính linh hoạt cao:} Dễ dàng kết hợp với các cơ chế đa mục tiêu (MOEA/D, NSGA-II) hoặc các toán tử tìm kiếm cục bộ \cite{Baraa2021}.
+        \item Tốc độ hội tụ nhanh: Cơ chế chia sẻ thông tin trực tiếp từ gbest giúp các hạt nhanh chóng hướng về vùng nghiệm tiềm năng \cite{Baraa2021, Beldi2025}.
+        \item Số lượng tham số ít: Dễ cài đặt và cấu hình so với các giải thuật tiến hóa phức tạp \cite{Baraa2021}.
+        \item Tính linh hoạt cao: Dễ dàng kết hợp với các cơ chế đa mục tiêu (MOEA/D, NSGA-II) hoặc các toán tử tìm kiếm cục bộ \cite{Baraa2021}.
     \end{itemize}
 
 \textbf{Nhược điểm:}
     \begin{itemize}
-        \item \textit{Dễ mất đa dạng quần thể:} Sự ảnh hưởng quá lớn của hạt gbest có thể khiến toàn đàn hội tụ sớm về một cực trị cục bộ kém chất lượng \cite{Baraa2021, Beldi2025}.
-        \item \textit{Yêu cầu toán tử tinh chỉnh chuyên biệt:} Cần tích hợp thêm các toán tử đột biến ngẫu nhiên hoặc chiến lược tìm kiếm cục bộ (Memetic PSO) để duy trì tính đa dạng và tinh chỉnh ranh giới cộng đồng trên các mạng quy mô siêu lớn \cite{Baraa2021, Beldi2025}.
+        \item Dễ mất đa dạng quần thể: Sự ảnh hưởng quá lớn của hạt gbest có thể khiến toàn đàn hội tụ sớm về một cực trị cục bộ kém chất lượng \cite{Baraa2021, Beldi2025}.
+        \item Yêu cầu toán tử tinh chỉnh chuyên biệt: Cần tích hợp thêm các toán tử đột biến ngẫu nhiên hoặc chiến lược tìm kiếm cục bộ (Memetic PSO) để duy trì tính đa dạng và tinh chỉnh ranh giới cộng đồng trên các mạng quy mô siêu lớn \cite{Baraa2021, Beldi2025}.
     \end{itemize}
 
 \subsection{Các phương pháp phát hiện cộng đồng làm cơ sở so sánh}
@@ -1043,9 +1043,9 @@ Các nhóm nghiên cứu tiêu biểu gồm iMeme-Net (Gong et al., 2012) tối 
     \item \textbf{Ưu điểm của giải thuật di truyền (GA):} GA là một trong những phương pháp siêu tìm kiếm tiến hóa dựa trên quần thể phổ biến và hiệu quả nhất cho bài toán phát hiện cộng đồng \cite{Chen2019, Baraa2021}. Nhờ sử dụng các sơ đồ mã hóa linh hoạt như vị trí kề Locus-based Adjacency Representation (LAR), GA có khả năng tìm kiếm không gian diện rộng (Exploration) và tự động xác định số lượng cộng đồng $K$ mà không cần biết trước hay khai báo tham số ban đầu \cite{Chen2019}.
     \item \textbf{Những tồn tại và hạn chế cốt lõi của GA truyền thống:}
     \begin{enumerate}
-        \item \textit{Hiện tượng hội tụ sớm (Premature Convergence):} Các thuật toán GA thuần túy chủ yếu sử dụng toán tử lai ghép và đột biến ngẫu nhiên mang tính "mù" (blind movement). Việc thiếu sự định hướng từ tri thức miền làm suy giảm nhanh tính đa dạng của quần thể, khiến thuật toán dễ rơi vào các cực trị cục bộ \cite{Chen2019}.
-        \item \textit{Khả năng khai thác cục bộ (Exploitation) yếu:} GA truyền thống mạnh về khám phá không gian rộng nhưng lại thiếu cơ chế tinh chỉnh sâu ở ranh giới giữa các cộng đồng trong các thế hệ cuối, làm giảm độ chính xác phân hoạch \cite{Baraa2021}.
-        \item \textit{Rào cản giới hạn độ phân giải (Resolution Limit):} Việc chỉ tối ưu hóa một hàm độ thích nghi (fitness) đơn lẻ - tiêu biểu là hàm Modularity ($Q$) - khiến thuật toán tự động bỏ qua hoặc gộp các cộng đồng quy mô nhỏ vào các cộng đồng lớn hơn \cite{Baraa2021}.
+        \item Hiện tượng hội tụ sớm (Premature Convergence): Các thuật toán GA thuần túy chủ yếu sử dụng toán tử lai ghép và đột biến ngẫu nhiên mang tính "mù" (blind movement). Việc thiếu sự định hướng từ tri thức miền làm suy giảm nhanh tính đa dạng của quần thể, khiến thuật toán dễ rơi vào các cực trị cục bộ \cite{Chen2019}.
+        \item Khả năng khai thác cục bộ (Exploitation) yếu: GA truyền thống mạnh về khám phá không gian rộng nhưng lại thiếu cơ chế tinh chỉnh sâu ở ranh giới giữa các cộng đồng trong các thế hệ cuối, làm giảm độ chính xác phân hoạch \cite{Baraa2021}.
+        \item Rào cản giới hạn độ phân giải (Resolution Limit): Việc chỉ tối ưu hóa một hàm độ thích nghi (fitness) đơn lẻ - tiêu biểu là hàm Modularity ($Q$) - khiến thuật toán tự động bỏ qua hoặc gộp các cộng đồng quy mô nhỏ vào các cộng đồng lớn hơn \cite{Baraa2021}.
     \end{enumerate}
 \end{itemize}
 
@@ -1060,7 +1060,7 @@ Các nhóm nghiên cứu tiêu biểu gồm iMeme-Net (Gong et al., 2012) tối 
 
 \noindent c) Xác định hướng nghiên cứu chi tiết của đề tài
 \\ \indent
-Từ những phân tích trên, đề tài xác định hướng nghiên cứu trọng tâm là phát triển thuật toán di truyền đa mục tiêu dạng memetic (\textbf{MO-HGA-LS} - \textit{Memetic Multi-Objective Genetic Algorithm}) nâng cao cho bài toán phát hiện cộng đồng trong mạng phức tạp:
+Từ những phân tích trên, đề tài xác định hướng nghiên cứu trọng tâm là phát triển thuật toán di truyền đa mục tiêu dạng memetic (\textbf{MO-HGA-LS} - Memetic Multi-Objective Genetic Algorithm) nâng cao cho bài toán phát hiện cộng đồng trong mạng phức tạp:
 \begin{enumerate}
 \item \textbf{Khởi tạo quần thể dựa trên tri thức miền:} Sử dụng sơ đồ mã hóa vị trí kề Locus-based Adjacency Representation (LAR) kết hợp kiểm tra tính liên thông và chỉ số hệ số cụm để tạo ra quần thể ban đầu có chất lượng cao.
 \item \textbf{Khung tối ưu đa mục tiêu (MOCD):} Áp dụng khung thuật toán tiến hóa đa mục tiêu (như NSGA-II) tối ưu hóa đồng thời hai hàm mục tiêu $f_1$ (Kernel Fitness) và $f_2$ (Community Cut).
@@ -1168,7 +1168,7 @@ Cho hai phân hoạch $\mathcal{C}_1$ và $\mathcal{C}_2$. Phân hoạch $\mathc
     \item Có ít nhất một bất đẳng thức xảy ra nghiêm ngặt.
 \end{itemize}
 
-Một nghiệm không bị bất kỳ nghiệm khả thi nào khác trội được gọi là \textit{nghiệm không bị trội} (non-dominated solution). Trong đó:
+Một nghiệm không bị bất kỳ nghiệm khả thi nào khác trội được gọi là nghiệm không bị trội (non-dominated solution). Trong đó:
 \begin{itemize}
     \item \textbf{Pareto set:} Tập hợp các nghiệm không bị trội trong không gian quyết định.
     \item \textbf{Pareto front:} Ảnh của Pareto set trong không gian mục tiêu.
@@ -1549,7 +1549,7 @@ Chi phí tính toán cho các toán tử cốt lõi trong mỗi thế hệ đư�
 Giải mã cá thể & $\mathcal{O}(n)$ & Dựa trên số lượng cung $n$ của đồ thị biểu diễn. \\ \hline
 Đánh giá mục tiêu ($Q, \Phi$) & $\mathcal{O}(n + m)$ & Quét toàn bộ đồ thị với $n$ đỉnh và $m$ cạnh. \\ \hline
 Hệ số gom cụm ($CC$) & $\mathcal{O}\left(\sum_{v\in V} k_v^2\right)$ & Tính trực tiếp theo số cặp láng giềng. \\ \hline
-Tìm kiếm cục bộ (LS) & $\mathcal{O}(I_{LS} C_{LS})$ & Chi phí phụ thuộc vào \textit{incremental evaluation} ($C_{LS}$), thay vì gán cố định $\mathcal{O}(m)$. \\ \hline
+Tìm kiếm cục bộ (LS) & $\mathcal{O}(I_{LS} C_{LS})$ & Chi phí phụ thuộc vào incremental evaluation ($C_{LS}$), thay vì gán cố định $\mathcal{O}(m)$. \\ \hline
 Sắp xếp không trội & $\mathcal{O}(N^2)$ & Với kích thước gộp $N = \mu + \lambda$ và 2 mục tiêu. \\ \hline
 Khoảng cách mật độ & $\mathcal{O}(N \log N)$ & Tính chỉ số khoảng cách đám đông trên mỗi front. \\ \hline
 \end{tabularx}
@@ -1608,32 +1608,32 @@ Một đóng góp cần được kiểm chứng bằng thực nghiệm là liệ
 \begin{itemize}
     \item \textbf{Zachary's Karate Club (Karate):}
     \begin{itemize}
-        \item \textit{Mô tả:} Thu thập bởi Wayne W. Zachary, mô tả mối quan hệ giữa 34 thành viên của một câu lạc bộ võ thuật.
-        \item \textit{Đặc điểm cấu trúc:} Đồ thị vô hướng, không trọng số với độ tập trung cụm cao. Do mâu thuẫn nội bộ, đồ thị phân tách thành 2 cộng đồng thực tế (ground-truth).
+        \item Mô tả: Thu thập bởi Wayne W. Zachary, mô tả mối quan hệ giữa 34 thành viên của một câu lạc bộ võ thuật.
+        \item Đặc điểm cấu trúc: Đồ thị vô hướng, không trọng số với độ tập trung cụm cao. Do mâu thuẫn nội bộ, đồ thị phân tách thành 2 cộng đồng thực tế (ground-truth).
     \end{itemize}
 
     \item \textbf{Political Books (Polbooks):}
     \begin{itemize}
-        \item \textit{Mô tả:} Thu thập bởi Valdis Krebs về mạng lưới đồng mua sách chính trị trên Amazon trước cuộc bầu cử tổng thống Mỹ năm 2004.
-        \item \textit{Đặc điểm cấu trúc:} Gồm 105 nút (sách) và 441 cạnh (đồng mua), phân chia thành 3 cộng đồng thực tế chính: tự do (Liberal), bảo thủ (Conservative) và trung lập (Neutral).
+        \item Mô tả: Thu thập bởi Valdis Krebs về mạng lưới đồng mua sách chính trị trên Amazon trước cuộc bầu cử tổng thống Mỹ năm 2004.
+        \item Đặc điểm cấu trúc: Gồm 105 nút (sách) và 441 cạnh (đồng mua), phân chia thành 3 cộng đồng thực tế chính: tự do (Liberal), bảo thủ (Conservative) và trung lập (Neutral).
     \end{itemize}
 
     \item \textbf{American College Football (Football):}
     \begin{itemize}
-        \item \textit{Mô tả:} Mạng lưới các trận đấu bóng đá Mỹ cấp đại học giữa các đội tuyển trong mùa giải Division I-A năm 2000.
-        \item \textit{Đặc điểm cấu trúc:} Gồm 115 nút và 613 cạnh, được phân chia tự nhiên thành 12 cộng đồng ứng với các liên đoàn thi đấu.
+        \item Mô tả: Mạng lưới các trận đấu bóng đá Mỹ cấp đại học giữa các đội tuyển trong mùa giải Division I-A năm 2000.
+        \item Đặc điểm cấu trúc: Gồm 115 nút và 613 cạnh, được phân chia tự nhiên thành 12 cộng đồng ứng với các liên đoàn thi đấu.
     \end{itemize}
 
     \item \textbf{SNAP Email-Eu-Core (Email):}
     \begin{itemize}
-        \item \textit{Mô tả:} Thu thập từ dữ liệu email nội bộ của một viện nghiên cứu lớn tại Châu Âu, ghi nhận các trao đổi thông tin giữa các thành viên.
-        \item \textit{Đặc điểm cấu trúc:} Gồm 1,005 nút và 25,571 cạnh với hệ số gom cụm trung bình 0.3994. Mỗi cá nhân thuộc chính xác một trong 42 phòng ban, tạo thành hệ thống cộng đồng thực tế.
+        \item Mô tả: Thu thập từ dữ liệu email nội bộ của một viện nghiên cứu lớn tại Châu Âu, ghi nhận các trao đổi thông tin giữa các thành viên.
+        \item Đặc điểm cấu trúc: Gồm 1,005 nút và 25,571 cạnh với hệ số gom cụm trung bình 0.3994. Mỗi cá nhân thuộc chính xác một trong 42 phòng ban, tạo thành hệ thống cộng đồng thực tế.
     \end{itemize}
 
     % \item \textbf{Amazon Co-purchasing Network (Amazon):}
     % \begin{itemize}
-    %     \item \textit{Mô tả:} Mạng lưới đồng mua sản phẩm trên nền tảng thương mại điện tử Amazon (thuộc SNAP).
-    %     \item \textit{Đặc điểm cấu trúc:} Mạng quy mô lớn, thưa, với các cộng đồng thực tế phản ánh danh mục sản phẩm (product categories và sub-categories).
+    %     \item Mô tả: Mạng lưới đồng mua sản phẩm trên nền tảng thương mại điện tử Amazon (thuộc SNAP).
+    %     \item Đặc điểm cấu trúc: Mạng quy mô lớn, thưa, với các cộng đồng thực tế phản ánh danh mục sản phẩm (product categories và sub-categories).
     % \end{itemize}
 \end{itemize}
 
@@ -1723,7 +1723,6 @@ Chương 2 đã phát biểu bài toán phát hiện cộng đồng dưới dạ
 \section{Phương pháp đề xuất cho bài toán phát hiện cộng đồng}
 
 \subsection{Môi trường thực nghiệm}
-Chương này trình bày kết quả thực nghiệm của bốn thuật toán tiến hóa (GA, HGA, NSGA-II và MO-HGA-LS) so với hai phương pháp đối chứng Louvain và Leiden trên bốn bộ dữ liệu mạng. Các nội dung gồm môi trường và cấu hình thực nghiệm, kết quả của từng thuật toán, so sánh theo các tiêu chí đánh giá và phân tích ảnh hưởng của Local Search.
 \subsubsection{Phần cứng và phần mềm}
 Các thực nghiệm được triển khai bằng ngôn ngữ lập trình Julia trên môi trường có hỗ trợ tính toán đa luồng và GPU thông qua CUDA. Cấu hình chạy được lưu trong tệp \texttt{config.json}, cho biết chương trình sử dụng 20 Julia threads, bật CUDA và thực hiện các tác vụ thực nghiệm theo chế độ tuần tự.
 
@@ -1755,12 +1754,12 @@ Thông tin chi tiết về phần cứng của máy thực nghiệm được tr�
     \begin{tabularx}{\textwidth}{|>{\raggedright\arraybackslash}p{0.48\textwidth}|>{\centering\arraybackslash}X|}
         \hline
         \textbf{Thành phần phần cứng} & \textbf{Thông tin} \\ \hline
-        CPU & [Bổ sung model CPU] \\ \hline
-        Số nhân / số luồng vật lý & [Bổ sung] \\ \hline
-        RAM & [Bổ sung dung lượng] \\ \hline
-        GPU & [Bổ sung model GPU] \\ \hline
-        Dung lượng VRAM & [Bổ sung] \\ \hline
-        Hệ điều hành & [Bổ sung phiên bản] \\ \hline
+        CPU & Intel Core i7 - 12700H \\ \hline
+        Số nhân / số luồng vật lý &  14 nhân / 20 luồng \\ \hline
+        RAM & 16 GB \\ \hline
+        GPU & NVIDIA RTX 3050 Laptop \\ \hline
+        Dung lượng VRAM & 4 GB \\ \hline
+        Hệ điều hành & Windows 11 Home \\ \hline
     \end{tabularx}
     \caption{Cấu hình phần cứng của máy thực nghiệm}
     \label{tab:hardware_environment}
@@ -1920,71 +1919,76 @@ Như vậy, HGA thể hiện hiệu quả tốt trên Football và cải thiện
 
 Thời gian thực thi là một tiêu chí quan trọng nhằm đánh giá khả năng áp dụng thuật toán trên các mạng có kích thước và cấu trúc khác nhau.
 
-Bảng~\ref{tab:runtime_comparison} trình bày thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán được tổng hợp trực tiếp từ tệp dữ liệu thực nghiệm gốc \texttt{runs.jsonl}.
+Hình~\ref{fig:runtime} trình bày thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán được tổng hợp trực tiếp từ tệp dữ liệu thực nghiệm gốc \texttt{runs.jsonl}.
 
-\begin{table}[H]
+% \begin{table}[H]
+%     \centering
+%     \small
+%     \renewcommand{\arraystretch}{1.35}
+%     \setlength{\tabcolsep}{5pt}
+%     \begin{tabularx}{\textwidth}{
+%         |>{\centering\arraybackslash}X
+%         |>{\centering\arraybackslash}X
+%         |>{\centering\arraybackslash}X
+%         |>{\centering\arraybackslash}X
+%         |>{\centering\arraybackslash}X
+%         |>{\centering\arraybackslash}X
+%         |>{\centering\arraybackslash}X|
+%     }
+%         \hline
+%         \textbf{Bộ dữ liệu} &
+%         \textbf{GA} &
+%         \textbf{HGA} &
+%         \textbf{NSGA-II} &
+%         \textbf{MO-HGA-LS} &
+%         \textbf{Louvain} &
+%         \textbf{Leiden} \\ \hline
+
+%         Karate &
+%         0.588 $\pm$ 2.806 &
+%         0.070 $\pm$ 0.015 &
+%         0.075 $\pm$ 0.008 &
+%         0.078 $\pm$ 0.013 &
+%         0.001 $\pm$ 0.002 &
+%         0.107 $\pm$ 0.578 \\ \hline
+
+%         Polbooks &
+%         0.174 $\pm$ 0.038 &
+%         0.106 $\pm$ 0.017 &
+%         0.216 $\pm$ 0.052 &
+%         0.139 $\pm$ 0.031 &
+%         0.003 $\pm$ 0.002 &
+%         0.004 $\pm$ 0.004 \\ \hline
+
+%         Football &
+%         0.175 $\pm$ 0.040 &
+%         0.139 $\pm$ 0.019 &
+%         0.339 $\pm$ 0.080 &
+%         0.292 $\pm$ 0.063 &
+%         0.006 $\pm$ 0.012 &
+%         0.003 $\pm$ 0.002 \\ \hline
+
+%         Email &
+%         1.151 $\pm$ 0.279 &
+%         8.138 $\pm$ 1.513 &
+%         0.934 $\pm$ 0.107 &
+%         25.510 $\pm$ 3.229 &
+%         0.142 $\pm$ 0.025 &
+%         0.040 $\pm$ 0.018 \\ \hline
+%     \end{tabularx}
+
+%     \caption{So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}
+%     \label{tab:runtime_comparison}
+% \end{table}
+
+\begin{figure}[H]
     \centering
-    \small
-    \renewcommand{\arraystretch}{1.35}
-    \setlength{\tabcolsep}{5pt}
-    \begin{tabularx}{\textwidth}{
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X|
-    }
-        \hline
-        \textbf{Bộ dữ liệu} &
-        \textbf{GA} &
-        \textbf{HGA} &
-        \textbf{NSGA-II} &
-        \textbf{MO-HGA-LS} &
-        \textbf{Louvain} &
-        \textbf{Leiden} \\ \hline
-
-        Karate &
-        0.588 $\pm$ 2.806 &
-        0.070 $\pm$ 0.015 &
-        0.075 $\pm$ 0.008 &
-        0.078 $\pm$ 0.013 &
-        0.001 $\pm$ 0.002 &
-        0.107 $\pm$ 0.578 \\ \hline
-
-        Polbooks &
-        0.174 $\pm$ 0.038 &
-        0.106 $\pm$ 0.017 &
-        0.216 $\pm$ 0.052 &
-        0.139 $\pm$ 0.031 &
-        0.003 $\pm$ 0.002 &
-        0.004 $\pm$ 0.004 \\ \hline
-
-        Football &
-        0.175 $\pm$ 0.040 &
-        0.139 $\pm$ 0.019 &
-        0.339 $\pm$ 0.080 &
-        0.292 $\pm$ 0.063 &
-        0.006 $\pm$ 0.012 &
-        0.003 $\pm$ 0.002 \\ \hline
-
-        Email &
-        1.151 $\pm$ 0.279 &
-        8.138 $\pm$ 1.513 &
-        0.934 $\pm$ 0.107 &
-        25.510 $\pm$ 3.229 &
-        0.142 $\pm$ 0.025 &
-        0.040 $\pm$ 0.018 \\ \hline
-    \end{tabularx}
-
+    \includegraphics[width=1.0\textwidth]{runtime.png}
     \caption{So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}
-    \label{tab:runtime_comparison}
-\end{table}
+    \label{fig:runtime}
+\end{figure}
 
-Đơn vị: giây. Các giá trị được trình bày dưới dạng trung bình $\pm$ độ lệch chuẩn.
-
-Trên Karate, thời gian chạy của các thuật toán tiến hóa tương đối nhỏ. HGA và MO-HGA-LS có thời gian trung bình lần lượt là 0.070 giây và 0.078 giây, trong khi Louvain có thời gian thực thi rất thấp (0.001 giây). Độ lệch chuẩn lớn của GA ($2.806$ giây) và Leiden ($0.578$ giây) chủ yếu xuất phát từ chi phí biên dịch JIT (Just-In-Time) ở lượt chạy đầu tiên (\texttt{seed = 0}) trong môi trường thực nghiệm.
+Trên Karate, thời gian chạy của các thuật toán tiến hóa tương đối nhỏ. HGA và MO-HGA-LS có thời gian trung bình lần lượt là 0.070 giây và 0.078 giây, trong khi Louvain có thời gian thực thi rất thấp (0.001 giây). Độ lệch chuẩn lớn của GA (2.81 giây) và Leiden (0.578 giây) chủ yếu xuất phát từ chi phí biên dịch JIT (Just-In-Time) ở lượt chạy đầu tiên (\texttt{seed = 0}) trong môi trường thực nghiệm.
 
 Trên Polbooks và Football, HGA và MO-HGA-LS có thời gian thực thi thấp hơn lần lượt so với GA và NSGA-II do cơ chế Local Search giúp quần thể hội tụ sớm hơn (giảm số thế hệ cần thiết). Louvain và Leiden vẫn có thời gian thực thi thấp hơn đáng kể so với các thuật toán tiến hóa trong các phép đo hiện tại.
 
@@ -2019,96 +2023,25 @@ Trên Polbooks, Modularity của hai thuật toán giữ nguyên ở mức $0.52
 
 Trên Football, HGA thể hiện hiệu quả rõ rệt hơn so với GA. Modularity tăng từ $0.6041$ lên $0.6046$, NMI tăng từ $0.8582$ lên $0.8903$ và ARI tăng từ $0.7152$ lên $0.8069$. Đặc biệt, mức cải thiện của NMI và ARI cho thấy Local Search hỗ trợ đáng kể quá trình tìm kiếm các phân hoạch có cấu trúc gần với phân hoạch tham chiếu. Đây là bộ dữ liệu thể hiện rõ lợi ích của việc kết hợp tìm kiếm tiến hóa với tìm kiếm cục bộ.
 
-Trên Email, HGA cải thiện cả ba chỉ số Modularity, NMI và ARI. Cụ thể, $Q$ tăng từ $0.3893$ lên $0.4035$, NMI tăng từ $0.4978$ lên $0.5107$ và ARI tăng từ $0.2167$ lên $0.2402$. Đồng thời, Conductance giảm từ $0.4277$ xuống $0.3963$, thể hiện sự cải thiện theo cả hai hướng đánh giá chất lượng phân hoạch. Tuy nhiên, lợi ích này đi kèm với chi phí tính toán tăng đáng kể (thời gian trung bình tăng từ 1.151 giây lên 8.138 giây) do HGA phải thực hiện nhiều lời gọi Local Search.
+Trên Email, HGA cải thiện cả ba chỉ số Modularity, NMI và ARI. Cụ thể, $Q$ tăng từ $0.3893$ lên $0.4035$, NMI tăng từ $0.4978$ lên $0.5107$ và ARI tăng từ $0.2167$ lên $0.2402$. Đồng thời, Conductance giảm từ $0.4277$ xuống $0.3963$, thể hiện sự cải thiện theo cả hai hướng đánh giá chất lượng phân hoạch. Tuy nhiên, lợi ích này đi kèm với chi phí tính toán tăng đáng kể (thời gian trung bình tăng từ 1.15 giây lên 8.14 giây) do HGA phải thực hiện nhiều lời gọi Local Search.
 
 Nhìn chung, kết quả thực nghiệm cho thấy Local Search có khả năng cải thiện chất lượng phân hoạch, đặc biệt trên hai bộ dữ liệu Football và Email. Tuy nhiên, mức độ cải thiện phụ thuộc vào đặc điểm của từng mạng và không đồng đều trên tất cả các chỉ số. Do đó, việc tích hợp Local Search cần được đánh giá đồng thời dựa trên chất lượng nghiệm và chi phí tính toán, thay vì chỉ xét mức cải thiện của một chỉ số riêng lẻ.
 
-% \subsubsection{Ảnh hưởng của các tham số Local Search}
-
-% Trong cấu hình thực nghiệm chính, Local Search sử dụng các tham số được trình bày trong Bảng~\ref{tab:local_search_params}.
-% \begin{table}[H]
-%     \centering
-%     \caption{Các tham số của cơ chế Local Search}
-%     \label{tab:local_search_params}
-%     \renewcommand{\arraystretch}{1.3}
-%     \begin{tabularx}{0.7\textwidth}{|>{\centering\arraybackslash}p{0.25\textwidth}|>{\centering\arraybackslash}X|}
-%         \hline
-%         \textbf{Tham số} & \textbf{Giá trị} \\
-%         \hline
-%         $p_{LS}$ & 0.2 \\
-%         \hline
-%         $I_{LS}$ & 30 \\
-%         \hline
-%         $\rho$ & Chưa xác định \\
-%         \hline
-%     \end{tabularx}
-% \end{table}
-
 \subsubsection{Ảnh hưởng của các tham số và cơ chế vận hành Local Search}
 
-Trong thiết lập thực nghiệm chính, cơ chế tìm kiếm cục bộ (Local Search) được cấu hình cố định thông qua các tham số điều khiển tần suất kích hoạt và ngân sách lặp nội bộ như trình bày trong Bảng~\ref{tab:local_search_params}. Cụ thể, xác suất áp dụng tìm kiếm cục bộ lên cá thể là $p_{LS} = 0.2$ và số bước lặp tối đa cho mỗi lần gọi là $I_{LS} = 30$. Việc giới hạn các tham số này ở mức vừa phải nhằm cân bằng giữa khả năng khai thác cục bộ (exploitation) và chi phí tính toán trên mỗi thế hệ tiến hóa.
+Trong thiết lập thực nghiệm chính, cơ chế tìm kiếm cục bộ (Local Search) được cấu hình cố định thông qua các tham số điều khiển tần suất kích hoạt và ngân sách lặp nội bộ. Cụ thể, xác suất áp dụng tìm kiếm cục bộ lên cá thể là $p_{LS} = 0.2$ và số bước lặp tối đa cho mỗi lần gọi là $I_{LS} = 30$. Việc giới hạn các tham số này ở mức vừa phải nhằm cân bằng giữa khả năng khai thác cục bộ (exploitation) và chi phí tính toán trên mỗi thế hệ tiến hóa.
 
-\begin{table}[H]
+Để đánh giá mức độ tác động thực tế của cấu hình tham số này, Hình ~\ref{fig:ls_behavior_stats} tổng hợp các chỉ số vận hành nội bộ của Local Search trong hai thuật toán HGA và MO-HGA-LS (trung bình trên 30 lần chạy), bao gồm: số lần gọi Local Search, số lần tìm được nghiệm cải thiện, tổng mức cải thiện tích lũy của hai hàm mục tiêu ($\sum \Delta Q$, $\sum \Delta \Phi$) và thời gian tiêu tốn riêng cho Local Search ($T_{LS}$).
+
+\begin{figure}[H]
     \centering
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabularx}{0.85\textwidth}{
-        |>{\centering\arraybackslash}p{0.2\textwidth}
-        |>{\centering\arraybackslash}p{0.2\textwidth}
-        |>{\raggedright\arraybackslash}X|
-    }
-        \hline
-        \textbf{Tham số} & \textbf{Giá trị} & \textbf{Vai trò trong quá trình tiến hóa} \\
-        \hline
-        $p_{LS}$ & 0.2 & Xác suất kích hoạt Local Search trên mỗi cá thể được chọn ở từng thế hệ. \\
-        \hline
-        $I_{LS}$ & 30 & Số vòng lặp di chuyển đỉnh tối đa cho mỗi lần gọi Local Search. \\
-        \hline
-    \end{tabularx}
-    \caption{Cấu hình tham số của cơ chế Local Search trong thực nghiệm chính}
-    \label{tab:local_search_params}
-\end{table}
+    \includegraphics[width=1.0\textwidth]{ls_behavior.png}
+    \caption{Các chỉ số vận hành của Local Search trong HGA và MO-HGA-LS trên các bộ dữ liệu}
+    \label{fig:ls_behavior_stats}
+\end{figure}
 
-Để đánh giá mức độ tác động thực tế của cấu hình tham số này, Bảng~\ref{tab:ls_behavior_stats} tổng hợp các chỉ số vận hành nội bộ của Local Search trong hai thuật toán HGA và MO-HGA-LS (trung bình trên 30 lần chạy), bao gồm: số lần gọi Local Search (\texttt{ls\_calls}), số lần tìm được nghiệm cải thiện (\texttt{ls\_improved}), tổng mức cải thiện tích lũy của hai hàm mục tiêu ($\sum \Delta Q$, $\sum \Delta \Phi$) và thời gian tiêu tốn riêng cho Local Search ($T_{LS}$).
 
-\begin{table}[H]
-    \centering
-    \small
-    \renewcommand{\arraystretch}{1.3}
-    \begin{tabularx}{\textwidth}{
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X
-        |>{\centering\arraybackslash}X|
-    }
-        \hline
-        \textbf{Bộ dữ liệu} &
-        \textbf{Thuật toán} &
-        \textbf{Số lần gọi} &
-        \textbf{Số lần cải thiện} &
-        \textbf{$\sum \Delta Q$} &
-        \textbf{$\sum \Delta \Phi$} &
-        \textbf{$T_{LS}$ (giây)} \\ \hline
-
-        Karate & HGA & 623.9 & 543.0 & +15.64 & -14.62 & 0.007 \\ \hline
-        Karate & MO-HGA-LS & 639.5 & 546.5 & +21.25 & -23.44 & 0.007 \\ \hline
-
-        Polbooks & HGA & 744.2 & 680.2 & +7.75 & -8.54 & 0.023 \\ \hline
-        Polbooks & MO-HGA-LS & 943.6 & 593.1 & +12.17 & -14.81 & 0.036 \\ \hline
-
-        Football & HGA & 785.8 & 646.5 & +20.83 & -21.58 & 0.047 \\ \hline
-        Football & MO-HGA-LS & 1450.1 & 1229.7 & +53.33 & -63.21 & 0.090 \\ \hline
-
-        Email & HGA & 3357.1 & 3120.0 & +55.22 & -29.62 & 6.739 \\ \hline
-        Email & MO-HGA-LS & 3769.3 & 3103.3 & +209.11 & -228.33 & 23.176 \\ \hline
-    \end{tabularx}
-    \caption{Thống kê hoạt động nội bộ của cơ chế Local Search trên HGA và MO-HGA-LS}
-    \label{tab:ls_behavior_stats}
-\end{table}
-
-Từ số liệu trong Bảng~\ref{tab:ls_behavior_stats}, có thể rút ra một số nhận xét quan trọng về ảnh hưởng của thiết lập $p_{LS} = 0.2$ và $I_{LS} = 30$:
+Từ số liệu trong Hình ~\ref{fig:ls_behavior_stats}, có thể rút ra một số nhận xét quan trọng về ảnh hưởng của thiết lập $p_{LS} = 0.2$ và $I_{LS} = 30$:
 
 \begin{itemize}
     \item \textbf{Tỷ lệ cải thiện nghiệm cao:} Trên tất cả các bộ dữ liệu, tỷ lệ số lần gọi Local Search tạo ra sự cải thiện thực sự (\texttt{ls\_improved} / \texttt{ls\_calls}) duy trì ở mức cao, dao động từ 62.9\% (MO-HGA-LS trên Polbooks) đến trên 92.9\% (HGA trên Email). Điều này chứng tỏ ngưỡng lặp $I_{LS} = 30$ đủ lớn để thực hiện các phép di chuyển đỉnh có ích mà không rơi vào trạng thái dư thừa quá mức.
@@ -2118,16 +2051,161 @@ Từ số liệu trong Bảng~\ref{tab:ls_behavior_stats}, có thể rút ra m�
 
 Cần lưu ý rằng trong phạm vi thực nghiệm hiện tại, các tham số $p_{LS}$ và $I_{LS}$ được giữ cố định để đảm bảo tính công bằng khi so sánh giữa các thuật toán, chưa thực hiện khảo sát độ nhạy (sensitivity analysis) với nhiều mức giá trị khác nhau. Việc điều chỉnh giảm $p_{LS}$ hoặc thiết lập cơ chế giảm dần $I_{LS}$ theo số thế hệ là hướng cải tiến tiềm năng nhằm tiết kiệm chi phí tính toán trên các mạng quy mô lớn như Email.
 
+
 \subsubsection{Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}
 
+Trong các thuật toán tối ưu hóa, chất lượng nghiệm và chi phí tính toán thường tồn tại mối quan hệ đánh đổi. Việc bổ sung các cơ chế tìm kiếm cục bộ có thể giúp cải thiện chất lượng phân hoạch, nhưng đồng thời làm tăng số lần đánh giá nghiệm và thời gian thực thi. Đối với MO-HGA-LS, sự đánh đổi này thể hiện chủ yếu ở cơ chế Pareto-Lamarck Local Search, khi thuật toán phải thực hiện các phép di chuyển đỉnh, đánh giá đồng thời Modularity ($Q$) và Conductance ($\Phi$), đồng thời cập nhật tập nghiệm Pareto.
+
+Để đánh giá mối quan hệ giữa hai yếu tố trên, cần xem xét đồng thời thời gian thực thi, chất lượng phân hoạch và mức độ cải thiện so với NSGA-II cũng như HGA. Kết quả tổng hợp được trình bày trong Bảng~\ref{tab:quality_cost_tradeoff}.
+
+\begin{table}[H]
+    \centering
+    \small
+    \renewcommand{\arraystretch}{1.3}
+    \setlength{\tabcolsep}{4pt}
+    \begin{tabularx}{\textwidth}{
+        |>{\centering\arraybackslash}p{0.15\textwidth}
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X
+        |>{\centering\arraybackslash}X|
+    }
+        \hline
+        \textbf{Bộ dữ liệu} &
+        \textbf{Thời gian MO-HGA-LS (s)} &
+        \textbf{Thời gian NSGA-II (s)} &
+        \textbf{Thời gian HGA (s)} &
+        \textbf{Tỷ lệ thời gian LS của MO-HGA-LS} \\ \hline
+
+        Karate & 0.078 & 0.075 & 0.070 & 8.97\% \\ \hline
+        Polbooks & 0.139 & 0.216 & 0.106 & 25.90\% \\ \hline
+        Football & 0.292 & 0.339 & 0.139 & 30.82\% \\ \hline
+        Email & 25.510 & 0.934 & 8.138 & 90.85\% \\ \hline
+    \end{tabularx}
+    \caption{So sánh chi phí tính toán của MO-HGA-LS với các thuật toán đối chứng}
+    \label{tab:quality_cost_tradeoff}
+\end{table}
+
+Từ kết quả trong bảng có thể nhận thấy chi phí tính toán của MO-HGA-LS phụ thuộc đáng kể vào quy mô và đặc điểm cấu trúc của đồ thị. Trên Karate, Polbooks và Football, thời gian thực thi của phương pháp đề xuất lần lượt là 0.078 giây, 0.139 giây và 0.292 giây. Các giá trị này tương đối thấp và không tạo ra sự gia tăng quá lớn về thời gian thực hiện. Đặc biệt, trên Polbooks và Football, MO-HGA-LS còn có thời gian thực thi thấp hơn NSGA-II, mặc dù được bổ sung cơ chế tìm kiếm cục bộ.
+
+Tuy nhiên, trên Email, thời gian thực thi của MO-HGA-LS tăng lên 25.510 giây, cao hơn đáng kể so với NSGA-II (0.934 giây) và HGA (8.138 giây). So với NSGA-II, thời gian thực thi của phương pháp đề xuất lớn hơn khoảng 27.32 lần. So với HGA, thời gian thực thi tăng khoảng 3.14 lần. Điều này cho thấy chi phí của cơ chế tìm kiếm cục bộ trở nên đáng kể khi kích thước và độ phức tạp của mạng tăng lên.
+
+Một nguyên nhân quan trọng được thể hiện qua thống kê hoạt động nội bộ của Local Search. Trên Email, thời gian thực hiện Local Search của MO-HGA-LS là 23.176 giây, chiếm khoảng 90.85\% tổng thời gian chạy. Trong khi đó, tỷ lệ này trên Karate, Polbooks và Football lần lượt chỉ khoảng 8.97\%, 25.90\% và 30.82\%. Như vậy, Local Search là thành phần chi phối chi phí tính toán của phương pháp đề xuất, đặc biệt đối với mạng có quy mô lớn hơn.
+
+Xét về chất lượng nghiệm, MO-HGA-LS thể hiện những ưu điểm nhất định so với NSGA-II. Trên Polbooks, thuật toán đạt Modularity bằng 0.5272, NMI bằng 0.5647 và ARI bằng 0.6623, cao hơn nhẹ so với các giá trị tương ứng của NSGA-II là 0.5271, 0.5637 và 0.6613. Trên Football, MO-HGA-LS cải thiện đáng kể NMI từ 0.8264 lên 0.8811 và ARI từ 0.6452 lên 0.7808. Modularity cũng tăng từ 0.6016 lên 0.6045. Tuy nhiên, Conductance tăng từ 0.2693 lên 0.2907, cho thấy sự đánh đổi giữa hai mục tiêu tối ưu hóa.
+
+Đối với Email, MO-HGA-LS cải thiện Modularity từ 0.3692 lên 0.3731 và ARI từ 0.1806 lên 0.1992 so với NSGA-II. Tuy nhiên, NMI giảm nhẹ từ 0.4542 xuống 0.4511, trong khi Conductance tăng từ 0.3705 lên 0.3960. Do đó, phương pháp đề xuất chưa thể hiện sự vượt trội đồng thời trên tất cả các chỉ số đánh giá. Trên Karate, hai thuật toán đạt kết quả tương đương, cho thấy việc bổ sung Local Search chưa tạo ra cải thiện rõ rệt đối với đồ thị nhỏ này.
+
+Cần lưu ý rằng MO-HGA-LS là thuật toán tối ưu đa mục tiêu, do đó việc lựa chọn một nghiệm đại diện có thể làm thay đổi mức độ thể hiện của từng tiêu chí. Một nghiệm có Modularity cao hơn không nhất thiết đồng thời có Conductance thấp hơn. Vì vậy, chất lượng của phương pháp đề xuất cần được xem xét cùng với tập nghiệm Pareto và chỉ số Hypervolume, thay vì chỉ dựa trên một nghiệm hoặc một hàm mục tiêu riêng lẻ.
+
+Từ các kết quả trên có thể nhận thấy sự đánh đổi giữa chất lượng nghiệm và chi phí tính toán không diễn ra đồng đều trên các bộ dữ liệu. Đối với Karate, Polbooks và Football, MO-HGA-LS có thể cung cấp các nghiệm có chất lượng cạnh tranh với NSGA-II trong thời gian thực thi tương đối thấp. Ngược lại, trên Email, chi phí bổ sung của Local Search lớn hơn đáng kể và chưa đi kèm với sự cải thiện đồng nhất trên các chỉ số đánh giá.
+
+Như vậy, MO-HGA-LS phù hợp hơn trong những trường hợp cần duy trì nhiều phương án phân hoạch theo các mục tiêu khác nhau và có ngân sách tính toán đủ lớn cho tìm kiếm cục bộ. Đối với các mạng lớn, cần cân nhắc điều chỉnh tần suất kích hoạt Local Search, giới hạn số bước tìm kiếm và tối ưu hóa quá trình đánh giá các phép di chuyển đỉnh nhằm giảm thời gian thực thi mà vẫn duy trì khả năng tìm kiếm đa mục tiêu.
+
 \subsection{Thảo luận kết quả}
+
+Kết quả thực nghiệm trên bốn bộ dữ liệu Karate, Polbooks, Football và Email cho thấy hiệu quả của các thuật toán phát hiện cộng đồng phụ thuộc đáng kể vào đặc điểm cấu trúc của từng mạng, cơ chế tìm kiếm và mục tiêu tối ưu hóa. Không có một thuật toán duy nhất đạt kết quả tốt nhất trên tất cả các bộ dữ liệu và mọi chỉ số đánh giá. Điều này cho thấy việc lựa chọn phương pháp phát hiện cộng đồng cần dựa trên yêu cầu cụ thể của bài toán, thay vì chỉ xem xét một tiêu chí chất lượng riêng lẻ.
+
+Trong nhóm thuật toán đơn mục tiêu, HGA nhìn chung cải thiện kết quả so với GA, đặc biệt trên Football và Email. Việc kết hợp Local Search giúp thuật toán khai thác các nghiệm tiềm năng trong vùng lân cận, qua đó cải thiện chất lượng phân hoạch mà quá trình tiến hóa thuần túy có thể chưa tìm được.
+
+Đối với nhóm thuật toán đa mục tiêu, MO-HGA-LS cho thấy khả năng cải thiện một số chỉ số so với NSGA-II, đặc biệt trên Football và Polbooks. Tuy nhiên, mức cải thiện không đồng nhất trên tất cả các tiêu chí. Điều này phản ánh bản chất của bài toán tối ưu đa mục tiêu, trong đó các mục tiêu có thể xung đột và không nhất thiết tồn tại một nghiệm tối ưu đồng thời cho tất cả tiêu chí.
+
+Bên cạnh chất lượng nghiệm, thời gian thực thi cũng là yếu tố quan trọng cần xem xét. Kết quả cho thấy MO-HGA-LS có chi phí tính toán chấp nhận được trên các mạng nhỏ và trung bình trong phạm vi thực nghiệm, nhưng thời gian chạy tăng mạnh trên Email do số lần gọi Local Search và chi phí xử lý các phép di chuyển đỉnh tăng lên. Vì vậy, việc đánh giá phương pháp đề xuất cần xem xét đồng thời khả năng tìm kiếm nghiệm không bị trội, chất lượng phân hoạch và hiệu quả sử dụng tài nguyên tính toán.
+
 \subsubsection{Ưu điểm của phương pháp đề xuất}
+
+Phương pháp MO-HGA-LS có một số ưu điểm đáng chú ý trong việc giải quyết bài toán phát hiện cộng đồng trên mạng xã hội.
+
+Thứ nhất, phương pháp kết hợp ưu điểm của thuật toán di truyền và tìm kiếm cục bộ. Genetic Algorithm có khả năng duy trì quần thể nghiệm và khám phá nhiều vùng khác nhau trong không gian tìm kiếm thông qua các toán tử lựa chọn, lai ghép và đột biến. Trong khi đó, Local Search thực hiện các phép di chuyển đỉnh giữa những cộng đồng lân cận nhằm khai thác sâu hơn các nghiệm hiện có. Sự kết hợp này giúp cân bằng giữa khả năng khám phá không gian nghiệm và khả năng cải thiện chất lượng nghiệm tại từng vùng tìm kiếm.
+
+Thứ hai, MO-HGA-LS hỗ trợ tối ưu đồng thời Modularity và Conductance. Khác với các phương pháp chỉ tập trung vào một hàm mục tiêu, phương pháp đề xuất xem xét đồng thời mức độ liên kết bên trong cộng đồng và mức độ liên kết giữa cộng đồng với phần còn lại của mạng. Nhờ đó, thuật toán có khả năng duy trì nhiều phương án phân hoạch khác nhau, phù hợp với những yêu cầu đánh giá chất lượng cộng đồng theo nhiều tiêu chí.
+
+Thứ ba, cơ chế Pareto-Lamarck Local Search giúp kết hợp quá trình cải thiện nghiệm cục bộ với cơ chế lưu trữ các nghiệm không bị trội. Các nghiệm sau khi được cải thiện có thể được cập nhật trở lại cá thể tương ứng, giúp thông tin thu được từ tìm kiếm cục bộ tiếp tục được khai thác trong những thế hệ tiến hóa tiếp theo. Đồng thời, tập nghiệm Pareto hỗ trợ duy trì sự đa dạng về chất lượng giữa các phương án phân hoạch.
+
+Thứ tư, kết quả thực nghiệm cho thấy phương pháp đề xuất có khả năng cải thiện chất lượng phân hoạch trên một số bộ dữ liệu. Trên Football, MO-HGA-LS cải thiện đáng kể NMI và ARI so với NSGA-II. Trên Polbooks, phương pháp đạt kết quả cao hơn nhẹ về Modularity, NMI và ARI. Những kết quả này cho thấy việc kết hợp tìm kiếm tiến hóa đa mục tiêu với Local Search có thể mang lại lợi ích trong quá trình tìm kiếm các phân hoạch cộng đồng có chất lượng tốt.
+
+Thứ năm, phương pháp được triển khai trong môi trường Julia với khả năng hỗ trợ tính toán đa luồng và GPU. Cấu trúc chương trình cho phép sử dụng CUDA để đánh giá hàm thích nghi theo lô, đồng thời khai thác tính toán đa luồng trong một số thành phần của Local Search khi số lượng công việc đủ lớn. Hệ thống cũng hỗ trợ lưu trữ kết quả, thống kê và profiling, tạo điều kiện thuận lợi cho việc phân tích hiệu năng và phát triển thuật toán trong các nghiên cứu tiếp theo.
+
+Nhìn chung, ưu điểm nổi bật của MO-HGA-LS nằm ở khả năng kết hợp tối ưu đa mục tiêu với tìm kiếm cục bộ, qua đó duy trì nhiều phương án phân hoạch và cải thiện chất lượng nghiệm trên một số loại mạng. Phương pháp không chỉ hướng đến việc tìm kiếm một phân hoạch có Modularity cao mà còn xem xét đồng thời Conductance để cung cấp góc nhìn toàn diện hơn về cấu trúc cộng đồng.
+
 \subsubsection{Hạn chế của phương pháp}
+
+Mặc dù đạt được một số kết quả tích cực, MO-HGA-LS vẫn tồn tại những hạn chế cần được xem xét.
+
+Thứ nhất, chi phí tính toán của Local Search tương đối lớn trên các mạng có quy mô và cấu trúc phức tạp. Kết quả profiling cho thấy trên Email, Local Search chiếm khoảng 90.85\% tổng thời gian thực thi của MO-HGA-LS. Điều này cho thấy cơ chế tìm kiếm cục bộ hiện tại có thể trở thành nút thắt cổ chai khi số lượng đỉnh và các phép di chuyển cần đánh giá tăng lên. So với NSGA-II, thời gian thực thi của MO-HGA-LS trên Email cao hơn khoảng 27.32 lần, làm hạn chế khả năng áp dụng trực tiếp trên những mạng lớn nếu không có các biện pháp tối ưu hóa phù hợp.
+
+Thứ hai, hiệu quả của Local Search phụ thuộc vào đặc điểm của từng bộ dữ liệu. Trên Karate, việc bổ sung Local Search không tạo ra sự cải thiện đáng kể về chất lượng nghiệm. Trên Polbooks và Football, mức cải thiện cũng khác nhau giữa Modularity, Conductance, NMI và ARI. Do đó, không thể khẳng định Local Search luôn cải thiện đồng thời tất cả các chỉ số đánh giá.
+
+Thứ ba, chất lượng nghiệm của phương pháp đa mục tiêu phụ thuộc vào cơ chế lựa chọn nghiệm đại diện từ tập Pareto. Khi hai mục tiêu có sự xung đột, nghiệm có Modularity cao có thể không phải nghiệm có Conductance thấp nhất. Vì vậy, việc lựa chọn nghiệm cuối cùng cần có tiêu chí phù hợp với mục đích sử dụng thực tế. Nếu chỉ báo cáo một nghiệm đại diện mà không phân tích tập Pareto, khả năng thể hiện đầy đủ lợi ích của tối ưu đa mục tiêu sẽ bị hạn chế.
+
+Thứ tư, cấu hình tham số hiện tại chưa được khảo sát đầy đủ về độ nhạy. Các tham số như kích thước quần thể, xác suất lai ghép, xác suất đột biến, xác suất kích hoạt Local Search, số vòng lặp tìm kiếm cục bộ và giới hạn tập lưu trữ Pareto đều có thể ảnh hưởng đến chất lượng nghiệm cũng như thời gian thực thi. Trong thực nghiệm, các tham số Local Search được giữ cố định với $p_{LS}=0.2$ và $I_{LS}=30$. Vì vậy, chưa thể xác định cấu hình này có phải lựa chọn tối ưu cho từng bộ dữ liệu hay không.
+
+Thứ năm, phạm vi thực nghiệm còn giới hạn ở bốn bộ dữ liệu chính được phân tích trong chương. Mặc dù các bộ dữ liệu có đặc điểm và quy mô khác nhau, kết quả hiện tại chưa đủ để khẳng định khả năng tổng quát hóa của thuật toán trên mọi loại mạng xã hội, đặc biệt là những mạng có hàng trăm nghìn hoặc hàng triệu đỉnh.
+
+Cuối cùng, việc so sánh thời gian thực thi giữa các thuật toán vẫn chịu ảnh hưởng bởi môi trường triển khai và nền tảng thực thi khác nhau. Leiden sử dụng backend Python thông qua igraph và leidenalg, Louvain sử dụng cài đặt Julia, trong khi các thuật toán tiến hóa có thể sử dụng CUDA cho đánh giá fitness. Do đó, thời gian thực thi hiện tại phản ánh hiệu năng của các cài đặt cụ thể trong môi trường thực nghiệm, chưa hoàn toàn loại bỏ được ảnh hưởng của ngôn ngữ lập trình và backend.
+
+Những hạn chế trên cho thấy phương pháp đề xuất vẫn cần được tiếp tục tối ưu hóa, đặc biệt là cơ chế Local Search, khả năng mở rộng và quy trình đánh giá tập nghiệm Pareto.
+
 \subsubsection{Khả năng áp dụng và mở rộng}
+
+Về khả năng áp dụng, MO-HGA-LS có thể được sử dụng trong các bài toán phân tích mạng xã hội khi cần phát hiện những nhóm đỉnh có mức độ liên kết nội bộ cao và mức độ liên kết với các nhóm khác thấp. Việc tối ưu đồng thời Modularity và Conductance cho phép xem xét cấu trúc cộng đồng theo hai khía cạnh khác nhau, từ đó cung cấp nhiều phương án phân hoạch để phục vụ các mục đích phân tích.
+
+Một số hướng ứng dụng tiềm năng bao gồm:
+
+\begin{itemize}
+    \item \textbf{Phân tích mạng xã hội:} Phát hiện các nhóm người dùng có quan hệ tương tác chặt chẽ, hỗ trợ nghiên cứu cấu trúc và sự hình thành cộng đồng trong mạng xã hội.
+    
+    \item \textbf{Phân tích mạng cộng tác:} Xác định các nhóm cá nhân hoặc tổ chức có mối quan hệ hợp tác thường xuyên trong các hệ thống cộng tác.
+    
+    \item \textbf{Phân tích mạng thông tin:} Phát hiện các nhóm nút có liên kết tương đối dày đặc trong mạng email, mạng trích dẫn hoặc các hệ thống trao đổi thông tin.
+    
+    \item \textbf{Phân tích mạng phức hợp:} Hỗ trợ nghiên cứu cấu trúc phân cấp và các nhóm liên kết trong những hệ thống có quan hệ phức tạp.
+\end{itemize}
+
+Đối với khả năng mở rộng về quy mô, cần ưu tiên cải tiến thành phần Local Search vì đây là thành phần chiếm tỷ trọng thời gian lớn nhất trong các thực nghiệm trên Email. Một hướng tiếp cận là sử dụng cơ chế lựa chọn các đỉnh biên có tiềm năng cải thiện cao thay vì đánh giá toàn bộ các đỉnh trong mỗi vòng tìm kiếm. Việc giới hạn vùng lân cận cần được thực hiện có kiểm soát để giảm số phép tính mà không làm mất đi các hướng cải thiện quan trọng.
+
+Bên cạnh đó, có thể xây dựng cơ chế điều chỉnh động tần suất kích hoạt Local Search theo tiến trình tiến hóa. Trong những thế hệ đầu, thuật toán có thể dành ngân sách tìm kiếm cục bộ thấp hơn để ưu tiên khám phá không gian nghiệm. Khi quần thể bắt đầu hội tụ, Local Search có thể được kích hoạt thường xuyên hơn đối với những cá thể có tiềm năng cải thiện. Cách tiếp cận này có thể giúp phân bổ ngân sách tính toán hợp lý hơn giữa hai giai đoạn khám phá và khai thác.
+
+Về phương diện tính toán, hệ thống có thể tiếp tục khai thác khả năng xử lý đa luồng của CPU bằng cách phân chia các tác vụ đánh giá hoặc tìm kiếm cục bộ độc lập. Đối với GPU, có thể nghiên cứu mở rộng phạm vi tính toán theo lô, đặc biệt là các phép đánh giá hàm mục tiêu trên nhiều cá thể. Tuy nhiên, cần cân nhắc chi phí truyền dữ liệu giữa CPU và GPU, dung lượng bộ nhớ GPU cũng như kích thước lô tính toán để bảo đảm hiệu quả thực tế.
+
+Ngoài ra, phương pháp có thể được mở rộng theo hướng xử lý mạng động, trong đó cấu trúc đồ thị thay đổi theo thời gian. Khi mạng xuất hiện các đỉnh hoặc cạnh mới, thuật toán có thể sử dụng phân hoạch ở thời điểm trước làm thông tin khởi tạo, sau đó thực hiện tìm kiếm cục bộ để cập nhật cấu trúc cộng đồng. Hướng tiếp cận này có tiềm năng giảm chi phí tính toán so với việc phát hiện lại toàn bộ cộng đồng sau mỗi lần mạng thay đổi.
+
+Một hướng mở rộng khác là nghiên cứu khả năng phát hiện cộng đồng phân cấp hoặc cộng đồng chồng lấn. Trong thực tế, một đỉnh có thể tham gia nhiều nhóm quan hệ khác nhau và cấu trúc cộng đồng có thể tồn tại ở nhiều mức độ. Việc mở rộng biểu diễn nghiệm và các hàm mục tiêu sẽ cho phép phương pháp xử lý những dạng cấu trúc phức tạp hơn.
+
+Nhìn chung, MO-HGA-LS có tiềm năng áp dụng trong các bài toán phát hiện cộng đồng cần xem xét đồng thời nhiều tiêu chí chất lượng. Tuy nhiên, để triển khai trên những mạng lớn hoặc mạng có cấu trúc thay đổi liên tục, cần tiếp tục cải thiện hiệu quả Local Search, tối ưu hóa tính toán song song và mở rộng phạm vi đánh giá thực nghiệm.
 
 \subsection{Kết luận chương}
 
+Chương này đã trình bày môi trường thực nghiệm, kết quả đánh giá và phân tích hiệu quả của phương pháp đề xuất MO-HGA-LS trong bài toán phát hiện cộng đồng trên mạng xã hội. Các thực nghiệm được thực hiện trên bốn bộ dữ liệu Karate, Polbooks, Football và Email, với 30 lần chạy độc lập cho mỗi thuật toán và mỗi bộ dữ liệu. Các phương pháp được so sánh bao gồm GA, HGA, NSGA-II, MO-HGA-LS, Louvain và Leiden.
+
+Kết quả thực nghiệm cho thấy GA có khả năng phát hiện cộng đồng với chất lượng tương đối tốt trên một số bộ dữ liệu, trong khi HGA nhìn chung cải thiện chất lượng nghiệm nhờ bổ sung cơ chế Local Search. Đặc biệt, HGA đạt kết quả nổi bật trên Football với Modularity bằng 0.6046, NMI bằng 0.8903 và ARI bằng 0.8069. Trên Email, HGA cũng cải thiện cả Modularity, NMI, ARI và Conductance so với GA.
+
+Đối với phương pháp đề xuất MO-HGA-LS, kết quả cho thấy việc kết hợp tối ưu đa mục tiêu với Pareto-Lamarck Local Search có khả năng cải thiện một số chỉ số đánh giá so với NSGA-II. Trên Football, NMI tăng từ 0.8264 lên 0.8811 và ARI tăng từ 0.6452 lên 0.7808. Trên Polbooks, phương pháp đề xuất đạt NMI bằng 0.5647 và ARI bằng 0.6623. Tuy nhiên, trên Email, mức cải thiện chưa đồng đều giữa các chỉ số và Conductance của MO-HGA-LS cao hơn NSGA-II. Điều này phản ánh sự đánh đổi giữa hai mục tiêu Modularity và Conductance trong quá trình tối ưu đa mục tiêu.
+
+Bên cạnh chất lượng nghiệm, chương cũng phân tích thời gian thực thi, độ ổn định và ảnh hưởng của Local Search. Kết quả cho thấy chi phí tìm kiếm cục bộ tăng đáng kể trên Email, trong đó thành phần này chiếm khoảng 90.85\% tổng thời gian thực thi của MO-HGA-LS. Đây là hạn chế quan trọng cần được giải quyết nếu muốn mở rộng phương pháp trên các mạng có quy mô lớn hơn.
+
+Nhìn chung, các kết quả thực nghiệm đã làm rõ vai trò của Local Search trong việc cải thiện chất lượng phân hoạch, đồng thời cho thấy lợi ích và chi phí của việc kết hợp tối ưu đa mục tiêu với thuật toán tiến hóa. Mặc dù MO-HGA-LS chưa vượt trội trên tất cả các bộ dữ liệu và tiêu chí đánh giá, phương pháp đã thể hiện khả năng tìm kiếm các phương án phân hoạch cạnh tranh, đồng thời duy trì cách tiếp cận tối ưu nhiều mục tiêu. Đây là cơ sở để tiếp tục nghiên cứu và hoàn thiện thuật toán trong các hướng phát triển tiếp theo.
+
 \subsection{Kết luận và hướng phát triển}
+
+Đề tài đã tập trung nghiên cứu và xây dựng phương pháp metaheuristic cho bài toán phát hiện cộng đồng trên mạng xã hội, với trọng tâm là sự kết hợp giữa thuật toán di truyền đa mục tiêu và tìm kiếm cục bộ. Trên cơ sở nghiên cứu các phương pháp phát hiện cộng đồng và các thuật toán tối ưu hóa liên quan, đề tài đã xây dựng phương pháp đề xuất MO-HGA-LS nhằm tối ưu đồng thời hai tiêu chí Modularity và Conductance.
+
+Về mặt lý thuyết, đề tài đã hệ thống hóa cơ sở lý thuyết về đồ thị, cấu trúc cộng đồng, các hàm đánh giá chất lượng phân hoạch và những phương pháp metaheuristic được sử dụng trong bài toán phát hiện cộng đồng. Trên cơ sở đó, phương pháp MO-HGA-LS được xây dựng bằng cách kết hợp cơ chế tiến hóa của Genetic Algorithm, cơ chế lựa chọn nghiệm không bị trội của tối ưu đa mục tiêu và Pareto-Lamarck Local Search. Cách tiếp cận này hướng đến việc khai thác đồng thời khả năng khám phá không gian nghiệm và khả năng cải thiện nghiệm trong vùng lân cận.
+
+Về mặt triển khai, đề tài đã xây dựng hệ thống thực nghiệm bằng ngôn ngữ Julia, tích hợp các thư viện xử lý đồ thị, tính toán GPU, xử lý dữ liệu và trực quan hóa kết quả. Hệ thống hỗ trợ thực hiện nhiều lần chạy độc lập, lưu trữ kết quả và phân tích hiệu năng thông qua profiling. Bên cạnh đó, các thuật toán đối chứng như GA, HGA, NSGA-II, Louvain và Leiden được tích hợp nhằm tạo cơ sở so sánh tương đối toàn diện.
+
+Về mặt thực nghiệm, kết quả trên các bộ dữ liệu Karate, Polbooks, Football và Email cho thấy hiệu quả của từng thuật toán phụ thuộc vào đặc điểm cấu trúc mạng và tiêu chí đánh giá. HGA thể hiện khả năng cải thiện chất lượng nghiệm so với GA, đặc biệt trên Football và Email. Trong khi đó, MO-HGA-LS cho thấy tiềm năng trong việc tìm kiếm các phương án phân hoạch theo hai mục tiêu, với một số kết quả tốt hơn NSGA-II về Modularity, NMI và ARI. Tuy nhiên, sự cải thiện không xuất hiện đồng thời trên tất cả các chỉ số và bộ dữ liệu. Chi phí tính toán của phương pháp cũng tăng đáng kể trên Email do hoạt động của Local Search.
+
+Từ những kết quả đạt được, có thể nhận thấy đề tài đã hoàn thành mục tiêu nghiên cứu và xây dựng một phương pháp phát hiện cộng đồng dựa trên tối ưu hóa metaheuristic đa mục tiêu kết hợp tìm kiếm cục bộ. Tuy nhiên, phương pháp vẫn còn một số hạn chế về chi phí tính toán, khả năng mở rộng và mức độ tổng quát hóa. Những hạn chế này là cơ sở để xác định các hướng nghiên cứu tiếp theo.
+
+Trong thời gian tới, định hướng phát triển của đề tài tập trung vào các điểm chính sau:
+\begin{enumerate}
+    \item \textbf{Cải tiến cơ chế Local Search và tham số thích nghi:} Tối ưu hóa chiến lược chọn đỉnh biên và thiết lập cơ chế điều chỉnh động các tham số ($p_{\text{LS}}$, $I_{\text{LS}}$) theo trạng thái hội tụ nhằm giảm thiểu chi phí tính toán trên mạng lớn.
+    \item \textbf{Tối ưu hóa tính toán song song:} Khai thác sâu hơn hiệu năng đa luồng $\text{CPU}$ và xử lý theo lô trên $\text{GPU}$ để tăng tốc độ đánh giá hàm mục tiêu.
+    \item \textbf{Mở rộng phạm vi và mô hình mạng:} Đánh giá thuật toán trên các bộ dữ liệu quy mô lớn hơn với chỉ số $\text{Hypervolume}$, đồng thời mở rộng sang bài toán phát hiện cộng đồng trên mạng động, phân cấp hoặc chồng lấn.
+\end{enumerate}
+
+Tóm lại, MO-HGA-LS là một hướng tiếp cận kết hợp tối ưu hóa tiến hóa đa mục tiêu với tìm kiếm cục bộ cho bài toán phát hiện cộng đồng. Kết quả thực nghiệm bước đầu cho thấy phương pháp có khả năng tạo ra các phân hoạch có chất lượng cạnh tranh trên một số bộ dữ liệu, đồng thời cung cấp nhiều phương án nghiệm theo các tiêu chí đánh giá khác nhau. Mặc dù vẫn cần tiếp tục cải thiện hiệu quả tính toán và khả năng mở rộng, những kết quả đạt được là cơ sở để phát triển các phương pháp phát hiện cộng đồng hiệu quả hơn trên những mạng xã hội có cấu trúc và quy mô ngày càng phức tạp.
 
 
 \renewcommand{\refname}{\mbox{Danh mục tài liệu tham khảo}}

@@ -4,3 +4,5 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của thuật toán HGA trên các bộ dữ liệu}}{60}{figure.caption.12}%
 \contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của Louvain và Leiden trên các bộ dữ liệu}}{62}{figure.caption.13}%
 \contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của NSGA-II và MO-HGA-LS trên các bộ dữ liệu}}{64}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces \xpg@aux {}{latex}\ignorespaces So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}}{67}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Các chỉ số vận hành của Local Search trong HGA và MO-HGA-LS trên các bộ dữ liệu}}{70}{figure.caption.16}%
