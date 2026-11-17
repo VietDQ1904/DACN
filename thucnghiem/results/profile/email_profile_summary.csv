@@ -1,0 +1,2 @@
+dataset,algorithm,repeats,time_mean_s,time_std_s,memory_alloc_mean_mb,memory_alloc_std_mb,ls_time_mean_s,ls_calls_mean,q_mean,phi_mean
+email,MO-HGA-LS,1,81.1032724,0.0,998.2621507644653,0.0,78.48529799999997,3877.0,0.37364472133564847,0.38842086619714544

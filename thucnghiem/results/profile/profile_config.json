@@ -1,0 +1,1 @@
+{"repeats":1,"algorithms":["MO-HGA-LS"],"seed_start":1,"dataset":"email","config":{"pm":0.0,"pc":0.85,"mu":100,"lam":100,"eps_stop":0.0001,"tournament":2,"a_max":100,"k_stag":30,"i_ls":30,"g_max":200,"rho":0.7,"p_ls":0.2},"data_dir":"data"}

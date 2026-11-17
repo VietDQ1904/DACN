@@ -283,6 +283,80 @@ results = [x for x in local_results if x !== nothing]
 runs_path = joinpath(out, "runs.jsonl")
 save_runs(runs_path, results)
 
+# Export the community assignment produced by every algorithm/run.
+# One row in community_assignments.csv represents one vertex in one run.
+assignment_rows = NamedTuple[]
+community_rows = NamedTuple[]
+
+for r in results
+    g = graphs[r.dataset]
+    graph_id = "$(g.name)_n$(g.n)_m$(g.m)"
+    labels = MOHGALS.canonical(copy(r.labels))
+    k = isempty(labels) ? 0 : maximum(labels)
+    sizes = zeros(Int, k)
+    degree_volumes = zeros(Int, k)
+    internal_edges = zeros(Int, k)
+
+    for u in 1:g.n
+        c = labels[u]
+        sizes[c] += 1
+        degree_volumes[c] += g.deg[u]
+        truth_label = g.truth === nothing || g.truth[u] < 0 ? missing : g.truth[u]
+        push!(assignment_rows, (
+            graph_id=graph_id,
+            dataset=r.dataset,
+            algorithm=r.algo,
+            seed=r.seed,
+            node_id=u,
+            community_id=c,
+            community_size=0, # filled after all community sizes are known
+            truth_community=truth_label,
+        ))
+    end
+
+    for e in eachindex(g.edges_u)
+        u, v = g.edges_u[e], g.edges_v[e]
+        if labels[u] == labels[v]
+            internal_edges[labels[u]] += 1
+        end
+    end
+
+    for c in 1:k
+        cut_edges = degree_volumes[c] - 2 * internal_edges[c]
+        denom = min(degree_volumes[c], 2 * g.m - degree_volumes[c])
+        conductance_value = denom <= 0 ? 1.0 : cut_edges / denom
+        push!(community_rows, (
+            graph_id=graph_id,
+            dataset=r.dataset,
+            algorithm=r.algo,
+            seed=r.seed,
+            community_id=c,
+            community_size=sizes[c],
+            internal_edges=internal_edges[c],
+            degree_volume=degree_volumes[c],
+            conductance=conductance_value,
+        ))
+    end
+end
+
+if !isempty(assignment_rows)
+    assignments = DataFrame(assignment_rows)
+    # Fill each vertex row with the size of its assigned community.
+    for row in eachrow(assignments)
+        idx = findfirst(x -> x.graph_id == row.graph_id && x.dataset == row.dataset &&
+            x.algorithm == row.algorithm && x.seed == row.seed &&
+            x.community_id == row.community_id, community_rows)
+        idx !== nothing && (row.community_size = community_rows[idx].community_size)
+    end
+    assignment_path = joinpath(out, "community_assignments.csv")
+    CSV.write(assignment_path, assignments)
+
+    community_path = joinpath(out, "community_summary.csv")
+    CSV.write(community_path, DataFrame(community_rows))
+    @info "Community assignments CSV" assignment_path
+    @info "Community summary CSV" community_path
+end
+
 config_path = joinpath(out, "config.json")
 
 open(config_path, "w") do io
