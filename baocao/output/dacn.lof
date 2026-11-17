@@ -1,8 +1,8 @@
-\contentsline {figure}{\numberline {2.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kiến trúc tổng thể của phương pháp MO-HGA-LS}}{43}{figure.caption.3}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Lưu đồ hoạt động của MO-HGA-LS}}{45}{figure.caption.4}%
-\contentsline {figure}{\numberline {3.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của thuật toán GA trên các bộ dữ liệu}}{59}{figure.caption.11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của thuật toán HGA trên các bộ dữ liệu}}{60}{figure.caption.12}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của Louvain và Leiden trên các bộ dữ liệu}}{62}{figure.caption.13}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của NSGA-II và MO-HGA-LS trên các bộ dữ liệu}}{64}{figure.caption.14}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces \xpg@aux {}{latex}\ignorespaces So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}}{67}{figure.caption.15}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Các chỉ số vận hành của Local Search trong HGA và MO-HGA-LS trên các bộ dữ liệu}}{70}{figure.caption.16}%
+\contentsline {figure}{\numberline {2.4.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kiến trúc tổng thể của phương pháp MO-HGA-LS}}{45}{figure.caption.3}%
+\contentsline {figure}{\numberline {2.4.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Lưu đồ hoạt động của MO-HGA-LS}}{46}{figure.caption.4}%
+\contentsline {figure}{\numberline {3.2.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của thuật toán GA trên các bộ dữ liệu}}{61}{figure.caption.11}%
+\contentsline {figure}{\numberline {3.2.2}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của thuật toán HGA trên các bộ dữ liệu}}{62}{figure.caption.12}%
+\contentsline {figure}{\numberline {3.2.3}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của Louvain và Leiden trên các bộ dữ liệu}}{64}{figure.caption.13}%
+\contentsline {figure}{\numberline {3.2.4}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Kết quả thực nghiệm trung bình của NSGA-II và MO-HGA-LS trên các bộ dữ liệu}}{66}{figure.caption.14}%
+\contentsline {figure}{\numberline {3.3.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces So sánh thời gian thực thi trung bình và độ lệch chuẩn của các thuật toán (giây)}}{69}{figure.caption.15}%
+\contentsline {figure}{\numberline {3.4.1}{\ignorespaces \xpg@aux {}{latex}\ignorespaces Các chỉ số vận hành của Local Search trong HGA và MO-HGA-LS trên các bộ dữ liệu}}{73}{figure.caption.16}%

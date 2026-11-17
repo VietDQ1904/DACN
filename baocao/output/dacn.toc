@@ -2,91 +2,91 @@
 \contentsline {section}{Lời cam đoan}{i}{Doc-Start}%
 \contentsline {section}{Lời cảm ơn}{ii}{Doc-Start}%
 \contentsline {section}{Danh mục các ký hiệu, các chữ viết tắt}{iii}{Doc-Start}%
-\contentsline {section}{Danh mục các biểu bảng}{vii}{table.0.2}%
-\contentsline {section}{Danh mục các hình ảnh, sơ đồ}{viii}{section*.1}%
+\contentsline {section}{Danh mục các hình ảnh, sơ đồ}{viii}{table.0.0.2}%
+\contentsline {section}{Danh mục các biểu bảng}{ix}{section*.1}%
 \contentsline {section}{Mở đầu}{5}{section*.2}%
-\contentsline {section}{\numberline {1}Tổng quan về mạng phức tạp và bài toán phát hiện cộng đồng}{7}{section.1}%
-\contentsline {subsection}{\numberline {1.1}Tổng quan về mạng phức tạp}{7}{subsection.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.1}Khái niệm và biểu diễn mạng phức tạp}{7}{subsubsection.1.1.1}%
-\contentsline {subsubsection}{\numberline {1.1.2}Các đặc trưng cơ bản của mạng phức tạp}{8}{subsubsection.1.1.2}%
-\contentsline {subsubsection}{\numberline {1.1.3}Một số loại mạng phức tạp}{10}{subsubsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.2}Bài toán phát hiện cộng đồng}{11}{subsection.1.2}%
-\contentsline {subsubsection}{\numberline {1.2.1}Khái niệm cộng đồng và phát hiện cộng đồng}{11}{subsubsection.1.2.1}%
-\contentsline {subsubsection}{\numberline {1.2.2}Các phương pháp phát hiện cộng đồng}{12}{subsubsection.1.2.2}%
-\contentsline {subsubsection}{\numberline {1.2.3}Phát hiện cộng đồng dưới góc nhìn bài toán tối ưu}{14}{subsubsection.1.2.3}%
+\contentsline {section}{\numberline {1}Tổng quan về mạng phức tạp và bài toán phát hiện cộng đồng}{8}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Tổng quan về mạng phức tạp}{8}{subsection.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.1}Khái niệm và biểu diễn mạng phức tạp}{8}{subsubsection.1.1.1}%
+\contentsline {subsubsection}{\numberline {1.1.2}Các đặc trưng cơ bản của mạng phức tạp}{9}{subsubsection.1.1.2}%
+\contentsline {subsubsection}{\numberline {1.1.3}Một số loại mạng phức tạp}{11}{subsubsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.2}Bài toán phát hiện cộng đồng}{12}{subsection.1.2}%
+\contentsline {subsubsection}{\numberline {1.2.1}Khái niệm cộng đồng và phát hiện cộng đồng}{12}{subsubsection.1.2.1}%
+\contentsline {subsubsection}{\numberline {1.2.2}Các phương pháp phát hiện cộng đồng}{13}{subsubsection.1.2.2}%
+\contentsline {subsubsection}{\numberline {1.2.3}Phát hiện cộng đồng dưới góc nhìn bài toán tối ưu}{15}{subsubsection.1.2.3}%
 \contentsline {subsection}{\numberline {1.3}Các hàm đánh giá chất lượng cộng đồng}{16}{subsection.1.3}%
 \contentsline {subsubsection}{\numberline {1.3.1}Modularity}{16}{subsubsection.1.3.1}%
-\contentsline {subsubsection}{\numberline {1.3.2}Normalized Mutual Information}{17}{subsubsection.1.3.2}%
-\contentsline {subsubsection}{\numberline {1.3.3}Adjusted Rand Index}{18}{subsubsection.1.3.3}%
-\contentsline {subsection}{\numberline {1.4}Các phương pháp Metaheuristic trong phát hiện cộng đồng}{20}{subsection.1.4}%
-\contentsline {subsubsection}{\numberline {1.4.1}Simulated Annealing}{20}{subsubsection.1.4.1}%
-\contentsline {subsubsection}{\numberline {1.4.2}Extremal Optimization}{21}{subsubsection.1.4.2}%
-\contentsline {subsubsection}{\numberline {1.4.3}Genetic Algorithm}{22}{subsubsection.1.4.3}%
+\contentsline {subsubsection}{\numberline {1.3.2}Normalized Mutual Information}{18}{subsubsection.1.3.2}%
+\contentsline {subsubsection}{\numberline {1.3.3}Adjusted Rand Index}{19}{subsubsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.4}Các phương pháp Metaheuristic trong phát hiện cộng đồng}{21}{subsection.1.4}%
+\contentsline {subsubsection}{\numberline {1.4.1}Simulated Annealing}{21}{subsubsection.1.4.1}%
+\contentsline {subsubsection}{\numberline {1.4.2}Extremal Optimization}{22}{subsubsection.1.4.2}%
+\contentsline {subsubsection}{\numberline {1.4.3}Genetic Algorithm}{23}{subsubsection.1.4.3}%
 \contentsline {subsubsection}{\numberline {1.4.4}Particle Swarm Optimization}{24}{subsubsection.1.4.4}%
-\contentsline {subsection}{\numberline {1.5}Các phương pháp phát hiện cộng đồng làm cơ sở so sánh}{26}{subsection.1.5}%
-\contentsline {subsubsection}{\numberline {1.5.1}Phương pháp Louvain}{26}{subsubsection.1.5.1}%
-\contentsline {subsubsection}{\numberline {1.5.2}Phương pháp Leiden}{27}{subsubsection.1.5.2}%
-\contentsline {subsection}{\numberline {1.6}Tổng quan các công trình nghiên cứu liên quan}{28}{subsection.1.6}%
-\contentsline {subsubsection}{\numberline {1.6.1}Các nghiên cứu sử dụng Genetic Algorithm}{28}{subsubsection.1.6.1}%
-\contentsline {subsubsection}{\numberline {1.6.2}Các nghiên cứu sử dụng tối ưu hóa đa mục tiêu}{29}{subsubsection.1.6.2}%
-\contentsline {subsubsection}{\numberline {1.6.3}Nhận xét và xác định hướng nghiên cứu của đề tài}{31}{subsubsection.1.6.3}%
-\contentsline {subsection}{\numberline {1.7}Tóm tắt chương 1}{33}{subsection.1.7}%
-\contentsline {section}{\numberline {2}Phương pháp đề xuất cho bài toán phát hiện cộng đồng}{34}{section.2}%
-\contentsline {subsection}{\numberline {2.1}Phát biểu bài toán}{34}{subsection.2.1}%
-\contentsline {subsubsection}{\numberline {2.1.1}Mô hình hóa bài toán phát hiện cộng đồng}{34}{subsubsection.2.1.1}%
-\contentsline {subsubsection}{\numberline {2.1.2}Không gian nghiệm và biểu diễn phân hoạch}{35}{subsubsection.2.1.2}%
-\contentsline {subsubsection}{\numberline {2.1.3}Hàm mục tiêu}{35}{subsubsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.2}Thiết kế thuật toán di truyền}{37}{subsection.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.1}Biểu diễn cá thể}{37}{subsubsection.2.2.1}%
-\contentsline {subsubsection}{\numberline {2.2.2}Khởi tạo quần thể}{38}{subsubsection.2.2.2}%
-\contentsline {subsubsection}{\numberline {2.2.3}Hàm đánh giá}{38}{subsubsection.2.2.3}%
-\contentsline {subsubsection}{\numberline {2.2.4}Phép chọn lọc}{38}{subsubsection.2.2.4}%
-\contentsline {subsubsection}{\numberline {2.2.5}Phép lai ghép}{39}{subsubsection.2.2.5}%
-\contentsline {subsubsection}{\numberline {2.2.6}Phép đột biến}{39}{subsubsection.2.2.6}%
-\contentsline {subsubsection}{\numberline {2.2.7}Cập nhật Pareto archive}{39}{subsubsection.2.2.7}%
-\contentsline {subsubsection}{\numberline {2.2.8}Điều kiện dừng}{40}{subsubsection.2.2.8}%
-\contentsline {subsection}{\numberline {2.3}Cơ chế Local Search}{40}{subsection.2.3}%
-\contentsline {subsubsection}{\numberline {2.3.1}Khái niệm và vai trò của tìm kiếm cục bộ}{40}{subsubsection.2.3.1}%
-\contentsline {subsubsection}{\numberline {2.3.2}Xác định không gian nghiệm lân cận và kỹ thuật thu hẹp}{40}{subsubsection.2.3.2}%
-\contentsline {subsubsection}{\numberline {2.3.3}Không gian lân cận và giới hạn tìm kiếm}{41}{subsubsection.2.3.3}%
-\contentsline {subsubsection}{\numberline {2.3.4}Cơ chế đánh giá chênh lệch cục bộ đa mục tiêu}{41}{subsubsection.2.3.4}%
-\contentsline {subsubsection}{\numberline {2.3.5}Tiêu chí chấp nhận nghiệm theo Pareto và cơ chế học tập Lamarck}{42}{subsubsection.2.3.5}%
-\contentsline {subsubsection}{\numberline {2.3.6}Mã hóa ngược}{42}{subsubsection.2.3.6}%
-\contentsline {subsection}{\numberline {2.4}Multi-Objective Hybrid Genetic Algorithm\\kết hợp Local Search}{43}{subsection.2.4}%
-\contentsline {subsubsection}{\numberline {2.4.1}Kiến trúc của phương pháp đề xuất}{43}{subsubsection.2.4.1}%
-\contentsline {subsubsection}{\numberline {2.4.2}Quy trình hoạt động}{45}{subsubsection.2.4.2}%
-\contentsline {subsubsection}{\numberline {2.4.3}Thuật toán tổng quát}{46}{subsubsection.2.4.3}%
-\contentsline {subsubsection}{\numberline {2.4.4}Phân tích độ phức tạp tính toán}{49}{subsubsection.2.4.4}%
-\contentsline {subsubsection}{\numberline {2.4.5}Thảo luận và định hướng đánh giá thực nghiệm}{51}{subsubsection.2.4.5}%
-\contentsline {subsection}{\numberline {2.5}Thiết kế thực nghiệm}{51}{subsection.2.5}%
-\contentsline {subsubsection}{\numberline {2.5.1}Bộ dữ liệu thực nghiệm}{51}{subsubsection.2.5.1}%
-\contentsline {subsubsection}{\numberline {2.5.2}Thiết lập tham số}{53}{subsubsection.2.5.2}%
-\contentsline {subsubsection}{\numberline {2.5.3}Các phương pháp baseline}{54}{subsubsection.2.5.3}%
-\contentsline {subsubsection}{\numberline {2.5.4}Các tiêu chí đánh giá}{54}{subsubsection.2.5.4}%
-\contentsline {subsection}{\numberline {2.6}Tóm tắt chương 2}{55}{subsection.2.6}%
-\contentsline {section}{\numberline {3}Phương pháp đề xuất cho bài toán phát hiện cộng đồng}{56}{section.3}%
-\contentsline {subsection}{\numberline {3.1}Môi trường thực nghiệm}{56}{subsection.3.1}%
-\contentsline {subsubsection}{\numberline {3.1.1}Phần cứng và phần mềm}{56}{subsubsection.3.1.1}%
-\contentsline {subsubsection}{\numberline {3.1.2}Công cụ và thư viện sử dụng}{57}{subsubsection.3.1.2}%
-\contentsline {subsection}{\numberline {3.2}Kết quả thực nghiệm}{59}{subsection.3.2}%
-\contentsline {subsubsection}{\numberline {3.2.1}Kết quả của Genetic Algorithm}{59}{subsubsection.3.2.1}%
-\contentsline {subsubsection}{\numberline {3.2.2}Kết quả của Hybrid Genetic Algorithm}{60}{subsubsection.3.2.2}%
-\contentsline {subsubsection}{\numberline {3.2.3}Kết quả của Louvain và Leiden}{61}{subsubsection.3.2.3}%
-\contentsline {subsubsection}{\numberline {3.2.4}Kết quả thực nghiệm của NSGA-II và MO-HGA-LS}{63}{subsubsection.3.2.4}%
-\contentsline {subsection}{\numberline {3.3}So sánh và đánh giá}{65}{subsection.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.1}So sánh Modularity}{65}{subsubsection.3.3.1}%
-\contentsline {subsubsection}{\numberline {3.3.2}So sánh NMI và ARI}{66}{subsubsection.3.3.2}%
-\contentsline {subsubsection}{\numberline {3.3.3}So sánh thời gian thực thi}{66}{subsubsection.3.3.3}%
-\contentsline {subsubsection}{\numberline {3.3.4}Phân tích độ ổn định của kết quả}{68}{subsubsection.3.3.4}%
-\contentsline {subsection}{\numberline {3.4}Phân tích ảnh hưởng của Local Search}{69}{subsection.3.4}%
-\contentsline {subsubsection}{\numberline {3.4.1}So sánh GA và GA kết hợp Local Search}{69}{subsubsection.3.4.1}%
-\contentsline {subsubsection}{\numberline {3.4.2}Ảnh hưởng của các tham số và cơ chế vận hành Local Search}{70}{subsubsection.3.4.2}%
-\contentsline {subsubsection}{\numberline {3.4.3}Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}{71}{subsubsection.3.4.3}%
-\contentsline {subsection}{\numberline {3.5}Thảo luận kết quả}{74}{subsection.3.5}%
-\contentsline {subsubsection}{\numberline {3.5.1}Ưu điểm của phương pháp đề xuất}{75}{subsubsection.3.5.1}%
-\contentsline {subsubsection}{\numberline {3.5.2}Hạn chế của phương pháp}{76}{subsubsection.3.5.2}%
-\contentsline {subsubsection}{\numberline {3.5.3}Khả năng áp dụng và mở rộng}{77}{subsubsection.3.5.3}%
-\contentsline {subsection}{\numberline {3.6}Kết luận chương}{79}{subsection.3.6}%
-\contentsline {subsection}{\numberline {3.7}Kết luận và hướng phát triển}{80}{subsection.3.7}%
-\contentsline {section}{\mbox {Danh mục tài liệu tham khảo}}{82}{Item.32}%
-\contentsline {section}{Phụ lục}{84}{Item.32}%
+\contentsline {subsection}{\numberline {1.5}Các phương pháp phát hiện cộng đồng làm cơ sở so sánh}{27}{subsection.1.5}%
+\contentsline {subsubsection}{\numberline {1.5.1}Phương pháp Louvain}{27}{subsubsection.1.5.1}%
+\contentsline {subsubsection}{\numberline {1.5.2}Phương pháp Leiden}{28}{subsubsection.1.5.2}%
+\contentsline {subsection}{\numberline {1.6}Tổng quan các công trình nghiên cứu liên quan}{29}{subsection.1.6}%
+\contentsline {subsubsection}{\numberline {1.6.1}Các nghiên cứu sử dụng Genetic Algorithm}{29}{subsubsection.1.6.1}%
+\contentsline {subsubsection}{\numberline {1.6.2}Các nghiên cứu sử dụng tối ưu hóa đa mục tiêu}{30}{subsubsection.1.6.2}%
+\contentsline {subsubsection}{\numberline {1.6.3}Nhận xét và xác định hướng nghiên cứu của đề tài}{32}{subsubsection.1.6.3}%
+\contentsline {subsection}{\numberline {1.7}Tóm tắt chương 1}{34}{subsection.1.7}%
+\contentsline {section}{\numberline {2}Phương pháp đề xuất cho bài toán phát hiện cộng đồng}{35}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Phát biểu bài toán}{35}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Mô hình hóa bài toán phát hiện cộng đồng}{35}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Không gian nghiệm và biểu diễn phân hoạch}{36}{subsubsection.2.1.2}%
+\contentsline {subsubsection}{\numberline {2.1.3}Hàm mục tiêu}{36}{subsubsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.2}Thiết kế thuật toán di truyền}{38}{subsection.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.1}Biểu diễn cá thể}{38}{subsubsection.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2}Khởi tạo quần thể}{39}{subsubsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.3}Hàm đánh giá}{39}{subsubsection.2.2.3}%
+\contentsline {subsubsection}{\numberline {2.2.4}Phép chọn lọc}{39}{subsubsection.2.2.4}%
+\contentsline {subsubsection}{\numberline {2.2.5}Phép lai ghép}{40}{subsubsection.2.2.5}%
+\contentsline {subsubsection}{\numberline {2.2.6}Phép đột biến}{40}{subsubsection.2.2.6}%
+\contentsline {subsubsection}{\numberline {2.2.7}Cập nhật Pareto archive}{40}{subsubsection.2.2.7}%
+\contentsline {subsubsection}{\numberline {2.2.8}Điều kiện dừng}{41}{subsubsection.2.2.8}%
+\contentsline {subsection}{\numberline {2.3}Cơ chế Local Search}{41}{subsection.2.3}%
+\contentsline {subsubsection}{\numberline {2.3.1}Khái niệm và vai trò của tìm kiếm cục bộ}{41}{subsubsection.2.3.1}%
+\contentsline {subsubsection}{\numberline {2.3.2}Xác định không gian nghiệm lân cận và kỹ thuật thu hẹp}{41}{subsubsection.2.3.2}%
+\contentsline {subsubsection}{\numberline {2.3.3}Không gian lân cận và giới hạn tìm kiếm}{42}{subsubsection.2.3.3}%
+\contentsline {subsubsection}{\numberline {2.3.4}Cơ chế đánh giá chênh lệch cục bộ đa mục tiêu}{42}{subsubsection.2.3.4}%
+\contentsline {subsubsection}{\numberline {2.3.5}Tiêu chí chấp nhận nghiệm theo Pareto và cơ chế học tập Lamarck}{43}{subsubsection.2.3.5}%
+\contentsline {subsubsection}{\numberline {2.3.6}Mã hóa ngược}{43}{subsubsection.2.3.6}%
+\contentsline {subsection}{\numberline {2.4}Multi-Objective Hybrid Genetic Algorithm\\kết hợp Local Search}{44}{subsection.2.4}%
+\contentsline {subsubsection}{\numberline {2.4.1}Kiến trúc của phương pháp đề xuất}{44}{subsubsection.2.4.1}%
+\contentsline {subsubsection}{\numberline {2.4.2}Quy trình hoạt động}{46}{subsubsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.3}Thuật toán tổng quát}{47}{subsubsection.2.4.3}%
+\contentsline {subsubsection}{\numberline {2.4.4}Phân tích độ phức tạp tính toán}{50}{subsubsection.2.4.4}%
+\contentsline {subsubsection}{\numberline {2.4.5}Thảo luận và định hướng đánh giá thực nghiệm}{52}{subsubsection.2.4.5}%
+\contentsline {subsection}{\numberline {2.5}Thiết kế thực nghiệm}{52}{subsection.2.5}%
+\contentsline {subsubsection}{\numberline {2.5.1}Bộ dữ liệu thực nghiệm}{52}{subsubsection.2.5.1}%
+\contentsline {subsubsection}{\numberline {2.5.2}Thiết lập tham số}{54}{subsubsection.2.5.2}%
+\contentsline {subsubsection}{\numberline {2.5.3}Các phương pháp baseline}{55}{subsubsection.2.5.3}%
+\contentsline {subsubsection}{\numberline {2.5.4}Các tiêu chí đánh giá}{55}{subsubsection.2.5.4}%
+\contentsline {subsection}{\numberline {2.6}Tóm tắt chương 2}{56}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Phương pháp đề xuất cho bài toán phát hiện cộng đồng}{58}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Môi trường thực nghiệm}{58}{subsection.3.1}%
+\contentsline {subsubsection}{\numberline {3.1.1}Phần cứng và phần mềm}{58}{subsubsection.3.1.1}%
+\contentsline {subsubsection}{\numberline {3.1.2}Công cụ và thư viện sử dụng}{59}{subsubsection.3.1.2}%
+\contentsline {subsection}{\numberline {3.2}Kết quả thực nghiệm}{61}{subsection.3.2}%
+\contentsline {subsubsection}{\numberline {3.2.1}Kết quả của Genetic Algorithm}{61}{subsubsection.3.2.1}%
+\contentsline {subsubsection}{\numberline {3.2.2}Kết quả của Hybrid Genetic Algorithm}{62}{subsubsection.3.2.2}%
+\contentsline {subsubsection}{\numberline {3.2.3}Kết quả của Louvain và Leiden}{63}{subsubsection.3.2.3}%
+\contentsline {subsubsection}{\numberline {3.2.4}Kết quả thực nghiệm của NSGA-II và MO-HGA-LS}{65}{subsubsection.3.2.4}%
+\contentsline {subsection}{\numberline {3.3}So sánh và đánh giá}{67}{subsection.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.1}So sánh Modularity}{67}{subsubsection.3.3.1}%
+\contentsline {subsubsection}{\numberline {3.3.2}So sánh NMI và ARI}{68}{subsubsection.3.3.2}%
+\contentsline {subsubsection}{\numberline {3.3.3}So sánh thời gian thực thi}{69}{subsubsection.3.3.3}%
+\contentsline {subsubsection}{\numberline {3.3.4}Phân tích độ ổn định của kết quả}{71}{subsubsection.3.3.4}%
+\contentsline {subsection}{\numberline {3.4}Phân tích ảnh hưởng của Local Search}{72}{subsection.3.4}%
+\contentsline {subsubsection}{\numberline {3.4.1}So sánh GA và GA kết hợp Local Search}{72}{subsubsection.3.4.1}%
+\contentsline {subsubsection}{\numberline {3.4.2}Ảnh hưởng của các tham số và cơ chế vận hành Local Search}{73}{subsubsection.3.4.2}%
+\contentsline {subsubsection}{\numberline {3.4.3}Phân tích sự cân bằng giữa chất lượng nghiệm và chi phí tính toán}{74}{subsubsection.3.4.3}%
+\contentsline {subsection}{\numberline {3.5}Thảo luận kết quả}{77}{subsection.3.5}%
+\contentsline {subsubsection}{\numberline {3.5.1}Ưu điểm của phương pháp đề xuất}{78}{subsubsection.3.5.1}%
+\contentsline {subsubsection}{\numberline {3.5.2}Hạn chế của phương pháp}{79}{subsubsection.3.5.2}%
+\contentsline {subsubsection}{\numberline {3.5.3}Khả năng áp dụng và mở rộng}{80}{subsubsection.3.5.3}%
+\contentsline {subsection}{\numberline {3.6}Tóm tắt chương 3}{82}{subsection.3.6}%
+\contentsline {section}{Kết luận và hướng phát triển}{84}{subsection.3.6}%
+\contentsline {section}{\mbox {Danh mục tài liệu tham khảo}}{89}{Item.34}%
+\contentsline {section}{Phụ lục}{92}{Item.34}%

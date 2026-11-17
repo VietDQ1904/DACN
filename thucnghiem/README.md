@@ -18,9 +18,7 @@
 
 ## Dataset chính theo báo cáo
 
-`karate polbooks football email amazon`.
-
-Amazon đầy đủ chỉ chạy Louvain/Leiden vì GA không phù hợp với quy mô 334k đỉnh. Polblogs không nằm trong main experiment; nếu cần có thể thêm vào `--datasets` như một phụ lục riêng.
+`karate polbooks football email`.
 
 Email được báo cáo theo **đồ thị sau preprocessing** (undirected, bỏ self-loop, LCC), đồng thời metadata raw nên được ghi riêng trong báo cáo.
 
@@ -74,10 +72,10 @@ JULIA_NUM_THREADS=20 julia --project=. scripts/run_experiments.jl   --datasets k
 ## Phân tích:
 
 ```bash
-julia --project=. scripts/analyze.jl results/main/runs.jsonl results/amazon/runs.jsonl --out results/report
+julia --project=. scripts/analyze.jl results/main/runs.jsonl results/email/runs.jsonl --out results/report
 ```
 
-## Profile thời gian và bộ nhớ sử dụng:
+## Phân tích thời gian và bộ nhớ sử dụng:
 
 ```bash
 julia --project=. scripts/profile.jl --dataset email --algo MO-HGA-LS --seed 1 --repeats 1
